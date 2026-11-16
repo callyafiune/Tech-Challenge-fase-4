@@ -1,0 +1,31 @@
+# Ambientes virtuais e caches de Python.
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Dados brutos, modelos e resultados locais de execução.
+/data/
+/artifacts/
+/mlruns/
+/mlartifacts/
+
+# Artefatos de empacotamento e cobertura de testes.
+/build/
+/dist/
+*.egg-info/
+.coverage
+.coverage.*
+htmlcov/
+
+# Configuração privada e arquivos temporários dos agentes.
+.env
+.env.*
+!.env.example
+/.superpowers/
+
+# Os relatórios agregados em reports/execucao_validada são entregáveis versionados.
