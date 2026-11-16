@@ -1,8 +1,8 @@
 # Resultados da execução validada
 
-Execução **`20261116T215129_2bee07608434`**, iniciada em **16/11/2026 às 18:51:29 (America/Sao_Paulo)**, equivalente a `2026-11-16T21:51:29.500441+00:00`. Estado: **sucesso**.
+Execução **`20261116T220412_87839641f75d`**, iniciada em **16/11/2026 às 19:04:12 (America/Sao_Paulo)**, equivalente a `2026-11-16T22:04:12.920707+00:00`. Estado: **sucesso**.
 
-Duração medida: **23,77 s**; **22 eventos e oito alertas**. Inclui a sincronização medida e exclui a cópia final de fechamento dos retratos; não é benchmark de produção.
+Duração medida: **38,67 s**; **22 eventos e oito alertas**. Inclui a sincronização medida e exclui a cópia final de fechamento dos retratos; não é benchmark de produção.
 
 [Painel HTML](../reports/execucao_validada/index.html), [resumo completo](../reports/execucao_validada/resumo.json), [manifesto](../reports/execucao_validada/manifesto.json) e [inventário dos arquivos publicados](../reports/execucao_validada/publicacao.json).
 
@@ -41,16 +41,16 @@ Bootstrap pareado de 500 reamostragens. Rótulos de conceito/combinado são sint
 
 Contrato: controle positivo aceito; nulo, idade e duplicidade rejeitados isoladamente e no lote combinado. O bloqueio é esperado; nenhuma inferência é executada nesse ramo do fluxo. Não houve falha inesperada.
 
-MLflow pai: **`a3cff0b470994809b9e85c89b001c5c5`**; banco local em `artifacts/mlflow.db`. [Metadados exportados do pai e dos quatro filhos](evidencias_mlflow.json) incluem `mlflow.parentRunId`, experimento, horários, nomes e artefatos, além de IDs, estados e métricas agregadas. O banco não integra o Git; os filhos apontam para os relatórios completos do pai.
+MLflow pai: **`b987bfd1e9a848179a2bdeec3eb526fc`**; banco local em `artifacts/mlflow.db`. [Metadados exportados do pai e dos quatro filhos](evidencias_mlflow.json) incluem `mlflow.parentRunId`, experimento, horários, nomes e artefatos, além de IDs, estados e métricas agregadas. O banco não integra o Git; os filhos apontam para os relatórios completos do pai.
 
 O [resumo](../reports/execucao_validada/resumo.json) contém amostras RSS, CPU e disco por etapa. Recursos são amostrados nos limites das etapas e não representam picos exatos ou monitoramento contínuo do host.
 
 Hash canônico da configuração: `25e79a5462f77c394b2162d8989651682614cd2172cd66d5f68181d750441790`.
 
-Hash agregado de fontes/configuração/lock: `312c6ae2f7e8cecf07e52930e28172bf34a44de4021c80e7cf10bf72061d3c73`. O manifesto traz os hashes individuais de 31 arquivos, incluindo workflow, versão Python e atributos Git. Esta execução histórica antecedeu os commits e registrou árvore suja. Seus bytes correspondem ao código versionado em `5152b36`; não se usa apenas o HEAD antigo para atribuir identidade ao código. O uso de hooks locais neste projeto acadêmico foi autorizado e o histórico semântico já está organizado.
+Hash agregado de fontes/configuração/lock: `312c6ae2f7e8cecf07e52930e28172bf34a44de4021c80e7cf10bf72061d3c73`. O manifesto traz os hashes individuais de 31 arquivos. A execução partiu da **árvore limpa**, no commit **`11dd2b83b57a77ceda8186d6c61b79e20e0dca35`**, que já contém o código e o histórico por blocos. A atualização posterior apenas consolida estas evidências. Hooks locais foram autorizados somente para este repositório acadêmico; a configuração global do trabalho foi preservada.
 
 ## Verificação e limites
 
-[Registro literal dos comandos](verificacao.json): Ruff aprovado e **150 testes passaram**, com **11 avisos de depreciação** das dependências, sem skips na máquina com cache UCI. O [log literal](validacao/03-comando.log) e o [JUnit](validacao/pytest.xml) acompanham horários e hash das fontes. Os testes terminaram depois da execução real, sem concorrência entre ambos. Incluem Evidently real, sucesso SQLite, links dos artefatos e rejeição de evidências adulteradas. O verificador identifica o estado do pipeline como derivado de seu resumo; a [captura independente da CLI original](execucao_cli.json) e seu [stdout literal](validacao/00-pipeline-cli.log) registram comando, horários e código de saída zero observado. O CI remoto não foi executado nesta sessão.
+[Registro literal dos comandos](verificacao.json): Ruff aprovado e **150 testes passaram**, com **11 avisos de depreciação** das dependências, sem skips na máquina com cache UCI. O [log literal](validacao/03-comando.log) e o [JUnit](validacao/pytest.xml) acompanham horários e hash das fontes. Incluem Evidently real, sucesso SQLite, links dos artefatos e rejeição de evidências adulteradas. O verificador identifica o estado do pipeline como derivado de seu resumo; a [captura independente da CLI original](execucao_cli.json) e seu [stdout literal](validacao/00-pipeline-cli.log) registram comando, horários e código de saída zero observado. Esta evidência é local; o [CI remoto](https://github.com/callyafiune/Tech-Challenge-fase-4/actions/workflows/ci.yml) tem seu estado próprio.
 
 O navegador foi interrompido por não confirmar a URL; não houve validação visual manual. O retrato contém apenas relatórios e indicadores agregados; modelo, base completa, predições individuais e banco foram excluídos. Governança no README é plano contextualizado, não certificado de conformidade. Vídeo e link estão fora do escopo: somente roteiro.

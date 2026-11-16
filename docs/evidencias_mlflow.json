@@ -1,13 +1,15 @@
 {
-  "execution_id": "20261116T215129_2bee07608434",
+  "execution_id": "20261116T220412_87839641f75d",
   "source_sha256": "312c6ae2f7e8cecf07e52930e28172bf34a44de4021c80e7cf10bf72061d3c73",
+  "git_revision": "11dd2b83b57a77ceda8186d6c61b79e20e0dca35",
+  "git_dirty": false,
   "parent": {
-    "run_id": "a3cff0b470994809b9e85c89b001c5c5",
+    "run_id": "b987bfd1e9a848179a2bdeec3eb526fc",
     "experiment_id": "1",
     "status": "FINISHED",
-    "start_time_utc_ms": 1794865911987,
-    "end_time_utc_ms": 1794865912997,
-    "mlflow.runName": "20261116T215129_2bee07608434",
+    "start_time_utc_ms": 1794866687788,
+    "end_time_utc_ms": 1794866690987,
+    "mlflow.runName": "20261116T220412_87839641f75d",
     "mlflow.parentRunId": null,
     "relatorio_run_pai": null,
     "metrics": {
@@ -45,8 +47,8 @@
       "janela_label_coverage": 1.0,
       "janela_atributos_com_drift": 2.0,
       "alertas": 8.0,
-      "duracao_total_segundos": 23.767508,
-      "memoria_maxima_mb": 369.18
+      "duracao_total_segundos": 38.67498,
+      "memoria_maxima_mb": 367.39
     },
     "artifacts_root": [
       "configuracao.json",
@@ -57,14 +59,14 @@
   },
   "children": [
     {
-      "run_id": "a6d3c6e350f1421795683de4d0a6f297",
+      "run_id": "6560ac6a7f714e9ca9b5edd06d895c66",
       "experiment_id": "1",
       "status": "FINISHED",
-      "start_time_utc_ms": 1794865912899,
-      "end_time_utc_ms": 1794865912985,
+      "start_time_utc_ms": 1794866690671,
+      "end_time_utc_ms": 1794866690976,
       "mlflow.runName": "combined",
-      "mlflow.parentRunId": "a3cff0b470994809b9e85c89b001c5c5",
-      "relatorio_run_pai": "a3cff0b470994809b9e85c89b001c5c5",
+      "mlflow.parentRunId": "b987bfd1e9a848179a2bdeec3eb526fc",
+      "relatorio_run_pai": "b987bfd1e9a848179a2bdeec3eb526fc",
       "metrics": {
         "roc_auc": 0.46489499020207004,
         "average_precision": 0.633578755699617,
@@ -84,14 +86,14 @@
       ]
     },
     {
-      "run_id": "8a5eac13d1854e00b29d9858ddde0256",
+      "run_id": "d67bfff4c58c44779f4615821e7c8131",
       "experiment_id": "1",
       "status": "FINISHED",
-      "start_time_utc_ms": 1794865912677,
-      "end_time_utc_ms": 1794865912764,
+      "start_time_utc_ms": 1794866689714,
+      "end_time_utc_ms": 1794866690048,
       "mlflow.runName": "concept",
-      "mlflow.parentRunId": "a3cff0b470994809b9e85c89b001c5c5",
-      "relatorio_run_pai": "a3cff0b470994809b9e85c89b001c5c5",
+      "mlflow.parentRunId": "b987bfd1e9a848179a2bdeec3eb526fc",
+      "relatorio_run_pai": "b987bfd1e9a848179a2bdeec3eb526fc",
       "metrics": {
         "roc_auc": 0.40733930348258707,
         "average_precision": 0.6347849543503578,
@@ -111,14 +113,14 @@
       ]
     },
     {
-      "run_id": "cdd616edd2dd4f75b3d898c1d8bc1dc3",
+      "run_id": "1012c3699d0741688681e58119eb2ecc",
       "experiment_id": "1",
       "status": "FINISHED",
-      "start_time_utc_ms": 1794865912461,
-      "end_time_utc_ms": 1794865912537,
+      "start_time_utc_ms": 1794866688974,
+      "end_time_utc_ms": 1794866689365,
       "mlflow.runName": "covariate",
-      "mlflow.parentRunId": "a3cff0b470994809b9e85c89b001c5c5",
-      "relatorio_run_pai": "a3cff0b470994809b9e85c89b001c5c5",
+      "mlflow.parentRunId": "b987bfd1e9a848179a2bdeec3eb526fc",
+      "relatorio_run_pai": "b987bfd1e9a848179a2bdeec3eb526fc",
       "metrics": {
         "roc_auc": 0.7964995507073278,
         "average_precision": 0.6350864521773996,
@@ -138,14 +140,14 @@
       ]
     },
     {
-      "run_id": "4c0ea3b52310437e832e2d5c0cf3eb4d",
+      "run_id": "07174065dcc04c21942904147d398a7a",
       "experiment_id": "1",
       "status": "FINISHED",
-      "start_time_utc_ms": 1794865912235,
-      "end_time_utc_ms": 1794865912319,
+      "start_time_utc_ms": 1794866688294,
+      "end_time_utc_ms": 1794866688483,
       "mlflow.runName": "control",
-      "mlflow.parentRunId": "a3cff0b470994809b9e85c89b001c5c5",
-      "relatorio_run_pai": "a3cff0b470994809b9e85c89b001c5c5",
+      "mlflow.parentRunId": "b987bfd1e9a848179a2bdeec3eb526fc",
+      "relatorio_run_pai": "b987bfd1e9a848179a2bdeec3eb526fc",
       "metrics": {
         "roc_auc": 0.7825126631946921,
         "average_precision": 0.5479240855220944,

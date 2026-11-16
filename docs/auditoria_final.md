@@ -6,7 +6,7 @@ Auditoria realizada em 16/11/2026, com esforço solicitado **xhigh** e velocidad
 
 Foram lidos todos os módulos de `src/credito_monitorado`, os testes, a configuração, o workflow, os scripts, README, cards e documentação causal. Também foram lidos os pareceres Fable 00, 01, 01b, 02, 02b, 03, 03b, 03c, 03d, 03e, 04 e 04b e seus metadados disponíveis. Serena não estava disponível; a inspeção usou leitura de arquivos, buscas e verificações locais.
 
-A evidência real examinada inicialmente foi `artifacts/20261116T210604_8c2119de557d/resumo.json`, junto ao manifesto, JSON Evidently, logs e backend SQLite MLflow. O código recebeu correções durante a auditoria. O retrato conferido é **`20261116T215129_2bee07608434`**, com **150 testes passando** nos registros posteriores. Esta rodada não repetiu testes, lint ou pipeline. O bloqueio anterior de commits foi resolvido por autorização específica do usuário para hooks locais; quatro commits técnicos foram conferidos. Uma nova execução a partir do código commitado será consolidada pelo principal, sem antecipar seu resultado neste registro.
+A evidência real examinada inicialmente foi `artifacts/20261116T210604_8c2119de557d/resumo.json`. A auditoria integral conferiu **`20261116T215129_2bee07608434`**, com **150 testes passando** nos registros posteriores. Após o versionamento, o principal produziu o retrato limpo atual **`20261116T220412_87839641f75d`**, na revisão **`11dd2b83b57a77ceda8186d6c61b79e20e0dca35`**, com `git_dirty=false`. Esta atualização é documental: não repetiu testes, lint ou pipeline. Os 31 arquivos e o hash agregado `312c6ae2f7e8cecf07e52930e28172bf34a44de4021c80e7cf10bf72061d3c73` permanecem os mesmos; a nova suíte do principal estava em andamento, sem resultado antecipado neste registro.
 
 Nenhum código, teste, README, hook ou commit foi alterado pelo auditor. Foram atualizados somente arquitetura, plano, progresso e este parecer.
 
@@ -45,7 +45,9 @@ No par conceito/controle, X e probabilidades são idênticos, o aumento pareado 
 
 O lote inválido foi bloqueado integralmente: nulo, idade, duplicidade e combinação são registrados como rejeitados. A execução histórica contém 18 eventos e oito alertas. A auditoria de grupos em referência tem no mínimo 429 registros por faixa etária e 1.802 por sexo nessa execução; os gaps de aprovação são descritivos, sem certificado de equidade.
 
-## Fechamento com a execução final
+## Retrato limpo atual e comprovações anteriores
+
+A execução atual **`20261116T220412_87839641f75d`**, informada pelo principal após o commit documental `11dd2b8`, terminou com `sucesso`, **38,67498 segundos**, **22 eventos** e **oito alertas**. O pai MLflow é **`b987bfd1e9a848179a2bdeec3eb526fc`**, com quatro filhos `FINISHED`. A revisão registrada contém o código executado e `git_dirty=false` descreve o estado no início dessa execução. O snapshot atual é `reports/execucao_validada`. As comprovações detalhadas abaixo pertencem à auditoria anterior dos mesmos bytes de código; os novos metadados e a nova rodada de verificação serão consolidados pelo principal.
 
 A execução **`20261116T215129_2bee07608434`** terminou com `sucesso`, **22 eventos**, **oito alertas** e **23,767508 segundos**, sem falhas inesperadas. O controle positivo do contrato foi validado; as quatro variantes inválidas foram rejeitadas. A ausência de inferência nesse ramo é explicitamente identificada como garantia do fluxo, sem alegar contador instrumentado.
 
@@ -88,7 +90,7 @@ Para tornar explícita a inspeção desta rodada, o JUnit conferido tem SHA-256 
 | Uso efetivo do Evidently/HTML | Quatro HTML/JSON gerados e adapter da API 0.7 | Atendido. Sua decisão bruta é complementar à política própria BH/efeito; banner, estados e JSON primário constam no retrato final. |
 | Logs, métricas operacionais e tracking | Telemetry, resumo, SQLite com pai/filhos e relatório local | Atendido no fluxo real final; links e métricas foram conferidos. |
 | Governança consolidada no README | Finalidade, base contextualizada, retenção, direitos, vieses e incidentes | Atendido como plano acadêmico contextualizado, com limitações de implementação declaradas. |
-| Histórico semântico organizado | `git log` e configuração local autorizada | Resolvido para os blocos técnicos: `1ec1062`, `734d66e`, `2b8c3bc`, `5152b36`, com mensagens semânticas em português. Documentação/evidência estão em consolidação pelo principal; push não é declarado. |
+| Histórico semântico organizado | Histórico e configuração local autorizada | Resolvido: `1ec1062`, `734d66e`, `2b8c3bc`, `5152b36` e documentação em `11dd2b8`. O retrato limpo atual registra essa revisão; a atualização de evidência será consolidada pelo principal. Push não é declarado. |
 | Vídeo STAR de até cinco minutos | `docs/roteiro_star.md` | Roteiro atende à instrução do usuário. Vídeo/link exigidos no enunciado continuam ausentes, por exclusão expressa do escopo autorizado; não atribuir cumprimento integral desse critério. |
 
 ## Estatística, vazamento e privacidade
@@ -129,4 +131,8 @@ Rodadas anteriores foram observadas pelo auditor; a rodada final usa os registro
 - [x] Incorporar 03d/03e e fechar a ressalva importante de cobertura com os mesmos bytes e evidências finais.
 - [x] Registrar a autorização específica para hooks locais e conferir os quatro commits técnicos, preservando a ocorrência histórica do bloqueio.
 
-O parecer confirma a consistência do retrato, fecha A01–A05, os resíduos do verificador e a ressalva importante de cobertura. A qualidade de código e as evidências locais examinadas estão fechadas, com os menores aceitos e documentados. As rejeições anteriores nas branches `feat/observabilidade-credito` e `feature/observabilidade-credito` são histórico: o usuário autorizou hooks locais apenas neste projeto acadêmico, preservando a configuração corporativa global. O principal configurou `core.hooksPath=.git/hooks` no repositório e criou os quatro commits técnicos, conferidos por leitura. Os 31 arquivos da execução são idênticos aos de `5152b36`. A documentação e a próxima evidência serão consolidadas pelo principal. Nenhum push é alegado. CI remoto e inspeção visual manual não foram realizados, e vídeo/link permanecem fora do escopo autorizado; isso não constitui certificação de operação real.
+O parecer fecha A01–A05, os resíduos do verificador e a ressalva importante de cobertura, com menores aceitos. As rejeições anteriores nas duas branches são histórico: o usuário autorizou hooks locais apenas neste projeto acadêmico, preservando o global corporativo. O principal configurou `core.hooksPath=.git/hooks`, criou os quatro commits técnicos e o documental `11dd2b8`. O novo retrato limpo registra essa revisão e os mesmos 31 arquivos. A atualização das evidências será consolidada pelo principal; nenhum push é alegado nesta auditoria. Esta auditoria valida execução local; o CI é consultável na aba Actions e tem estado autônomo, sem aprovação antecipada. Inspeção visual manual não foi realizada e vídeo/link permanecem fora do escopo autorizado; isso não constitui certificação de operação real.
+
+## Consolidação observada pelo executor após o versionamento
+
+O verificador automático concluiu sobre `220412` e os mesmos bytes: **150 testes passaram, 11 avisos, 126,89 segundos**, sem falhas ou skips. Os sete comandos terminaram com código zero, entre `2026-11-16T22:09:01Z` e `2026-11-16T22:11:14Z`, depois da execução da CLI. `current_source_sha256` coincide com o manifesto e `source_matches=true`. Log literal, JUnit e metadados MLflow atualizados estão vinculados em `docs/verificacao.json`. Este parágrafo registra o resultado do executor; o auditor não reexecutou a suíte.

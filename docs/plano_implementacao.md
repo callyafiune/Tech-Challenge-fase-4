@@ -8,7 +8,7 @@
 
 **Tecnologias:** Python 3.11, uv/uv.lock, pandas, Pandera, scikit-learn, scipy, Evidently, MLflow, PyYAML, joblib, pytest e Ruff; leitura XLS compatível com o arquivo oficial e coleta de recursos compatível com Windows.
 
-**Especificação:** [arquitetura.md](arquitetura.md) e [enunciado preservado](enunciado.md), originalmente lido em UTF-8 de `C:\estudos\MLET-Tech-Challenge-Fase-4.md`. A Fase 2 serve de referência de organização, sem copiar seu domínio ou pins antigos. Este checklist usa a execução `20261116T215129_2bee07608434`, a captura original da CLI e os registros de 150 testes. O histórico técnico foi concluído após autorização específica para hooks locais, com fontes idênticas às de `5152b36`. O [progresso](progresso.md) distingue a inspeção visual pendente da consolidação documental pelo principal. Comandos por bloco foram cobertos também pela suíte global, sem alegar repetição de cada comando individual.
+**Especificação:** [arquitetura.md](arquitetura.md) e [enunciado preservado](enunciado.md), originalmente lido em UTF-8 de `C:\estudos\MLET-Tech-Challenge-Fase-4.md`. A Fase 2 serve de referência de organização, sem copiar seu domínio ou pins antigos. O retrato atual é `20261116T220412_87839641f75d`, produzido a partir da revisão `11dd2b8` com `git_dirty=false`, 38,67498 s, 22 eventos e oito alertas; pai MLflow `b987bfd1e9a848179a2bdeec3eb526fc`. As 31 fontes mantêm SHA agregado `312c6ae2f7e8cecf07e52930e28172bf34a44de4021c80e7cf10bf72061d3c73`. Os 150 testes já comprovados pertencem à rodada anterior dos mesmos bytes; a nova rodada está em consolidação pelo principal. Não se antecipam resultados de CI ou push.
 
 ## Restrições globais
 
@@ -133,7 +133,7 @@ As interfaces abaixo são contratos de integração; classes de resultado devem 
 - [x] Registrar execução/cenários no MLflow SQLite local e anexar configuração, métricas, manifestos e relatórios. Testar escrita/leitura real, encerramento de runs e erro de tracking explícito.
 - [x] Gerar HTML consolidado local, links relativos válidos, resumo de saúde e todos os cenários. Exibir estados insuficientes/indefinidos como pendentes.
 - [x] Cobrir `tests/test_telemetry.py`, `tests/test_fairness.py` e `tests/test_pipeline.py` pela suíte global; conferir execução completa, SQLite pai/filhos e artefatos baixados, incluindo links e métricas consistentes. A consulta foi automatizada, sem alegar navegação visual da UI.
-- [x] Configurar CI para `uv sync --frozen`, Ruff e pytest sem credenciais; executar integração real local separada, com skip explícito somente em cache ausente. CI remoto não foi executado nesta sessão.
+- [x] Configurar CI para `uv sync --frozen`, Ruff e pytest sem credenciais; executar integração real local separada, com skip explícito somente em cache ausente. Esta auditoria valida execução local; o CI é consultável na aba Actions e tem estado autônomo.
 - [x] Executar Ruff/formatação/pytest e registrar resultados reais: 150 testes passaram; conferir sete logs literais, JUnit, artefatos e hashes da execução UCI final.
 - [x] Criar commit semântico de observabilidade: `5152b36`.
 
@@ -157,7 +157,7 @@ As interfaces abaixo são contratos de integração; classes de resultado devem 
 - [x] Fechar URI ambígua por omissão integral de metadados remotos e validar o helper de integridade por bytes, configuração, ID e manifesto; conferir regressões/evidências da versão final.
 - [x] Incorporar 03d/03e, corrigir a discriminação dos três casos negativos de ID/status/escape e conferir os hashes dos arquivos revisados e sua presença no JUnit final.
 - [x] Auditar UTF-8, integridade, links relativos automatizados e correspondência documentação/implementação; conferir lint/testes e relatar limites de CI remoto, visualização e vídeo.
-- [x] Resolver o hook por autorização específica e conferir o histórico técnico: `1ec1062`, `734d66e`, `2b8c3bc`, `5152b36`. Documentação e evidências serão consolidadas pelo principal na sequência; push não foi declarado.
+- [x] Resolver o hook por autorização específica e concluir os quatro commits técnicos mais documentação em `11dd2b8`. O principal consolidará as evidências do retrato limpo; push não foi declarado nesta auditoria.
 
 **Aceite independente:** um avaliador consegue reproduzir a demonstração e associar cada requisito ao artefato correto; o README contém governança e reconhece o critério de vídeo fora do escopo.
 

@@ -47,7 +47,7 @@ Cada bloco recebe revisão adversarial pelo Claude Code com `--model fable`, con
 | Observabilidade | Links, hashes, métricas e pai+quatro filhos conferidos | URI remota omitida integralmente; nenhuma ressalva técnica aberta nesta auditoria |
 | Documentação e governança finais | Resultados, matriz, snapshot, README/cards e tratamento inspecionados | Verificações finais refletidas; vídeo/visual/CI remoto explicitados |
 | Revisão adversarial e auditoria final | A01–A05, helper e ressalva importante de cobertura fechados | 03d/03e incorporados; menores aceitos e documentados |
-| Histórico semântico | Resolvido para os blocos técnicos por autorização específica | Quatro commits conferidos; principal consolidará documentação/evidência |
+| Histórico semântico | Resolvido por autorização específica | Quatro commits técnicos e documentação `11dd2b8`; evidência do retrato limpo em consolidação |
 
 ## Verificação desta preparação
 
@@ -87,4 +87,14 @@ A diferença de escopo do Ruff está comprovada no sétimo log: o formatador pro
 
 Menores aceitos e documentados incluem consistência por hashes sem assinatura/autenticidade adversarial, uso em checkout uv/editável, caminhos de perfil local nos logs verbose e acoplamento do espião à leitura atual por `Path.read_bytes`, além das mensagens compartilhadas de ID/status. Não são apresentados como garantias resolvidas ou certificação de produção. A revisão Fable é estática; a evidência de execução está nos logs/JUnit correspondentes.
 
-Os perfis de qualidade de código e de evidências locais estão fechados. As rejeições do hook em `feat/observabilidade-credito` e `feature/observabilidade-credito` ocorreram antes da autorização específica, não representam o estado atual. O usuário autorizou o uso de hooks locais neste projeto acadêmico; o principal configurou `core.hooksPath=.git/hooks` somente no repositório, mantendo o global corporativo intacto. Quatro commits semânticos em português foram conferidos: `1ec1062` (ambiente), `734d66e` (dados/modelo), `2b8c3bc` (drift) e `5152b36` (integração/CI/scripts/testes). A documentação e uma nova evidência a partir de Git limpo serão consolidadas pelo principal. Não se alega push. CI remoto, vídeo e inspeção visual manual não foram realizados; o roteiro é contíguo até 4:50.
+Os perfis de qualidade de código e das evidências auditadas estão fechados. As rejeições do hook nas duas branches ocorreram antes da autorização específica e não representam o estado atual. O usuário autorizou hooks locais neste projeto acadêmico; o principal configurou `core.hooksPath=.git/hooks` somente no repositório, mantendo o global corporativo intacto. Os quatro commits técnicos foram seguidos pelo documental `11dd2b83b57a77ceda8186d6c61b79e20e0dca35`. Não se alega push. Esta auditoria valida execução local; o CI é consultável na aba Actions e tem estado autônomo. Inspeção visual manual não foi realizada; o roteiro, sem gravação de vídeo, é contíguo até 4:50.
+
+## Atualização após versionamento limpo
+
+O principal produziu **`20261116T220412_87839641f75d`**, agora no snapshot atual, com `git_revision=11dd2b83b57a77ceda8186d6c61b79e20e0dca35` e **`git_dirty=false`**. O código permaneceu inalterado: 31 fontes, SHA agregado `312c6ae2f7e8cecf07e52930e28172bf34a44de4021c80e7cf10bf72061d3c73`. A execução registrou **38,67498 segundos**, **22 eventos**, **oito alertas** e pai MLflow **`b987bfd1e9a848179a2bdeec3eb526fc`**, com quatro filhos `FINISHED`.
+
+Esta foi uma atualização documental baseada nos metadados encaminhados pelo principal, sem novos checks, testes ou pipeline pelo auditor. A suíte anterior de 150 testes dos mesmos bytes continua preservada como anterior; o principal ainda consolidará o resultado da nova verificação e a atualização das evidências. O CI permanece independente e não é declarado aprovado antes da consulta ao estado real na aba Actions.
+
+## Consolidação final pelo executor
+
+A nova verificação sobre `220412`, após o commit `11dd2b8`, encerrou com **150 testes passando, 11 avisos e 126,89 segundos**, sem skips. Os sete comandos deram código zero; os registros entre 22:09:01 e 22:11:14 UTC são posteriores à CLI. Fontes e configuração coincidem com o manifesto, incluindo os 31 hashes, e os arquivos das evidências foram revalidados. Os commits técnicos e a documentação estão registrados por bloco. A atualização do retrato pós-versionamento será registrada em commit documental próprio; o estado remoto é consultável no GitHub e não é inferido do sucesso local.

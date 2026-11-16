@@ -1,8 +1,8 @@
 {
-  "execution_id": "20261116T215129_2bee07608434",
-  "started_at_utc": "2026-11-16T21:51:29.500441+00:00",
+  "execution_id": "20261116T220412_87839641f75d",
+  "started_at_utc": "2026-11-16T22:04:12.920707+00:00",
   "status": "sucesso",
-  "duration_seconds": 23.767508,
+  "duration_seconds": 38.67498,
   "config_sha256": "25e79a5462f77c394b2162d8989651682614cd2172cd66d5f68181d750441790",
   "dataset": {
     "source_url": "https://archive.ics.uci.edu/static/public/350/default+of+credit+card+clients.zip",
@@ -119,9 +119,9 @@
     "mlflow": "3.18.0",
     "scipy": "1.17.1"
   },
-  "git_revision": "22313dd90a88bded39fa6865493c58d5ee692abf",
+  "git_revision": "11dd2b83b57a77ceda8186d6c61b79e20e0dca35",
   "source": {
-    "git_dirty": true,
+    "git_dirty": false,
     "files_sha256": {
       ".gitattributes": "cc2a0632e5ffc1805397163f172e3dbbfdc15387a905d7151cf6c4470f36f966",
       ".github/workflows/ci.yml": "ceee6c7362e799facf4e32ba5b795653eac4c6d00b5cdd8e7caab6c7524b1042",
@@ -160,118 +160,118 @@
   "tracking": {
     "status": "completed",
     "uri": "sqlite:///C:/estudos/Tech-Challenge-fase-4/artifacts/mlflow.db",
-    "run_id": "a3cff0b470994809b9e85c89b001c5c5"
+    "run_id": "b987bfd1e9a848179a2bdeec3eb526fc"
   },
   "resources": [
     {
-      "rss_mb": 173.16,
-      "cpu_seconds": 1.75,
-      "disk_free_gb": 4.57
+      "rss_mb": 172.51,
+      "cpu_seconds": 2.438,
+      "disk_free_gb": 4.43
     },
     {
-      "rss_mb": 173.17,
-      "cpu_seconds": 1.797,
-      "disk_free_gb": 4.57
+      "rss_mb": 172.52,
+      "cpu_seconds": 2.469,
+      "disk_free_gb": 4.43
     },
     {
-      "rss_mb": 219.04,
-      "cpu_seconds": 2.844,
-      "disk_free_gb": 4.57
+      "rss_mb": 236.75,
+      "cpu_seconds": 4.125,
+      "disk_free_gb": 4.43
     },
     {
-      "rss_mb": 231.73,
-      "cpu_seconds": 2.938,
-      "disk_free_gb": 4.57
+      "rss_mb": 231.72,
+      "cpu_seconds": 4.328,
+      "disk_free_gb": 4.43
     },
     {
-      "rss_mb": 231.77,
-      "cpu_seconds": 2.953,
-      "disk_free_gb": 4.57
+      "rss_mb": 231.75,
+      "cpu_seconds": 4.344,
+      "disk_free_gb": 4.43
     },
     {
-      "rss_mb": 231.77,
-      "cpu_seconds": 2.953,
-      "disk_free_gb": 4.57
+      "rss_mb": 231.75,
+      "cpu_seconds": 4.344,
+      "disk_free_gb": 4.43
     },
     {
-      "rss_mb": 231.8,
-      "cpu_seconds": 2.969,
-      "disk_free_gb": 4.57
+      "rss_mb": 231.79,
+      "cpu_seconds": 4.375,
+      "disk_free_gb": 4.43
     },
     {
-      "rss_mb": 231.85,
-      "cpu_seconds": 2.984,
-      "disk_free_gb": 4.57
+      "rss_mb": 231.83,
+      "cpu_seconds": 4.422,
+      "disk_free_gb": 4.43
     },
     {
-      "rss_mb": 231.85,
-      "cpu_seconds": 2.984,
-      "disk_free_gb": 4.57
+      "rss_mb": 231.83,
+      "cpu_seconds": 4.422,
+      "disk_free_gb": 4.43
     },
     {
-      "rss_mb": 237.59,
-      "cpu_seconds": 4.047,
-      "disk_free_gb": 4.57
+      "rss_mb": 238.66,
+      "cpu_seconds": 6.328,
+      "disk_free_gb": 4.43
     },
     {
-      "rss_mb": 235.45,
-      "cpu_seconds": 4.594,
-      "disk_free_gb": 4.57
+      "rss_mb": 235.11,
+      "cpu_seconds": 7.188,
+      "disk_free_gb": 4.43
     },
     {
-      "rss_mb": 235.5,
-      "cpu_seconds": 4.656,
-      "disk_free_gb": 4.57
+      "rss_mb": 235.18,
+      "cpu_seconds": 7.25,
+      "disk_free_gb": 4.43
     },
     {
-      "rss_mb": 291.96,
-      "cpu_seconds": 9.359,
-      "disk_free_gb": 4.57
+      "rss_mb": 291.58,
+      "cpu_seconds": 13.641,
+      "disk_free_gb": 4.43
     },
     {
-      "rss_mb": 294.7,
-      "cpu_seconds": 11.891,
-      "disk_free_gb": 4.56
+      "rss_mb": 294.16,
+      "cpu_seconds": 16.844,
+      "disk_free_gb": 4.42
     },
     {
-      "rss_mb": 293.54,
-      "cpu_seconds": 14.031,
-      "disk_free_gb": 4.56
+      "rss_mb": 293.75,
+      "cpu_seconds": 19.359,
+      "disk_free_gb": 4.42
     },
     {
-      "rss_mb": 305.97,
-      "cpu_seconds": 16.422,
-      "disk_free_gb": 4.56
+      "rss_mb": 295.45,
+      "cpu_seconds": 21.938,
+      "disk_free_gb": 4.41
     },
     {
-      "rss_mb": 305.98,
-      "cpu_seconds": 16.938,
-      "disk_free_gb": 4.56
+      "rss_mb": 295.46,
+      "cpu_seconds": 22.578,
+      "disk_free_gb": 4.41
     },
     {
-      "rss_mb": 306.84,
-      "cpu_seconds": 17.109,
-      "disk_free_gb": 4.56
+      "rss_mb": 295.87,
+      "cpu_seconds": 22.859,
+      "disk_free_gb": 4.41
     },
     {
-      "rss_mb": 306.84,
-      "cpu_seconds": 17.344,
-      "disk_free_gb": 4.56
+      "rss_mb": 295.91,
+      "cpu_seconds": 22.984,
+      "disk_free_gb": 4.41
     },
     {
-      "rss_mb": 368.42,
-      "cpu_seconds": 19.609,
-      "disk_free_gb": 4.56
+      "rss_mb": 366.89,
+      "cpu_seconds": 26.641,
+      "disk_free_gb": 4.41
     },
     {
-      "rss_mb": 369.17,
-      "cpu_seconds": 19.656,
-      "disk_free_gb": 4.56
+      "rss_mb": 367.38,
+      "cpu_seconds": 26.703,
+      "disk_free_gb": 4.41
     },
     {
-      "rss_mb": 369.18,
-      "cpu_seconds": 19.828,
-      "disk_free_gb": 4.54
+      "rss_mb": 367.39,
+      "cpu_seconds": 26.891,
+      "disk_free_gb": 4.39
     }
   ],
   "contracts": {
@@ -443,22 +443,22 @@
     }
   },
   "artifacts_sha256": {
-    "alertas.json": "3d9ec302b66c1592127ff24d20270996d6a7a510ca061d23ed4072e833b5f48b",
-    "combined/evidently.html": "ff7bc6e15b56a9e6397836b7a0d2d31ce45e4ef2187d9a5491ea50eeb70f900d",
+    "alertas.json": "296688b707ee6f3df19c21b67652cbacfebb2fce740d94a5a1d850a023fd4d39",
+    "combined/evidently.html": "b1bc9f51364b6beb6ec4138672a7b84488cef75a5565342b795af1e93f5a2f51",
     "combined/evidently.json": "360cfd84f3de765ef5d48df985c43fb274ccb48d8c8d7442807ef9cc881b69d0",
-    "combined/monitoring.json": "62bb02311ee5cee4e5eddfbded287ac740973496fb2161d2709ba520a5a75058",
-    "concept/evidently.html": "31970dd20b0c37356660099af52d54f401e8f9b3dad4a0921fc056be91930bc1",
+    "combined/monitoring.json": "d6867657bedbc5808afc4d78062d208eeb8bce58bfcd3aee0f8c77ea88ba034a",
+    "concept/evidently.html": "813169789670111dec965345252ba14aca1af71a43dfd902bcad2a9e75b86085",
     "concept/evidently.json": "58007b9c4cdb6db60c76f18db687956051fb84b70ead567df6d659da08fbbd72",
-    "concept/monitoring.json": "8b5a63a9d5463f48b250bcd05154657473a0fb7cded1ec189470101f1bc32172",
-    "control/evidently.html": "6e8acd8b6a2ee943d97803dd4b37aa70420eb790ec00eb378a0852cae85271ce",
+    "concept/monitoring.json": "095b84ed480e0a8139342c032517ce1a9b6c4908f232faedecfa8e96c9a0751f",
+    "control/evidently.html": "1d8439ad258a3cbade812d10db91570de8fcd72b420f45aa8fc82c352ae4f416",
     "control/evidently.json": "53e95cfd71b60cea9031f17d3c78d519e6153aefd49c2cfdbc82c45da9314700",
-    "control/monitoring.json": "d16a984fa3fdd27d4a92719c5975854d6edc2267eeaf4f7be0f876a08d5d4cf5",
-    "covariate/evidently.html": "11c165fefae00aa984ca8acbb311a2800f2c2840f641a92b61a93b62cf631e55",
+    "control/monitoring.json": "ed962101a824a5f4e0cafeb5da7d771405c9080367b6fb060b4c1b8932c29414",
+    "covariate/evidently.html": "9b2f9df006850e776d9982953e41d96c7689b452ed928548c75498615415c1f4",
     "covariate/evidently.json": "bce491b69d7239e76f37ef2309c91ed2f7045373750f222a6b95298f310088c7",
-    "covariate/monitoring.json": "442019c618601b058ad5e76db1891554907813a6c3627a058273a00636998b50",
-    "index.html": "43e0a19af69fc4a35d3dfb2e926f4a78ad4c114a7933bf3e06bfbe22794712a2",
-    "logs.jsonl": "99a8355d38e063d5c7a4e646ede90b62c1c50aff34eb7dc451634093cd764fbf",
+    "covariate/monitoring.json": "df25a46af691e78bcbec9e2ccf15482dcd15f0f77e5d92de03d8ca3c3af8cab4",
+    "index.html": "37abcc2e3e10d18bc62a26179d54c01a26b32d047ae581e8c917da8e86739f82",
+    "logs.jsonl": "a79be727e86689cec6e5fea5770242fb8e46137e309a9688102b858b66f0a2ad",
     "modelo.joblib": "c499470682cef36df9d787c799db428f645661d5f4831ad98b06485fdfcad3f7",
-    "resumo.json": "78e3a73841ec75a956f60de310743c57cad043db7afaaddf974908db9a5e52b3"
+    "resumo.json": "54f5d534de5ab73715abc87a1de47da04edea58677a4eaa15ce4e052a5d60c3c"
   }
 }

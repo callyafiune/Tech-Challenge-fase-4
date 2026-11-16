@@ -30,4 +30,4 @@ tests/test_pipeline.py::test_pipeline_real_consolida_artefatos_e_estado_do_track
   The ``noload`` loader strategy is deprecated and will be removed in a future release.  This option produces incorrect results by returning ``None`` for related items. (deprecated since: 2.1)
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-150 passed, 11 warnings in 48.79s
+150 passed, 11 warnings in 126.89s (0:02:06)

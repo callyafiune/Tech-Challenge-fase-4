@@ -2,7 +2,7 @@
 
 **Estado:** roteiro pronto; vídeo não gravado por solicitação do usuário. Não há link de vídeo.
 
-O retrato entregue usa a execução `20261116T215129_2bee07608434`. Nesta máquina ela pode ser consultada no MLflow pelo run pai indicado em `docs/resultados.md`; em outro clone, use o novo ID gerado localmente.
+O retrato entregue usa a execução `20261116T220412_87839641f75d`. Nesta máquina ela pode ser consultada no MLflow pelo run pai indicado em `docs/resultados.md`; em outro clone, use o novo ID gerado localmente.
 
 Preparar antes da gravação: executar o pipeline; abrir o HTML consolidado e o Evidently covariável da **mesma execução**; abrir seu run pai no MLflow; deixar README, `params.yaml` e saída do pytest disponíveis. O ID deve coincidir nas telas. Em outro clone, o run da entrega não existe: usar o novo ID local e servir `artifacts/ID_DA_EXECUCAO`, sem misturar com o retrato versionado. Usar somente telas agregadas.
 
