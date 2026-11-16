@@ -1,0 +1,31 @@
+name: Qualidade e testes
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verificacoes:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.11.6"
+          enable-cache: true
+      - name: Preparar Python 3.11
+        run: uv python install 3.11
+      - name: Instalar dependências congeladas
+        run: uv sync --frozen
+      - name: Verificar regras estáticas
+        run: uv run ruff check .
+      - name: Verificar formatação
+        run: uv run ruff format --check .
+      - name: Executar testes sem aquisição externa
+        run: uv run pytest
