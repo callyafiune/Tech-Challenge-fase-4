@@ -1,0 +1,27 @@
+seed: 42
+dataset:
+  url: https://archive.ics.uci.edu/static/public/350/default+of+credit+card+clients.zip
+  min_rows: 5000
+model:
+  max_iter: 150
+  learning_rate: 0.08
+  max_leaf_nodes: 15
+  threshold: 0.30
+simulation:
+  batch_size: 2500
+  low_limit_weight: 3.0
+  late_payment_weight: 4.0
+  concept_flip_probability: 0.8
+monitoring:
+  psi_threshold: 0.20
+  psi_epsilon: 0.000001
+  ks_alpha: 0.05
+  ks_min_effect: 0.10
+  auc_drop_threshold: 0.05
+  brier_increase_threshold: 0.05
+  bootstrap_samples: 500
+  min_rows: 200
+  max_stage_seconds: 120
+  max_rss_mb: 2048
+tracking:
+  experiment_name: confiabilidade-credito

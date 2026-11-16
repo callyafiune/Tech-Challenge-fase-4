@@ -1,0 +1,2 @@
+# Espaços de contexto fazem parte do formato dos pacotes de diff auditados.
+*.diff whitespace=-blank-at-eol,cr-at-eol

@@ -1,0 +1,30 @@
+{
+  "session_id": "44f00790-b749-49f6-8c55-bd092bfb62e4",
+  "duration_ms": 174553,
+  "num_turns": 1,
+  "is_error": false,
+  "subtype": "success",
+  "modelos": [
+    "claude-fable-5-2"
+  ],
+  "velocidade": "standard",
+  "instante_utc": "2026-11-16T21:00:47.525104+00:00",
+  "arquivos": [
+    "src/credito_monitorado/config.py",
+    "src/credito_monitorado/contracts.py",
+    "src/credito_monitorado/data.py",
+    "src/credito_monitorado/model.py",
+    "tests/test_contracts.py",
+    "tests/test_data_model.py",
+    "params.yaml"
+  ],
+  "sha256": {
+    "src/credito_monitorado/config.py": "c6b836fd3f128ee5d759dca93aea08c5fa052792683548463163e24ca9b67d8d",
+    "src/credito_monitorado/contracts.py": "5e421b85514416db326f5e25ad002f1d7a58a654aea25538de387d2becfb7564",
+    "src/credito_monitorado/data.py": "708b41be87a3c7c1c3c2f8a688f0b313c49db8e98d22e85657a81ddc94a16f7f",
+    "src/credito_monitorado/model.py": "a8bda692f7fed9915efd8cb53942e50b1fd9f3e478dbc526f1fc8bd2519ba661",
+    "tests/test_contracts.py": "46bc6fea783b07b832a934af84b9dcc85a3c65acf5212c13a98ff349056a91be",
+    "tests/test_data_model.py": "57080f7784909d4c4989861b40ec08b3614a579d889bbe6e046670ef2b1d7e51",
+    "params.yaml": "960457bed592d56eed3be60cd5fe77d5314ae8238160ddede1dd04f73c42b587"
+  }
+}

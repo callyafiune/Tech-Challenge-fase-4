@@ -1,0 +1,24 @@
+{
+  "session_id": "46a64e39-43cd-41c5-b1a0-e8f3e0ff87a5",
+  "duration_ms": 225651,
+  "num_turns": 1,
+  "is_error": false,
+  "subtype": "success",
+  "modelos": [
+    "claude-fable-5-2"
+  ],
+  "velocidade": "standard",
+  "instante_utc": "2026-11-16T20:59:58.177459+00:00",
+  "arquivos": [
+    "docs/arquitetura.md",
+    "docs/plano_implementacao.md",
+    "params.yaml",
+    "pyproject.toml"
+  ],
+  "sha256": {
+    "docs/arquitetura.md": "b2456927f007ce0684b95bf501cf8efb73d1fb2ea124b26e5e8f9434aa8a61f7",
+    "docs/plano_implementacao.md": "58643932e1fb4926590917a24825f59e3978a79ff3fd2f145d198b9776827938",
+    "params.yaml": "51f0bc379def696d58cc097136e4eb8dbc63dbec57c5d21760a9e458e1546900",
+    "pyproject.toml": "d6b5380b058ccbba97dfc06892742f0379d5408708701bcbb548f33337533e58"
+  }
+}

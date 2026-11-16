@@ -1,0 +1,2 @@
+# Preserva literalmente o stdout das bibliotecas, inclusive suas linhas de espaços.
+*.log whitespace=-blank-at-eol,cr-at-eol

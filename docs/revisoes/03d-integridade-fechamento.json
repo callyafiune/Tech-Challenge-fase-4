@@ -1,0 +1,34 @@
+{
+  "session_id": "b7a5aca6-89a2-403b-8e6a-290a74aef7f1",
+  "duration_ms": 210376,
+  "num_turns": 1,
+  "is_error": false,
+  "subtype": "success",
+  "modelos": [
+    "claude-fable-5-2"
+  ],
+  "velocidade": "standard",
+  "instante_utc": "2026-11-16T21:46:20.918616+00:00",
+  "arquivos": [
+    "docs/revisoes/pacote-03d.diff",
+    "src/credito_monitorado/pipeline.py",
+    "scripts/verificar_entrega.py",
+    "tests/test_verificar_entrega.py",
+    "tests/test_pipeline.py",
+    "docs/verificacao.json",
+    "docs/validacao/03-comando.log",
+    "docs/evidencias_mlflow.json"
+  ],
+  "sha256": {
+    "docs/revisoes/pacote-03d.diff": "bb65b02c5ca5789bfa7668378e232d6e073508a9138a5852b27a2457ff0d18a4",
+    "src/credito_monitorado/pipeline.py": "42bfe5389eec050c45d02861d3e764118dca3cc9cd914e4d61cbe763f0bbf699",
+    "scripts/verificar_entrega.py": "ff7377ffae870a252e4b218f3037d7a867c297504324acb0571f1219b1352be2",
+    "tests/test_verificar_entrega.py": "d160413b34dc26eb315865b24ba2ee53e75d90af90bfa0e4ac48dd2f02c573ef",
+    "tests/test_pipeline.py": "4488369a03d35a1d4ad60ff392733b9b2972e3c073ce61c65728418e38e3e347",
+    "docs/verificacao.json": "ef766e1949bab459379406de7a0dd83f828591dac5c23780a52e821f23adb3f1",
+    "docs/validacao/03-comando.log": "fe22a7a2c914334bca47225d157b4cad51958f0cc2325adb173002c2863b971f",
+    "docs/evidencias_mlflow.json": "3bfd33618c2236251067a6b15624701abb47e61a8365df8edf6ece75fc5e776e"
+  },
+  "foco": "Última rechecagem estritamente limitada aos itens1a3 da03c. Julgue CORRIGIDO/EMABERTO para (1) URIremota retorna constante sem nenhum caractere do input, (2) evidência CLI anterior rotulada derivada, sem alegar captura, com validação de IDdiretório/status/config/manifesto/TODOS17hashes e caminhos, (3) source compara bytes/sourcehash ignorando gitdirty; mais regressões negativas. Confira registro literal150testes e32? nenhuma imposição de contagemesperada: use a contagem real31fonte informada, MDexplicaRuff. Não reabra o desenho ML, governança ou novas funcionalidades. Flagre apenas regressões introduzidas por esse diff. Gitcommits seguem dependentes de autorização e não foram contornados. Contexto adicional do arquivo completo não amplia o escopo da rechecagem.",
+  "prompt_sha256": "e821274bd457b0b1ce98ea3210042ef09bfc56b628d4d72bab4fbb5ed13a32e4"
+}

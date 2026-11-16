@@ -1,0 +1,363 @@
+{
+  "status": "success",
+  "performance": {
+    "roc_auc": 0.7964995507073278,
+    "average_precision": 0.6350864521773996,
+    "f1": 0.6357918810748999,
+    "recall": 0.7155727155727156,
+    "precision": 0.5720164609053497,
+    "accuracy": 0.7452,
+    "brier_score": 0.15972377494360196,
+    "status": "ok",
+    "label_count": 2500,
+    "prevalence": 0.3108,
+    "label_coverage": 1.0,
+    "confusion_matrix": [
+      [
+        1307,
+        416
+      ],
+      [
+        221,
+        556
+      ]
+    ]
+  },
+  "reference_performance": {
+    "roc_auc": 0.7673506526104418,
+    "average_precision": 0.5415303005988966,
+    "f1": 0.5292908530318602,
+    "recall": 0.5170682730923695,
+    "precision": 0.5421052631578948,
+    "accuracy": 0.7964444444444444,
+    "brier_score": 0.1379710776238617,
+    "status": "ok",
+    "label_count": 4500,
+    "prevalence": 0.22133333333333333,
+    "label_coverage": 1.0,
+    "confusion_matrix": [
+      [
+        3069,
+        435
+      ],
+      [
+        481,
+        515
+      ]
+    ]
+  },
+  "drift": {
+    "features": {
+      "limit_bal": {
+        "method": "ks_bh_effect",
+        "score": 0.18151111111111112,
+        "psi": 0.1312393442241331,
+        "ks": 0.18151111111111112,
+        "pvalue": 9.95125935260897e-47,
+        "pvalue_adjusted": 1.3931763093652557e-45,
+        "threshold": 0.05,
+        "min_effect": 0.1,
+        "drift": true
+      },
+      "age": {
+        "method": "ks_bh_effect",
+        "score": 0.03897777777777778,
+        "psi": 0.014467480190368621,
+        "ks": 0.03897777777777778,
+        "pvalue": 0.014723933932083648,
+        "pvalue_adjusted": 0.01585654423455162,
+        "threshold": 0.05,
+        "min_effect": 0.1,
+        "drift": false
+      },
+      "pay_0": {
+        "method": "psi",
+        "score": 0.2053078182096538,
+        "psi": 0.2053078182096538,
+        "ks": null,
+        "pvalue": null,
+        "pvalue_adjusted": null,
+        "threshold": 0.2,
+        "min_effect": null,
+        "drift": true
+      },
+      "pay_2": {
+        "method": "psi",
+        "score": 0.1309014741253702,
+        "psi": 0.1309014741253702,
+        "ks": null,
+        "pvalue": null,
+        "pvalue_adjusted": null,
+        "threshold": 0.2,
+        "min_effect": null,
+        "drift": false
+      },
+      "pay_3": {
+        "method": "psi",
+        "score": 0.07916526738415393,
+        "psi": 0.07916526738415393,
+        "ks": null,
+        "pvalue": null,
+        "pvalue_adjusted": null,
+        "threshold": 0.2,
+        "min_effect": null,
+        "drift": false
+      },
+      "pay_4": {
+        "method": "psi",
+        "score": 0.06259272380051033,
+        "psi": 0.06259272380051033,
+        "ks": null,
+        "pvalue": null,
+        "pvalue_adjusted": null,
+        "threshold": 0.2,
+        "min_effect": null,
+        "drift": false
+      },
+      "pay_5": {
+        "method": "psi",
+        "score": 0.04098321464476585,
+        "psi": 0.04098321464476585,
+        "ks": null,
+        "pvalue": null,
+        "pvalue_adjusted": null,
+        "threshold": 0.2,
+        "min_effect": null,
+        "drift": false
+      },
+      "pay_6": {
+        "method": "psi",
+        "score": 0.029191653332940992,
+        "psi": 0.029191653332940992,
+        "ks": null,
+        "pvalue": null,
+        "pvalue_adjusted": null,
+        "threshold": 0.2,
+        "min_effect": null,
+        "drift": false
+      },
+      "bill_amt1": {
+        "method": "ks_bh_effect",
+        "score": 0.04017777777777778,
+        "psi": 0.03573135926546185,
+        "ks": 0.04017777777777778,
+        "pvalue": 0.01083948682034997,
+        "pvalue_adjusted": 0.012646067957074967,
+        "threshold": 0.05,
+        "min_effect": 0.1,
+        "drift": false
+      },
+      "bill_amt2": {
+        "method": "ks_bh_effect",
+        "score": 0.044844444444444444,
+        "psi": 0.034150784218259386,
+        "ks": 0.044844444444444444,
+        "pvalue": 0.003016114191658075,
+        "pvalue_adjusted": 0.0052781998354016315,
+        "threshold": 0.05,
+        "min_effect": 0.1,
+        "drift": false
+      },
+      "bill_amt3": {
+        "method": "ks_bh_effect",
+        "score": 0.04031111111111111,
+        "psi": 0.030276780051228552,
+        "ks": 0.04031111111111111,
+        "pvalue": 0.010470820646218987,
+        "pvalue_adjusted": 0.012646067957074967,
+        "threshold": 0.05,
+        "min_effect": 0.1,
+        "drift": false
+      },
+      "bill_amt4": {
+        "method": "ks_bh_effect",
+        "score": 0.04062222222222222,
+        "psi": 0.03157337855488328,
+        "ks": 0.04062222222222222,
+        "pvalue": 0.00965432840242057,
+        "pvalue_adjusted": 0.012646067957074967,
+        "threshold": 0.05,
+        "min_effect": 0.1,
+        "drift": false
+      },
+      "bill_amt5": {
+        "method": "ks_bh_effect",
+        "score": 0.037333333333333336,
+        "psi": 0.02916091175380172,
+        "ks": 0.037333333333333336,
+        "pvalue": 0.0220680954504983,
+        "pvalue_adjusted": 0.022068095450498298,
+        "threshold": 0.05,
+        "min_effect": 0.1,
+        "drift": false
+      },
+      "bill_amt6": {
+        "method": "ks_bh_effect",
+        "score": 0.042444444444444444,
+        "psi": 0.035220799292698196,
+        "ks": 0.042444444444444444,
+        "pvalue": 0.005926138588852449,
+        "pvalue_adjusted": 0.009218437804881586,
+        "threshold": 0.05,
+        "min_effect": 0.1,
+        "drift": false
+      },
+      "pay_amt1": {
+        "method": "ks_bh_effect",
+        "score": 0.07288888888888889,
+        "psi": 0.045875976770250584,
+        "ks": 0.07288888888888889,
+        "pvalue": 7.188874059215065e-08,
+        "pvalue_adjusted": 2.012884736580218e-07,
+        "threshold": 0.05,
+        "min_effect": 0.1,
+        "drift": false
+      },
+      "pay_amt2": {
+        "method": "ks_bh_effect",
+        "score": 0.076,
+        "psi": 0.03218804831958555,
+        "ks": 0.076,
+        "pvalue": 1.6141933626996623e-08,
+        "pvalue_adjusted": 7.53290235926509e-08,
+        "threshold": 0.05,
+        "min_effect": 0.1,
+        "drift": false
+      },
+      "pay_amt3": {
+        "method": "ks_bh_effect",
+        "score": 0.08022222222222222,
+        "psi": 0.03620207693765529,
+        "ks": 0.08022222222222222,
+        "pvalue": 1.923502359249488e-09,
+        "pvalue_adjusted": 1.3464516514746415e-08,
+        "threshold": 0.05,
+        "min_effect": 0.1,
+        "drift": false
+      },
+      "pay_amt4": {
+        "method": "ks_bh_effect",
+        "score": 0.07382222222222222,
+        "psi": 0.031011563912112503,
+        "ks": 0.07382222222222222,
+        "pvalue": 4.622771397271554e-08,
+        "pvalue_adjusted": 1.617969989045044e-07,
+        "threshold": 0.05,
+        "min_effect": 0.1,
+        "drift": false
+      },
+      "pay_amt5": {
+        "method": "ks_bh_effect",
+        "score": 0.058977777777777775,
+        "psi": 0.01929118042440971,
+        "ks": 0.058977777777777775,
+        "pvalue": 2.661630185341663e-05,
+        "pvalue_adjusted": 5.323260370683325e-05,
+        "threshold": 0.05,
+        "min_effect": 0.1,
+        "drift": false
+      },
+      "pay_amt6": {
+        "method": "ks_bh_effect",
+        "score": 0.07115555555555556,
+        "psi": 0.029955152958858144,
+        "ks": 0.07115555555555556,
+        "pvalue": 1.6080410543206822e-07,
+        "pvalue_adjusted": 3.752095793414925e-07,
+        "threshold": 0.05,
+        "min_effect": 0.1,
+        "drift": false
+      }
+    },
+    "summary": {
+      "status": "ok",
+      "reference_rows": 4500,
+      "current_rows": 2500,
+      "min_rows": 200,
+      "drift_detected": true,
+      "drifted_features": [
+        "limit_bal",
+        "pay_0"
+      ],
+      "n_features": 20,
+      "drift_share": 0.1,
+      "rules": {
+        "continuous": "p ajustado BH <= alpha e KS D >= efeito mínimo",
+        "categorical": "PSI >= limiar; suporte é a união das categorias observadas",
+        "bh_family": [
+          "limit_bal",
+          "age",
+          "bill_amt1",
+          "bill_amt2",
+          "bill_amt3",
+          "bill_amt4",
+          "bill_amt5",
+          "bill_amt6",
+          "pay_amt1",
+          "pay_amt2",
+          "pay_amt3",
+          "pay_amt4",
+          "pay_amt5",
+          "pay_amt6"
+        ],
+        "continuous_psi": "Complementar; quantis da referência com extremos abertos",
+        "interpretation": "Drift de X não comprova alteração em P(Y|X)."
+      }
+    }
+  },
+  "labels_status": "original_labels",
+  "label_count": 2500,
+  "label_coverage": 1.0,
+  "label_delay": "Não observado; cenários acadêmicos contrafactuais.",
+  "concept_status": "requires_pair",
+  "evidently_html": "evidently.html",
+  "aggregate_json": "monitoring.json",
+  "simulation": {
+    "scenario": "covariate",
+    "selection_seed": 43,
+    "selection": "ponderada_somente_por_X",
+    "labels_status": "original_labels",
+    "counterfactual": true,
+    "rows": 2500
+  },
+  "prediction_monitoring": {
+    "status": "ok",
+    "score": {
+      "psi": 0.18949446400483194,
+      "ks": 0.18337777777777778,
+      "pvalue": 1.0853311832181104e-47,
+      "drift": true,
+      "psi_drift": false,
+      "ks_alpha": 0.05,
+      "ks_min_effect": 0.1,
+      "psi_threshold": 0.2,
+      "rule": "KS p <= alpha e D >= efeito mínimo; PSI é sinal complementar separado.",
+      "multiplicity": "Teste único do score; não integra a família BH dos atributos de X."
+    },
+    "threshold": 0.3,
+    "reference_positive_rate": 0.2111111111111111,
+    "current_positive_rate": 0.3888,
+    "reference_prevalence": 0.22133333333333333,
+    "current_prevalence": 0.3108,
+    "interpretation": "Score e taxa de decisões positivas descrevem saídas do modelo. Prevalência descreve rótulos disponíveis, que podem ser contrafactuais na simulação. Nenhum desses sinais isolados comprova alteração em P(Y|X)."
+  },
+  "evidently": {
+    "status": "success",
+    "decision_role": "Relatório bruto complementar; a decisão primária está em drift.",
+    "differences": "Evidently usa KS por coluna sem BH nem efeito mínimo, PSI com suavização própria e regra agregada própria. Essas decisões não substituem a política do projeto.",
+    "html": "evidently.html",
+    "json": "evidently.json",
+    "classification_included": true
+  },
+  "rows": 2500,
+  "ids_sha256": "cf1940673251597c8e00c3d9ff21bf4f1754b9010ec71b984b947b0631daac20",
+  "data_sha256": "c82d5add8e32c5cb03200af98de3abdd4f533ad852e3c3b3e0a589e60232f0e6",
+  "features_sha256": "25fb33a316d9c372a6aeeb310ddaf49ea14f32015f142f14b7e121c604e3e2c3",
+  "class_rate": 0.3108,
+  "execution_id": "20261116T220412_87839641f75d",
+  "scenario": "covariate",
+  "config_sha256": "25e79a5462f77c394b2162d8989651682614cd2172cd66d5f68181d750441790",
+  "model_sha256": "c499470682cef36df9d787c799db428f645661d5f4831ad98b06485fdfcad3f7",
+  "simulated_window": "T1",
+  "window_index": 1
+}

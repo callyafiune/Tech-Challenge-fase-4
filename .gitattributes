@@ -1,0 +1,5 @@
+# Preserva os bytes de fontes e evidências cujos SHA-256 fazem parte da auditoria.
+* -text
+* whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# HTMLs de terceiros preservam o espaçamento original para manter a integridade auditada.
+reports/** whitespace=-blank-at-eol,cr-at-eol

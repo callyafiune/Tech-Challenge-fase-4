@@ -13,6 +13,7 @@ __pycache__/
 /artifacts/
 /mlruns/
 /mlartifacts/
+*.db
 
 # Artefatos de empacotamento e cobertura de testes.
 /build/

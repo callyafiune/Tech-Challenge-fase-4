@@ -1,0 +1,30 @@
+{
+  "session_id": "edf53de4-aa04-4a1a-9097-055c2366cdd9",
+  "duration_ms": 255346,
+  "num_turns": 1,
+  "is_error": false,
+  "subtype": "success",
+  "modelos": [
+    "claude-fable-5-2"
+  ],
+  "velocidade": "standard",
+  "instante_utc": "2026-11-16T21:14:15.685310+00:00",
+  "arquivos": [
+    "src/credito_monitorado/drift.py",
+    "src/credito_monitorado/monitoring.py",
+    "src/credito_monitorado/contracts.py",
+    "tests/test_drift.py",
+    "tests/test_monitoring.py",
+    "docs/causalidade.md",
+    "docs/revisoes/02-drift-estatistica.md"
+  ],
+  "sha256": {
+    "src/credito_monitorado/drift.py": "41192efced1412a446f8a236c776181a84a9e34c7d722f4556a62bcfc656a79d",
+    "src/credito_monitorado/monitoring.py": "8e90fe7aed02aa9dabf5b738f803af298ff70abde64610693728e9a51f3a1179",
+    "src/credito_monitorado/contracts.py": "37904209530c3ddc2deb05d2d68e17b65d42ec900755b17add0a3dc0a5189b1b",
+    "tests/test_drift.py": "9234d8540b504578a685ec4941be140778e828732f9eb5ea62dbc3d572b35993",
+    "tests/test_monitoring.py": "33dcd1b1be22e666867a771fe47209c03e57947d9c3aea192f087412cb338b1c",
+    "docs/causalidade.md": "775b4eef4f077cd4bebb340a179618678c18739b2eee5e17b842d9777b2280a4",
+    "docs/revisoes/02-drift-estatistica.md": "0e4bb8eb308ba39fefbf1cded7493a549107fadda18807e2230308baff2c17c7"
+  }
+}

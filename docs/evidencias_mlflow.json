@@ -1,0 +1,170 @@
+{
+  "execution_id": "20261116T220412_87839641f75d",
+  "source_sha256": "312c6ae2f7e8cecf07e52930e28172bf34a44de4021c80e7cf10bf72061d3c73",
+  "git_revision": "11dd2b83b57a77ceda8186d6c61b79e20e0dca35",
+  "git_dirty": false,
+  "parent": {
+    "run_id": "b987bfd1e9a848179a2bdeec3eb526fc",
+    "experiment_id": "1",
+    "status": "FINISHED",
+    "start_time_utc_ms": 1794866687788,
+    "end_time_utc_ms": 1794866690987,
+    "mlflow.runName": "20261116T220412_87839641f75d",
+    "mlflow.parentRunId": null,
+    "relatorio_run_pai": null,
+    "metrics": {
+      "roc_auc": 0.7735701331192337,
+      "average_precision": 0.5278471868498241,
+      "f1": 0.5152,
+      "recall": 0.48542713567839196,
+      "precision": 0.5488636363636363,
+      "accuracy": 0.798,
+      "brier_score": 0.13812067094834762,
+      "dummy_roc_auc": 0.5,
+      "dummy_average_precision": 0.22111111111111112,
+      "dummy_f1": 0.0,
+      "dummy_recall": 0.0,
+      "dummy_precision": 0.0,
+      "dummy_accuracy": 0.7788888888888889,
+      "dummy_brier_score": 0.1722209955555555,
+      "roc_auc_gain_over_dummy": 0.2735701331192337,
+      "referencia_roc_auc": 0.7673506526104418,
+      "referencia_average_precision": 0.5415303005988966,
+      "referencia_f1": 0.5292908530318602,
+      "referencia_recall": 0.5170682730923695,
+      "referencia_precision": 0.5421052631578948,
+      "referencia_accuracy": 0.7964444444444444,
+      "referencia_brier_score": 0.1379710776238617,
+      "janela_roc_auc": 0.46489499020207004,
+      "janela_average_precision": 0.633578755699617,
+      "janela_f1": 0.4549424374751886,
+      "janela_recall": 0.3703943115707822,
+      "janela_precision": 0.5895061728395061,
+      "janela_accuracy": 0.4508,
+      "janela_brier_score": 0.3878599845308037,
+      "janela_label_count": 2500.0,
+      "janela_prevalence": 0.6188,
+      "janela_label_coverage": 1.0,
+      "janela_atributos_com_drift": 2.0,
+      "alertas": 8.0,
+      "duracao_total_segundos": 38.67498,
+      "memoria_maxima_mb": 367.39
+    },
+    "artifacts_root": [
+      "configuracao.json",
+      "modelo",
+      "observabilidade",
+      "particoes.json"
+    ]
+  },
+  "children": [
+    {
+      "run_id": "6560ac6a7f714e9ca9b5edd06d895c66",
+      "experiment_id": "1",
+      "status": "FINISHED",
+      "start_time_utc_ms": 1794866690671,
+      "end_time_utc_ms": 1794866690976,
+      "mlflow.runName": "combined",
+      "mlflow.parentRunId": "b987bfd1e9a848179a2bdeec3eb526fc",
+      "relatorio_run_pai": "b987bfd1e9a848179a2bdeec3eb526fc",
+      "metrics": {
+        "roc_auc": 0.46489499020207004,
+        "average_precision": 0.633578755699617,
+        "f1": 0.4549424374751886,
+        "recall": 0.3703943115707822,
+        "precision": 0.5895061728395061,
+        "accuracy": 0.4508,
+        "brier_score": 0.3878599845308037,
+        "label_count": 2500.0,
+        "prevalence": 0.6188,
+        "label_coverage": 1.0,
+        "volume": 2500.0,
+        "atributos_com_drift": 2.0
+      },
+      "artifacts_root": [
+        "estatisticas.json"
+      ]
+    },
+    {
+      "run_id": "d67bfff4c58c44779f4615821e7c8131",
+      "experiment_id": "1",
+      "status": "FINISHED",
+      "start_time_utc_ms": 1794866689714,
+      "end_time_utc_ms": 1794866690048,
+      "mlflow.runName": "concept",
+      "mlflow.parentRunId": "b987bfd1e9a848179a2bdeec3eb526fc",
+      "relatorio_run_pai": "b987bfd1e9a848179a2bdeec3eb526fc",
+      "metrics": {
+        "roc_auc": 0.40733930348258707,
+        "average_precision": 0.6347849543503578,
+        "f1": 0.28868778280542984,
+        "recall": 0.19044776119402984,
+        "precision": 0.5962616822429907,
+        "accuracy": 0.3712,
+        "brier_score": 0.47754173815199574,
+        "label_count": 2500.0,
+        "prevalence": 0.67,
+        "label_coverage": 1.0,
+        "volume": 2500.0,
+        "atributos_com_drift": 0.0
+      },
+      "artifacts_root": [
+        "estatisticas.json"
+      ]
+    },
+    {
+      "run_id": "1012c3699d0741688681e58119eb2ecc",
+      "experiment_id": "1",
+      "status": "FINISHED",
+      "start_time_utc_ms": 1794866688974,
+      "end_time_utc_ms": 1794866689365,
+      "mlflow.runName": "covariate",
+      "mlflow.parentRunId": "b987bfd1e9a848179a2bdeec3eb526fc",
+      "relatorio_run_pai": "b987bfd1e9a848179a2bdeec3eb526fc",
+      "metrics": {
+        "roc_auc": 0.7964995507073278,
+        "average_precision": 0.6350864521773996,
+        "f1": 0.6357918810748999,
+        "recall": 0.7155727155727156,
+        "precision": 0.5720164609053497,
+        "accuracy": 0.7452,
+        "brier_score": 0.15972377494360196,
+        "label_count": 2500.0,
+        "prevalence": 0.3108,
+        "label_coverage": 1.0,
+        "volume": 2500.0,
+        "atributos_com_drift": 2.0
+      },
+      "artifacts_root": [
+        "estatisticas.json"
+      ]
+    },
+    {
+      "run_id": "07174065dcc04c21942904147d398a7a",
+      "experiment_id": "1",
+      "status": "FINISHED",
+      "start_time_utc_ms": 1794866688294,
+      "end_time_utc_ms": 1794866688483,
+      "mlflow.runName": "control",
+      "mlflow.parentRunId": "b987bfd1e9a848179a2bdeec3eb526fc",
+      "relatorio_run_pai": "b987bfd1e9a848179a2bdeec3eb526fc",
+      "metrics": {
+        "roc_auc": 0.7825126631946921,
+        "average_precision": 0.5479240855220944,
+        "f1": 0.5420560747663551,
+        "recall": 0.5420560747663551,
+        "precision": 0.5420560747663551,
+        "accuracy": 0.804,
+        "brier_score": 0.13034351093348087,
+        "label_count": 2500.0,
+        "prevalence": 0.214,
+        "label_coverage": 1.0,
+        "volume": 2500.0,
+        "atributos_com_drift": 0.0
+      },
+      "artifacts_root": [
+        "estatisticas.json"
+      ]
+    }
+  ]
+}
