@@ -6,7 +6,7 @@ Este documento define a implementação do Tech Challenge Fase 4. As decisões a
 
 O fluxo deve bloquear dados inválidos antes da inferência, distinguir mudança de distribuição de degradação supervisionada, centralizar evidências e explicar limites de privacidade e causalidade. A entrega usa Python 3.11, `uv` com `uv.lock`, layout `src/credito_monitorado`, Pandera, scikit-learn, Evidently e MLflow. Os parâmetros ficam em `params.yaml` na raiz; configuração de ambiente fica em `.env.example`, sem segredos.
 
-A Fase 2 foi consultada como referência de organização: pacote em `src/`, parâmetros na raiz, MLflow, testes, lint e matriz requisito/evidência. O recomendador, a infraestrutura AWS, os dados Instacart e as restrições antigas de versões não são reutilizados. Esta fase precisa de um pipeline local de crédito reproduzível, sem exigir conta externa. As versões compatíveis serão resolvidas e congeladas no lock desta fase.
+O pipeline de crédito é executado localmente, sem exigir conta externa. As versões das dependências ficam congeladas em `uv.lock`.
 
 ## Blocos e fluxo
 

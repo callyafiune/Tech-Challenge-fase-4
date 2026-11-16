@@ -8,7 +8,6 @@ Registro iniciado em 16/11/2026 e atualizado durante a auditoria final. Os estad
 - Branch de trabalho atual: `feature/observabilidade-credito`.
 - Commit inicial observado por `git log`: `22313dd90a88bded39fa6865493c58d5ee692abf` (`Initial commit`).
 - Enunciado: `C:\estudos\MLET-Tech-Challenge-Fase-4.md`, lido em UTF-8.
-- Fase 2 consultada: README, `pyproject.toml`, matriz de rastreabilidade e organização do projeto; aproveitados apenas padrões pertinentes.
 - Serena não estava disponível; navegação realizada por arquivos e ferramentas de texto. Os `AGENTS.md` global e local foram considerados.
 - Execução ponta a ponta solicitada. O usuário autorizou especificamente hooks locais neste repositório acadêmico, preservando a configuração corporativa global. Produzir roteiro STAR; gravação de vídeo e link ficam fora do escopo.
 

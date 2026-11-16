@@ -1,20 +1,19 @@
 # Confiabilidade de Modelos de Crédito — Tech Challenge Fase 4
 
 ![Python](https://img.shields.io/badge/Python-3.11-3776AB)
-![uv](https://img.shields.io/badge/uv-ambiente%20reprodut%C3%ADvel-DE5FE9)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-modelo%20de%20cr%C3%A9dito-F7931E)
-![pandas](https://img.shields.io/badge/pandas-dados-150458)
-![Pandera](https://img.shields.io/badge/Pandera-contratos-5B5EA6)
-![Evidently](https://img.shields.io/badge/Evidently-relat%C3%B3rios%20de%20drift-ED0400)
-![SciPy](https://img.shields.io/badge/SciPy-estat%C3%ADstica-8CAAE6)
-![MLflow](https://img.shields.io/badge/MLflow-rastreamento-0194E2)
-![Pytest](https://img.shields.io/badge/Pytest-testes-0A9EDC)
-![Ruff](https://img.shields.io/badge/Ruff-lint%20%2B%20format-D7FF64)
-![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-CI-2088FF)
+![uv](https://img.shields.io/badge/uv-0.11.6-DE5FE9)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-1.9.1-F7931E)
+![pandas](https://img.shields.io/badge/pandas-2.3.3-150458)
+![Pandera](https://img.shields.io/badge/Pandera-0.36.0-5B5EA6)
+![Evidently](https://img.shields.io/badge/Evidently-0.7.23-ED0400)
+![SciPy](https://img.shields.io/badge/SciPy-1.17.1-8CAAE6)
+![MLflow](https://img.shields.io/badge/MLflow-3.18.0-0194E2)
+![Pytest](https://img.shields.io/badge/Pytest-9.2.0-0A9EDC)
+![Ruff](https://img.shields.io/badge/Ruff-0.17.5-D7FF64)
 
 Pipeline de sustentação de um classificador de inadimplência: valida dados antes da inferência, simula e detecta drift, acompanha desempenho e registra a saúde da execução. **Pandera + scikit-learn + Evidently + MLflow**, com relatórios HTML e plano de governança.
 
-A organização segue a [Fase 2](https://github.com/callyafiune/Tech-Challenge-fase-2), agora com dados financeiros. Consulte o [enunciado](docs/enunciado.md). **Vídeo: somente o [roteiro STAR](docs/roteiro_star.md); a gravação não foi realizada, conforme solicitado.**
+Consulte o [enunciado](docs/enunciado.md). **Vídeo: somente o [roteiro STAR](docs/roteiro_star.md); a gravação não foi realizada, conforme solicitado.**
 
 ## Pré-requisitos e execução
 

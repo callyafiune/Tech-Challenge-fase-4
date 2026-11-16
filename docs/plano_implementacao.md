@@ -8,7 +8,7 @@
 
 **Tecnologias:** Python 3.11, uv/uv.lock, pandas, Pandera, scikit-learn, scipy, Evidently, MLflow, PyYAML, joblib, pytest e Ruff; leitura XLS compatível com o arquivo oficial e coleta de recursos compatível com Windows.
 
-**Especificação:** [arquitetura.md](arquitetura.md) e [enunciado preservado](enunciado.md), originalmente lido em UTF-8 de `C:\estudos\MLET-Tech-Challenge-Fase-4.md`. A Fase 2 serve de referência de organização, sem copiar seu domínio ou pins antigos. O retrato atual é `20261116T220412_87839641f75d`, produzido a partir da revisão `11dd2b8` com `git_dirty=false`, 38,67498 s, 22 eventos e oito alertas; pai MLflow `b987bfd1e9a848179a2bdeec3eb526fc`. As 31 fontes mantêm SHA agregado `312c6ae2f7e8cecf07e52930e28172bf34a44de4021c80e7cf10bf72061d3c73`. Os 150 testes já comprovados pertencem à rodada anterior dos mesmos bytes; a nova rodada está em consolidação pelo principal. Não se antecipam resultados de CI ou push.
+**Especificação:** [arquitetura.md](arquitetura.md) e [enunciado preservado](enunciado.md), originalmente lido em UTF-8 de `C:\estudos\MLET-Tech-Challenge-Fase-4.md`. O retrato atual é `20261116T220412_87839641f75d`, produzido a partir da revisão `11dd2b8` com `git_dirty=false`, 38,67498 s, 22 eventos e oito alertas; pai MLflow `b987bfd1e9a848179a2bdeec3eb526fc`. As 31 fontes mantêm SHA agregado `312c6ae2f7e8cecf07e52930e28172bf34a44de4021c80e7cf10bf72061d3c73`. Os 150 testes já comprovados pertencem à rodada anterior dos mesmos bytes; a nova rodada está em consolidação pelo principal. Não se antecipam resultados de CI ou push.
 
 ## Restrições globais
 
