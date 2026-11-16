@@ -1,0 +1,168 @@
+{
+  "execution_id": "20261116T215129_2bee07608434",
+  "source_sha256": "312c6ae2f7e8cecf07e52930e28172bf34a44de4021c80e7cf10bf72061d3c73",
+  "parent": {
+    "run_id": "a3cff0b470994809b9e85c89b001c5c5",
+    "experiment_id": "1",
+    "status": "FINISHED",
+    "start_time_utc_ms": 1794865911987,
+    "end_time_utc_ms": 1794865912997,
+    "mlflow.runName": "20261116T215129_2bee07608434",
+    "mlflow.parentRunId": null,
+    "relatorio_run_pai": null,
+    "metrics": {
+      "roc_auc": 0.7735701331192337,
+      "average_precision": 0.5278471868498241,
+      "f1": 0.5152,
+      "recall": 0.48542713567839196,
+      "precision": 0.5488636363636363,
+      "accuracy": 0.798,
+      "brier_score": 0.13812067094834762,
+      "dummy_roc_auc": 0.5,
+      "dummy_average_precision": 0.22111111111111112,
+      "dummy_f1": 0.0,
+      "dummy_recall": 0.0,
+      "dummy_precision": 0.0,
+      "dummy_accuracy": 0.7788888888888889,
+      "dummy_brier_score": 0.1722209955555555,
+      "roc_auc_gain_over_dummy": 0.2735701331192337,
+      "referencia_roc_auc": 0.7673506526104418,
+      "referencia_average_precision": 0.5415303005988966,
+      "referencia_f1": 0.5292908530318602,
+      "referencia_recall": 0.5170682730923695,
+      "referencia_precision": 0.5421052631578948,
+      "referencia_accuracy": 0.7964444444444444,
+      "referencia_brier_score": 0.1379710776238617,
+      "janela_roc_auc": 0.46489499020207004,
+      "janela_average_precision": 0.633578755699617,
+      "janela_f1": 0.4549424374751886,
+      "janela_recall": 0.3703943115707822,
+      "janela_precision": 0.5895061728395061,
+      "janela_accuracy": 0.4508,
+      "janela_brier_score": 0.3878599845308037,
+      "janela_label_count": 2500.0,
+      "janela_prevalence": 0.6188,
+      "janela_label_coverage": 1.0,
+      "janela_atributos_com_drift": 2.0,
+      "alertas": 8.0,
+      "duracao_total_segundos": 23.767508,
+      "memoria_maxima_mb": 369.18
+    },
+    "artifacts_root": [
+      "configuracao.json",
+      "modelo",
+      "observabilidade",
+      "particoes.json"
+    ]
+  },
+  "children": [
+    {
+      "run_id": "a6d3c6e350f1421795683de4d0a6f297",
+      "experiment_id": "1",
+      "status": "FINISHED",
+      "start_time_utc_ms": 1794865912899,
+      "end_time_utc_ms": 1794865912985,
+      "mlflow.runName": "combined",
+      "mlflow.parentRunId": "a3cff0b470994809b9e85c89b001c5c5",
+      "relatorio_run_pai": "a3cff0b470994809b9e85c89b001c5c5",
+      "metrics": {
+        "roc_auc": 0.46489499020207004,
+        "average_precision": 0.633578755699617,
+        "f1": 0.4549424374751886,
+        "recall": 0.3703943115707822,
+        "precision": 0.5895061728395061,
+        "accuracy": 0.4508,
+        "brier_score": 0.3878599845308037,
+        "label_count": 2500.0,
+        "prevalence": 0.6188,
+        "label_coverage": 1.0,
+        "volume": 2500.0,
+        "atributos_com_drift": 2.0
+      },
+      "artifacts_root": [
+        "estatisticas.json"
+      ]
+    },
+    {
+      "run_id": "8a5eac13d1854e00b29d9858ddde0256",
+      "experiment_id": "1",
+      "status": "FINISHED",
+      "start_time_utc_ms": 1794865912677,
+      "end_time_utc_ms": 1794865912764,
+      "mlflow.runName": "concept",
+      "mlflow.parentRunId": "a3cff0b470994809b9e85c89b001c5c5",
+      "relatorio_run_pai": "a3cff0b470994809b9e85c89b001c5c5",
+      "metrics": {
+        "roc_auc": 0.40733930348258707,
+        "average_precision": 0.6347849543503578,
+        "f1": 0.28868778280542984,
+        "recall": 0.19044776119402984,
+        "precision": 0.5962616822429907,
+        "accuracy": 0.3712,
+        "brier_score": 0.47754173815199574,
+        "label_count": 2500.0,
+        "prevalence": 0.67,
+        "label_coverage": 1.0,
+        "volume": 2500.0,
+        "atributos_com_drift": 0.0
+      },
+      "artifacts_root": [
+        "estatisticas.json"
+      ]
+    },
+    {
+      "run_id": "cdd616edd2dd4f75b3d898c1d8bc1dc3",
+      "experiment_id": "1",
+      "status": "FINISHED",
+      "start_time_utc_ms": 1794865912461,
+      "end_time_utc_ms": 1794865912537,
+      "mlflow.runName": "covariate",
+      "mlflow.parentRunId": "a3cff0b470994809b9e85c89b001c5c5",
+      "relatorio_run_pai": "a3cff0b470994809b9e85c89b001c5c5",
+      "metrics": {
+        "roc_auc": 0.7964995507073278,
+        "average_precision": 0.6350864521773996,
+        "f1": 0.6357918810748999,
+        "recall": 0.7155727155727156,
+        "precision": 0.5720164609053497,
+        "accuracy": 0.7452,
+        "brier_score": 0.15972377494360196,
+        "label_count": 2500.0,
+        "prevalence": 0.3108,
+        "label_coverage": 1.0,
+        "volume": 2500.0,
+        "atributos_com_drift": 2.0
+      },
+      "artifacts_root": [
+        "estatisticas.json"
+      ]
+    },
+    {
+      "run_id": "4c0ea3b52310437e832e2d5c0cf3eb4d",
+      "experiment_id": "1",
+      "status": "FINISHED",
+      "start_time_utc_ms": 1794865912235,
+      "end_time_utc_ms": 1794865912319,
+      "mlflow.runName": "control",
+      "mlflow.parentRunId": "a3cff0b470994809b9e85c89b001c5c5",
+      "relatorio_run_pai": "a3cff0b470994809b9e85c89b001c5c5",
+      "metrics": {
+        "roc_auc": 0.7825126631946921,
+        "average_precision": 0.5479240855220944,
+        "f1": 0.5420560747663551,
+        "recall": 0.5420560747663551,
+        "precision": 0.5420560747663551,
+        "accuracy": 0.804,
+        "brier_score": 0.13034351093348087,
+        "label_count": 2500.0,
+        "prevalence": 0.214,
+        "label_coverage": 1.0,
+        "volume": 2500.0,
+        "atributos_com_drift": 0.0
+      },
+      "artifacts_root": [
+        "estatisticas.json"
+      ]
+    }
+  ]
+}

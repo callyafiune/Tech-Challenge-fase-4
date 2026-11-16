@@ -1,0 +1,90 @@
+[
+  {
+    "timestamp_utc": "2026-11-16T21:51:30.914565+00:00",
+    "code": "BLOQUEIO_CONTRATO",
+    "severity": "aviso",
+    "scenario": "lote_invalido",
+    "message": "Lote de demonstração rejeitado integralmente antes da inferência.",
+    "execution_id": "20261116T215129_2bee07608434",
+    "observed": 10,
+    "threshold": 0,
+    "recommended_action": "Corrigir a origem e validar novamente o lote completo."
+  },
+  {
+    "timestamp_utc": "2026-11-16T21:51:40.892833+00:00",
+    "code": "DRIFT_ENTRADAS",
+    "severity": "aviso",
+    "scenario": "covariate",
+    "message": "Atributos ultrapassaram a política estatística configurada; investigar entradas.",
+    "execution_id": "20261116T215129_2bee07608434",
+    "observed": 2,
+    "threshold": 1,
+    "recommended_action": "Revisar distribuição, coleta e seleção; drift de X não prova conceito."
+  },
+  {
+    "timestamp_utc": "2026-11-16T21:51:43.388822+00:00",
+    "code": "QUEDA_AUROC",
+    "severity": "critico",
+    "scenario": "concept",
+    "message": "Degradação supervisionada material em relação à referência congelada.",
+    "execution_id": "20261116T215129_2bee07608434",
+    "observed": 0.3600113491278547,
+    "threshold": 0.05,
+    "recommended_action": "Investigar rótulos, seleção e desempenho; exigir revisão humana."
+  },
+  {
+    "timestamp_utc": "2026-11-16T21:51:43.389737+00:00",
+    "code": "AUMENTO_BRIER",
+    "severity": "critico",
+    "scenario": "concept",
+    "message": "Degradação supervisionada material em relação à referência congelada.",
+    "execution_id": "20261116T215129_2bee07608434",
+    "observed": 0.339570660528134,
+    "threshold": 0.05,
+    "recommended_action": "Investigar rótulos, seleção e desempenho; exigir revisão humana."
+  },
+  {
+    "timestamp_utc": "2026-11-16T21:51:46.086126+00:00",
+    "code": "DRIFT_ENTRADAS",
+    "severity": "aviso",
+    "scenario": "combined",
+    "message": "Atributos ultrapassaram a política estatística configurada; investigar entradas.",
+    "execution_id": "20261116T215129_2bee07608434",
+    "observed": 2,
+    "threshold": 1,
+    "recommended_action": "Revisar distribuição, coleta e seleção; drift de X não prova conceito."
+  },
+  {
+    "timestamp_utc": "2026-11-16T21:51:46.086126+00:00",
+    "code": "QUEDA_AUROC",
+    "severity": "critico",
+    "scenario": "combined",
+    "message": "Degradação supervisionada material em relação à referência congelada.",
+    "execution_id": "20261116T215129_2bee07608434",
+    "observed": 0.30245566240837174,
+    "threshold": 0.05,
+    "recommended_action": "Investigar rótulos, seleção e desempenho; exigir revisão humana."
+  },
+  {
+    "timestamp_utc": "2026-11-16T21:51:46.087031+00:00",
+    "code": "AUMENTO_BRIER",
+    "severity": "critico",
+    "scenario": "combined",
+    "message": "Degradação supervisionada material em relação à referência congelada.",
+    "execution_id": "20261116T215129_2bee07608434",
+    "observed": 0.24988890690694202,
+    "threshold": 0.05,
+    "recommended_action": "Investigar rótulos, seleção e desempenho; exigir revisão humana."
+  },
+  {
+    "timestamp_utc": "2026-11-16T21:51:46.152535+00:00",
+    "code": "CONCEITO_SIMULADO",
+    "severity": "critico",
+    "scenario": "concept",
+    "message": "A intervenção conhecida nos rótulos gerou degradação pareada material.",
+    "execution_id": "20261116T215129_2bee07608434",
+    "observed": 0.34719822721851484,
+    "threshold": 0.05,
+    "recommended_action": "Validar o experimento; em produção investigar causas e rótulos."
+  }
+]

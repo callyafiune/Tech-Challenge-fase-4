@@ -1,0 +1,11 @@
+{
+  "comando": "uv run python -X utf8 -m credito_monitorado.cli run --config params.yaml --output artifacts",
+  "codigo_saida": 0,
+  "inicio_utc": "2026-11-16T21:51:27.241214+00:00",
+  "fim_utc": "2026-11-16T21:51:54.398738+00:00",
+  "execution_id": "20261116T215129_2bee07608434",
+  "source_sha256": "312c6ae2f7e8cecf07e52930e28172bf34a44de4021c80e7cf10bf72061d3c73",
+  "arquivo_saida_literal": "docs/validacao/00-pipeline-cli.log",
+  "sha256_saida": "c7f7139d287ac635294be379c39b6acc1c271536e796168c90ba9f60b2b91707",
+  "saida_literal": "Execução concluída: 20261116T215129_2bee07608434\r\nRelatório: C:\\estudos\\Tech-Challenge-fase-4\\artifacts\\20261116T215129_2bee07608434\\index.html\r\nResumo: C:\\estudos\\Tech-Challenge-fase-4\\artifacts\\20261116T215129_2bee07608434\\resumo.json\r\n"
+}

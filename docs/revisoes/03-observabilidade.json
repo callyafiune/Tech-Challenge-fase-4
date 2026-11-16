@@ -1,0 +1,38 @@
+{
+  "session_id": "77cf4e2e-f07b-4e31-ae79-1bd13a37c703",
+  "duration_ms": 267474,
+  "num_turns": 1,
+  "is_error": false,
+  "subtype": "success",
+  "modelos": [
+    "claude-fable-5-2"
+  ],
+  "velocidade": "standard",
+  "instante_utc": "2026-11-16T21:08:40.887196+00:00",
+  "arquivos": [
+    "src/credito_monitorado/pipeline.py",
+    "src/credito_monitorado/cli.py",
+    "src/credito_monitorado/fairness.py",
+    "src/credito_monitorado/telemetry.py",
+    "src/credito_monitorado/tracking.py",
+    "src/credito_monitorado/reporting.py",
+    "tests/test_pipeline.py",
+    "tests/test_telemetry.py",
+    "tests/test_fairness.py",
+    ".github/workflows/ci.yml",
+    "docs/enunciado.md"
+  ],
+  "sha256": {
+    "src/credito_monitorado/pipeline.py": "cf89fe3039e88a0f872fd4f974e7e62a2198569fed1d8f8029e3efc9237e362c",
+    "src/credito_monitorado/cli.py": "55a8df397ae1406d2d4601758696d9262299caee055b2d21971e65c989bc762a",
+    "src/credito_monitorado/fairness.py": "9c9c946b3e1173c0dcf3e3d32251b0bc5a499ee3031d0541c9186151eca496d5",
+    "src/credito_monitorado/telemetry.py": "8985313ce17a268ea9c16442154319c70353e9d7fff7427043508b664e41da33",
+    "src/credito_monitorado/tracking.py": "04b2350cf4a221120c40df863e1b849b284666cbec37758a5d05fec7b259cea4",
+    "src/credito_monitorado/reporting.py": "0f0b9c0b43e18fd3b437a22a4e6539d51eda30baa0dd1114868c61c7983adcc6",
+    "tests/test_pipeline.py": "6f226a8aee8f86a1e229bde10570aa3780d587f7ff5021a461b50aaf4734e2de",
+    "tests/test_telemetry.py": "b0f47a17a161ff22d0ca162eea2d40f0a1d391b448fa27d1977ec03f90cb31a9",
+    "tests/test_fairness.py": "dd1d29602f067a305ccdd08252b95f2fb098c926d608382ac46d3c7feebddd28",
+    ".github/workflows/ci.yml": "7b936c349a820d5b6180c1f866c97520a5715f3424f4b3ecbfeaf40f4e9f5bba",
+    "docs/enunciado.md": "cd15af228391c7ba6ac8c1dc2ffc4efa197566c33a2d22e1953e8235895f9bbc"
+  }
+}

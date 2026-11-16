@@ -1,0 +1,28 @@
+{
+  "session_id": "30554110-cc45-45fe-86b9-0795bce940ba",
+  "duration_ms": 219071,
+  "num_turns": 1,
+  "is_error": false,
+  "subtype": "success",
+  "modelos": [
+    "claude-fable-5-2"
+  ],
+  "velocidade": "standard",
+  "instante_utc": "2026-11-16T21:06:26.108833+00:00",
+  "arquivos": [
+    "src/credito_monitorado/drift.py",
+    "src/credito_monitorado/monitoring.py",
+    "tests/test_drift.py",
+    "tests/test_monitoring.py",
+    "params.yaml",
+    "docs/enunciado.md"
+  ],
+  "sha256": {
+    "src/credito_monitorado/drift.py": "d6f895b4a2b524c951ea77e8822d685238297ec090bb9cc876254cc41e682563",
+    "src/credito_monitorado/monitoring.py": "6837b5d6c7520bcac7ffee32e84515c9f8591e6d438a365dbc822b15c4e14a50",
+    "tests/test_drift.py": "5569ad7d09e5964fc060d44d9d119a2b903c43347124d19e51fd1298f386590c",
+    "tests/test_monitoring.py": "e44356b7c9ce93c9417ff3b3f16450077347689f9672324d2e54fb8e3bcc664f",
+    "params.yaml": "960457bed592d56eed3be60cd5fe77d5314ae8238160ddede1dd04f73c42b587",
+    "docs/enunciado.md": "cd15af228391c7ba6ac8c1dc2ffc4efa197566c33a2d22e1953e8235895f9bbc"
+  }
+}

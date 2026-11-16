@@ -1,0 +1,22 @@
+{
+  "session_id": "7f7ba546-48a6-49ed-821d-07f82903f465",
+  "duration_ms": 61907,
+  "num_turns": 1,
+  "is_error": false,
+  "subtype": "success",
+  "modelos": [
+    "claude-fable-5-2"
+  ],
+  "velocidade": "standard",
+  "instante_utc": "2026-11-16T21:55:03.426117+00:00",
+  "arquivos": [
+    "tests/test_verificar_entrega.py",
+    "scripts/verificar_entrega.py"
+  ],
+  "sha256": {
+    "tests/test_verificar_entrega.py": "e82cce41ee49e5173ccda4b0745b81a87d103630a2d884bd4dbca42eb5227b75",
+    "scripts/verificar_entrega.py": "ff7377ffae870a252e4b218f3037d7a867c297504324acb0571f1219b1352be2"
+  },
+  "foco": "Revisão final SOMENTE do Important de cobertura03d. Verifique se casos negativos ID/status/escape agora isolam o comportamento: cópia integral paradiretórioerrado; resumo+manifesto/hashes coerentes com statusfalha; espião impede ler arquivoexterno antes do guard. CORRIGIDO/EMABERTO porcaso. Não reabra desenho ou novos requisitos. Helpersnãoforamalterados, somentefixtures. Testesafetados12passaram no executor; não alegue execução própria. Demaisminors03d serãoadjudicadosdocumentalmente.",
+  "prompt_sha256": "2b2b6d654440591d25201d674256ea74c9b3d2238951c78b631c51b7fd55190e"
+}

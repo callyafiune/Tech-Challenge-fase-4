@@ -1,0 +1,44 @@
+{
+  "session_id": "2ea627f4-b2a6-4958-89f8-018c2fd829c3",
+  "duration_ms": 385959,
+  "num_turns": 1,
+  "is_error": false,
+  "subtype": "success",
+  "modelos": [
+    "claude-fable-5-2"
+  ],
+  "velocidade": "standard",
+  "instante_utc": "2026-11-16T21:24:07.378032+00:00",
+  "arquivos": [
+    "README.md",
+    "docs/enunciado.md",
+    "docs/dicionario_dados.md",
+    "docs/model_card.md",
+    "docs/causalidade.md",
+    "docs/roteiro_star.md",
+    "docs/resultados.md",
+    "docs/matriz_rastreabilidade.md",
+    "docs/verificacao.json",
+    "docs/revisoes/tratamento.md",
+    "reports/execucao_validada/resumo.json",
+    "reports/execucao_validada/publicacao.json",
+    "scripts/exportar_evidencias.py"
+  ],
+  "sha256": {
+    "README.md": "2712b5d7460c96c8bddfecb0891d35bcc06e0cb58e91315ce436b6e029417e64",
+    "docs/enunciado.md": "cd15af228391c7ba6ac8c1dc2ffc4efa197566c33a2d22e1953e8235895f9bbc",
+    "docs/dicionario_dados.md": "983090dd7f23e5e606b106f9a02a264837deb277c74bc8a26e95914b93f67f57",
+    "docs/model_card.md": "17618a4bf2f065231c79997414479059cf74c3320af0a4a29c39907e264045f6",
+    "docs/causalidade.md": "775b4eef4f077cd4bebb340a179618678c18739b2eee5e17b842d9777b2280a4",
+    "docs/roteiro_star.md": "f2a9f55506500f4a6373f487b4fd0d9856916abc2af6bf52ee360ddbda78fe28",
+    "docs/resultados.md": "3c1266cda100678ca23b1d4dd9ceaf605c60e6f0e087d21f6210ff95e0290de1",
+    "docs/matriz_rastreabilidade.md": "dc274a75a7d0844baf39c73ce7a841a965adc0a213359fa30093714d0e360363",
+    "docs/verificacao.json": "59014570816da163d85b774fcaf20cc49f3430932de70c302d313f1e529781d6",
+    "docs/revisoes/tratamento.md": "bffbb95852163af4cc21407b5f084d0e00120b5d695a7a9abe7ff8ca94931685",
+    "reports/execucao_validada/resumo.json": "83392229575f47ab0c86d6587a0f19e661993eac42e50c47d8647acfeb94be2f",
+    "reports/execucao_validada/publicacao.json": "d77a50ab94943b4120055d04ca55c41f9dedbca4ce71f7bef8eb05527617b595",
+    "scripts/exportar_evidencias.py": "10bdcf07cb8c7e6446e1681ac4865c4670c132526f6f30e930bda1c3a8529997"
+  },
+  "foco": "Audite documentação, governança/LGPD, roteiro sem vídeo, rastreabilidade e coerência dos números com resumo real fornecido. O histórico de commits está bloqueado por hook corporativo e depende de decisão do usuário; não foi ignorado ou contornado. Não trate vídeo excluído expressamente ou limitação de produção declarada como alegação de atendimento. Aponte erros concretos, afirmações exageradas ou links incompatíveis.",
+  "prompt_sha256": "e5698b8fcf3160e3543fd14f52845cfcabe006c3ea72c2a9cd6b0f4c7df1c589"
+}

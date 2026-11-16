@@ -1,0 +1,30 @@
+{
+  "execution_id": "20261116T215129_2bee07608434",
+  "source_status": "sucesso",
+  "included_sha256": {
+    "index.html": "43e0a19af69fc4a35d3dfb2e926f4a78ad4c114a7933bf3e06bfbe22794712a2",
+    "resumo.json": "78e3a73841ec75a956f60de310743c57cad043db7afaaddf974908db9a5e52b3",
+    "manifesto.json": "22edfa15f16d4d3c87fa6de37cffee220e9759d65ab011a369f8e851045ef8b0",
+    "logs.jsonl": "99a8355d38e063d5c7a4e646ede90b62c1c50aff34eb7dc451634093cd764fbf",
+    "alertas.json": "3d9ec302b66c1592127ff24d20270996d6a7a510ca061d23ed4072e833b5f48b",
+    "control/evidently.html": "6e8acd8b6a2ee943d97803dd4b37aa70420eb790ec00eb378a0852cae85271ce",
+    "control/evidently.json": "53e95cfd71b60cea9031f17d3c78d519e6153aefd49c2cfdbc82c45da9314700",
+    "control/monitoring.json": "d16a984fa3fdd27d4a92719c5975854d6edc2267eeaf4f7be0f876a08d5d4cf5",
+    "covariate/evidently.html": "11c165fefae00aa984ca8acbb311a2800f2c2840f641a92b61a93b62cf631e55",
+    "covariate/evidently.json": "bce491b69d7239e76f37ef2309c91ed2f7045373750f222a6b95298f310088c7",
+    "covariate/monitoring.json": "442019c618601b058ad5e76db1891554907813a6c3627a058273a00636998b50",
+    "concept/evidently.html": "31970dd20b0c37356660099af52d54f401e8f9b3dad4a0921fc056be91930bc1",
+    "concept/evidently.json": "58007b9c4cdb6db60c76f18db687956051fb84b70ead567df6d659da08fbbd72",
+    "concept/monitoring.json": "8b5a63a9d5463f48b250bcd05154657473a0fb7cded1ec189470101f1bc32172",
+    "combined/evidently.html": "ff7bc6e15b56a9e6397836b7a0d2d31ce45e4ef2187d9a5491ea50eeb70f900d",
+    "combined/evidently.json": "360cfd84f3de765ef5d48df985c43fb274ccb48d8c8d7442807ef9cc881b69d0",
+    "combined/monitoring.json": "62bb02311ee5cee4e5eddfbded287ac740973496fb2161d2709ba520a5a75058"
+  },
+  "excluded": [
+    "modelo.joblib",
+    "dados brutos",
+    "predições individuais",
+    "banco MLflow"
+  ],
+  "note": "O manifesto original descreve a execução local completa. Este inventário descreve somente os arquivos agregados incluídos no Git. O banco MLflow e o modelo devem ser recriados executando o pipeline."
+}

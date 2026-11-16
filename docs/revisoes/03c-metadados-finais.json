@@ -1,0 +1,32 @@
+{
+  "session_id": "84f2830d-975d-43ae-8746-16d3adcb5885",
+  "duration_ms": 218878,
+  "num_turns": 1,
+  "is_error": false,
+  "subtype": "success",
+  "modelos": [
+    "claude-fable-5-2"
+  ],
+  "velocidade": "standard",
+  "instante_utc": "2026-11-16T21:33:05.847899+00:00",
+  "arquivos": [
+    "src/credito_monitorado/pipeline.py",
+    "src/credito_monitorado/reporting.py",
+    "src/credito_monitorado/tracking.py",
+    "scripts/verificar_entrega.py",
+    "tests/test_pipeline.py",
+    "docs/verificacao.json",
+    "docs/evidencias_mlflow.json"
+  ],
+  "sha256": {
+    "src/credito_monitorado/pipeline.py": "ff10ac70f82b5bfe140a614a927a34c1a319e831fd4659ff3ad4c8e8a98e5626",
+    "src/credito_monitorado/reporting.py": "3a1c16ef82cd9e67ac64abbe71cf1d6caeb77d4b00ae0749b7508cfbcc2541e8",
+    "src/credito_monitorado/tracking.py": "d81f0ba4ed9dd14e1e8840eb9bc5403d8b24f2ab41007aa355ace15010712ecd",
+    "scripts/verificar_entrega.py": "57b918d552d5ec72d9faf372d9b37c712bb6b11bef163864a04150eb5cddc1a8",
+    "tests/test_pipeline.py": "43c07c1dd5f4b1d2006cb077e0d7218951890084886caa4a8100d59599b3a854",
+    "docs/verificacao.json": "75f48be309a4e304566a210836d0ae41efdce852b83a089702d7274936066e52",
+    "docs/evidencias_mlflow.json": "5a8f23dd0a4e5dccd5b1d01dbf326ed3b7d9b04e9aee71afb6771b5ac4a855ac"
+  },
+  "foco": "Revisão estritamente limitada aos resíduos03b: sanitização de URI com senha malformada/caminho com@; failed_stage sem falhas esperadas; original_labels em português; runs filhos apontando para pai sem HTML isolado; identidade incluindo script/workflow/Python/atributos; registro literal de testes e execução real. Verificar correções sem reabrir o desenho do detector ou exigir novas funcionalidades. Os demais blocos já receberam revisão adversarial. Git/hook é pendência declarada de autorização.",
+  "prompt_sha256": "a3c92976aa0cd96ab88699004219cadda91e23f65865fe9aa1cffcc674b039ed"
+}

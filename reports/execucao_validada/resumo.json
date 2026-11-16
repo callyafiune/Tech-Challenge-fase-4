@@ -1,0 +1,2277 @@
+{
+  "execution_id": "20261116T215129_2bee07608434",
+  "started_at_utc": "2026-11-16T21:51:29.500441+00:00",
+  "status": "sucesso",
+  "output_dir": "C:\\estudos\\Tech-Challenge-fase-4\\artifacts\\20261116T215129_2bee07608434",
+  "config": {
+    "seed": 42,
+    "dataset": {
+      "url": "https://archive.ics.uci.edu/static/public/350/default+of+credit+card+clients.zip",
+      "min_rows": 5000
+    },
+    "model": {
+      "max_iter": 150,
+      "learning_rate": 0.08,
+      "max_leaf_nodes": 15,
+      "threshold": 0.3
+    },
+    "simulation": {
+      "batch_size": 2500,
+      "low_limit_weight": 3.0,
+      "late_payment_weight": 4.0,
+      "concept_flip_probability": 0.8
+    },
+    "monitoring": {
+      "psi_threshold": 0.2,
+      "psi_epsilon": 1e-06,
+      "ks_alpha": 0.05,
+      "ks_min_effect": 0.1,
+      "auc_drop_threshold": 0.05,
+      "brier_increase_threshold": 0.05,
+      "bootstrap_samples": 500,
+      "min_rows": 200,
+      "max_stage_seconds": 120,
+      "max_rss_mb": 2048
+    },
+    "tracking": {
+      "experiment_name": "confiabilidade-credito"
+    }
+  },
+  "config_sha256": "25e79a5462f77c394b2162d8989651682614cd2172cd66d5f68181d750441790",
+  "dataset": {
+    "source_url": "https://archive.ics.uci.edu/static/public/350/default+of+credit+card+clients.zip",
+    "dataset": "UCI 350 — Default of Credit Card Clients",
+    "retrieved_at_utc": "2026-11-16T20:57:18.865133+00:00",
+    "zip_sha256": "56c885f84457f6680f8438f02bfcdac9579323d8a94465ee5f26e32baa727602",
+    "xls_sha256": "30c6be3abd8dcfd3e6096c828bad8c2f011238620f5369220bd60cfc82700933",
+    "license": "CC BY 4.0",
+    "source_rows": 30000,
+    "synthetic": false,
+    "source_size_bytes": 5539328,
+    "sha256": "30c6be3abd8dcfd3e6096c828bad8c2f011238620f5369220bd60cfc82700933",
+    "rows": 30000,
+    "size_bytes": 5539328,
+    "normalized_data_sha256": "887f1cb21972eb05b5c0bf90903ebb2476df3618eec86e99e9892f70948af7dd"
+  },
+  "partitions": {
+    "train": {
+      "rows": 15000,
+      "ids_sha256": "2d171314deb9d3a16fb7f6712f8482f045ebdd24bdd83958f6f68e525c6ca020",
+      "data_sha256": "7dbfd97935ad72f8be53bf7235010abe2748e9690075f52fd28ee556e78d5aec",
+      "features_sha256": "826fb6571e0a2d25077128fe75522ba1dfe7c4abb6353cc4d8312c7ccb48db4e",
+      "class_rate": 0.2212
+    },
+    "validation": {
+      "rows": 4500,
+      "ids_sha256": "020fe8b5e9641cf1d460dd4491d91d701da16a2fa4ffd78914c04e7e0d8ec77f",
+      "data_sha256": "9180744c10b1a202af4be932c76db33da883367be5c1360cb9c3d465a2470c90",
+      "features_sha256": "9a68ed032330e0c26d105fce16212450b42defd5dc57b6577761dbeb10dcc63a",
+      "class_rate": 0.22111111111111112
+    },
+    "reference": {
+      "rows": 4500,
+      "ids_sha256": "f574ed23d2fb2f96bcdf35099f0adfea3d9b40fb64ea50ed24dd6791bda41b8e",
+      "data_sha256": "b364d85c938502f686c928cfaaff2aae1e0289f9d741105656098a5f5a886a81",
+      "features_sha256": "893f248443cd7a7c531757edd3b087dc3901510821c6fabf9280afb90c8124b6",
+      "class_rate": 0.22133333333333333
+    },
+    "production_pool": {
+      "rows": 6000,
+      "ids_sha256": "7a7944f27bd0ffcb5cf7363c3bfe4d893c09f587c37e9f958c3c000c7a8c3ce4",
+      "data_sha256": "af5ed1e675cb2ff9eb405bb3b7f86c22a6db9ecec9db006519e1572e102dfde1",
+      "features_sha256": "954a08de038524b291f4e266abe316eacb9ff6ac0c69382ca9920f6ef066eb67",
+      "class_rate": 0.22116666666666668
+    }
+  },
+  "model": {
+    "threshold": 0.3,
+    "validation_metrics": {
+      "roc_auc": 0.7735701331192337,
+      "average_precision": 0.5278471868498241,
+      "f1": 0.5152,
+      "recall": 0.48542713567839196,
+      "precision": 0.5488636363636363,
+      "accuracy": 0.798,
+      "brier_score": 0.13812067094834762,
+      "dummy_roc_auc": 0.5,
+      "dummy_average_precision": 0.22111111111111112,
+      "dummy_f1": 0.0,
+      "dummy_recall": 0.0,
+      "dummy_precision": 0.0,
+      "dummy_accuracy": 0.7788888888888889,
+      "dummy_brier_score": 0.1722209955555555,
+      "roc_auc_gain_over_dummy": 0.2735701331192337
+    },
+    "sha256": "c499470682cef36df9d787c799db428f645661d5f4831ad98b06485fdfcad3f7",
+    "features": [
+      "limit_bal",
+      "age",
+      "pay_0",
+      "pay_2",
+      "pay_3",
+      "pay_4",
+      "pay_5",
+      "pay_6",
+      "bill_amt1",
+      "bill_amt2",
+      "bill_amt3",
+      "bill_amt4",
+      "bill_amt5",
+      "bill_amt6",
+      "pay_amt1",
+      "pay_amt2",
+      "pay_amt3",
+      "pay_amt4",
+      "pay_amt5",
+      "pay_amt6"
+    ],
+    "roundtrip_predictions_equal": true,
+    "hyperparameters": {
+      "max_iter": 150,
+      "learning_rate": 0.08,
+      "max_leaf_nodes": 15,
+      "threshold": 0.3
+    },
+    "trained_only_on": "train",
+    "reference_metrics": {
+      "roc_auc": 0.7673506526104418,
+      "average_precision": 0.5415303005988966,
+      "f1": 0.5292908530318602,
+      "recall": 0.5170682730923695,
+      "precision": 0.5421052631578948,
+      "accuracy": 0.7964444444444444,
+      "brier_score": 0.1379710776238617
+    }
+  },
+  "scenarios": {
+    "control": {
+      "status": "success",
+      "performance": {
+        "roc_auc": 0.7825126631946921,
+        "average_precision": 0.5479240855220944,
+        "f1": 0.5420560747663551,
+        "recall": 0.5420560747663551,
+        "precision": 0.5420560747663551,
+        "accuracy": 0.804,
+        "brier_score": 0.13034351093348087,
+        "status": "ok",
+        "label_count": 2500,
+        "prevalence": 0.214,
+        "label_coverage": 1.0,
+        "confusion_matrix": [
+          [
+            1720,
+            245
+          ],
+          [
+            245,
+            290
+          ]
+        ]
+      },
+      "reference_performance": {
+        "roc_auc": 0.7673506526104418,
+        "average_precision": 0.5415303005988966,
+        "f1": 0.5292908530318602,
+        "recall": 0.5170682730923695,
+        "precision": 0.5421052631578948,
+        "accuracy": 0.7964444444444444,
+        "brier_score": 0.1379710776238617,
+        "status": "ok",
+        "label_count": 4500,
+        "prevalence": 0.22133333333333333,
+        "label_coverage": 1.0,
+        "confusion_matrix": [
+          [
+            3069,
+            435
+          ],
+          [
+            481,
+            515
+          ]
+        ]
+      },
+      "drift": {
+        "features": {
+          "limit_bal": {
+            "method": "ks_bh_effect",
+            "score": 0.02008888888888889,
+            "psi": 0.0037399137182989365,
+            "ks": 0.02008888888888889,
+            "pvalue": 0.5284341492364966,
+            "pvalue_adjusted": 0.871999695035092,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "age": {
+            "method": "ks_bh_effect",
+            "score": 0.015288888888888888,
+            "psi": 0.0020482781844997342,
+            "ks": 0.015288888888888888,
+            "pvalue": 0.8406330145857932,
+            "pvalue_adjusted": 0.871999695035092,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "pay_0": {
+            "method": "psi",
+            "score": 0.008373284656922516,
+            "psi": 0.008373284656922516,
+            "ks": null,
+            "pvalue": null,
+            "pvalue_adjusted": null,
+            "threshold": 0.2,
+            "min_effect": null,
+            "drift": false
+          },
+          "pay_2": {
+            "method": "psi",
+            "score": 0.004460757750726691,
+            "psi": 0.004460757750726691,
+            "ks": null,
+            "pvalue": null,
+            "pvalue_adjusted": null,
+            "threshold": 0.2,
+            "min_effect": null,
+            "drift": false
+          },
+          "pay_3": {
+            "method": "psi",
+            "score": 0.00514312482365616,
+            "psi": 0.00514312482365616,
+            "ks": null,
+            "pvalue": null,
+            "pvalue_adjusted": null,
+            "threshold": 0.2,
+            "min_effect": null,
+            "drift": false
+          },
+          "pay_4": {
+            "method": "psi",
+            "score": 0.0057616230278864766,
+            "psi": 0.0057616230278864766,
+            "ks": null,
+            "pvalue": null,
+            "pvalue_adjusted": null,
+            "threshold": 0.2,
+            "min_effect": null,
+            "drift": false
+          },
+          "pay_5": {
+            "method": "psi",
+            "score": 0.007384946679026846,
+            "psi": 0.007384946679026846,
+            "ks": null,
+            "pvalue": null,
+            "pvalue_adjusted": null,
+            "threshold": 0.2,
+            "min_effect": null,
+            "drift": false
+          },
+          "pay_6": {
+            "method": "psi",
+            "score": 0.0032707132978892182,
+            "psi": 0.0032707132978892182,
+            "ks": null,
+            "pvalue": null,
+            "pvalue_adjusted": null,
+            "threshold": 0.2,
+            "min_effect": null,
+            "drift": false
+          },
+          "bill_amt1": {
+            "method": "ks_bh_effect",
+            "score": 0.01608888888888889,
+            "psi": 0.006340941949122834,
+            "ks": 0.01608888888888889,
+            "pvalue": 0.7930389736607638,
+            "pvalue_adjusted": 0.871999695035092,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "bill_amt2": {
+            "method": "ks_bh_effect",
+            "score": 0.020133333333333333,
+            "psi": 0.012088318044711978,
+            "ks": 0.020133333333333333,
+            "pvalue": 0.5255694334601893,
+            "pvalue_adjusted": 0.871999695035092,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "bill_amt3": {
+            "method": "ks_bh_effect",
+            "score": 0.016577777777777778,
+            "psi": 0.006014747173518632,
+            "ks": 0.016577777777777778,
+            "pvalue": 0.762124189318566,
+            "pvalue_adjusted": 0.871999695035092,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "bill_amt4": {
+            "method": "ks_bh_effect",
+            "score": 0.01471111111111111,
+            "psi": 0.0036834887564153964,
+            "ks": 0.01471111111111111,
+            "pvalue": 0.871999695035092,
+            "pvalue_adjusted": 0.871999695035092,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "bill_amt5": {
+            "method": "ks_bh_effect",
+            "score": 0.021644444444444445,
+            "psi": 0.006484007122178068,
+            "ks": 0.021644444444444445,
+            "pvalue": 0.4324228186229073,
+            "pvalue_adjusted": 0.871999695035092,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "bill_amt6": {
+            "method": "ks_bh_effect",
+            "score": 0.029155555555555556,
+            "psi": 0.0063285724130684425,
+            "ks": 0.029155555555555556,
+            "pvalue": 0.12745484730123843,
+            "pvalue_adjusted": 0.871999695035092,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "pay_amt1": {
+            "method": "ks_bh_effect",
+            "score": 0.018755555555555557,
+            "psi": 0.0019078103451189402,
+            "ks": 0.018755555555555557,
+            "pvalue": 0.6166556005509695,
+            "pvalue_adjusted": 0.871999695035092,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "pay_amt2": {
+            "method": "ks_bh_effect",
+            "score": 0.022266666666666667,
+            "psi": 0.002910706003543234,
+            "ks": 0.022266666666666667,
+            "pvalue": 0.3968607430269949,
+            "pvalue_adjusted": 0.871999695035092,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "pay_amt3": {
+            "method": "ks_bh_effect",
+            "score": 0.01671111111111111,
+            "psi": 0.0013771354287486423,
+            "ks": 0.01671111111111111,
+            "pvalue": 0.7535077383224694,
+            "pvalue_adjusted": 0.871999695035092,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "pay_amt4": {
+            "method": "ks_bh_effect",
+            "score": 0.015644444444444443,
+            "psi": 0.0034538916130767245,
+            "ks": 0.015644444444444443,
+            "pvalue": 0.820008820856235,
+            "pvalue_adjusted": 0.871999695035092,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "pay_amt5": {
+            "method": "ks_bh_effect",
+            "score": 0.0312,
+            "psi": 0.006100901102131401,
+            "ks": 0.0312,
+            "pvalue": 0.08561096777396045,
+            "pvalue_adjusted": 0.871999695035092,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "pay_amt6": {
+            "method": "ks_bh_effect",
+            "score": 0.017644444444444445,
+            "psi": 0.005258708922377853,
+            "ks": 0.017644444444444445,
+            "pvalue": 0.6916751577271042,
+            "pvalue_adjusted": 0.871999695035092,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          }
+        },
+        "summary": {
+          "status": "ok",
+          "reference_rows": 4500,
+          "current_rows": 2500,
+          "min_rows": 200,
+          "drift_detected": false,
+          "drifted_features": [],
+          "n_features": 20,
+          "drift_share": 0.0,
+          "rules": {
+            "continuous": "p ajustado BH <= alpha e KS D >= efeito mínimo",
+            "categorical": "PSI >= limiar; suporte é a união das categorias observadas",
+            "bh_family": [
+              "limit_bal",
+              "age",
+              "bill_amt1",
+              "bill_amt2",
+              "bill_amt3",
+              "bill_amt4",
+              "bill_amt5",
+              "bill_amt6",
+              "pay_amt1",
+              "pay_amt2",
+              "pay_amt3",
+              "pay_amt4",
+              "pay_amt5",
+              "pay_amt6"
+            ],
+            "continuous_psi": "Complementar; quantis da referência com extremos abertos",
+            "interpretation": "Drift de X não comprova alteração em P(Y|X)."
+          }
+        }
+      },
+      "labels_status": "original_labels",
+      "label_count": 2500,
+      "label_coverage": 1.0,
+      "label_delay": "Não observado; cenários acadêmicos contrafactuais.",
+      "concept_status": "requires_pair",
+      "evidently_html": "evidently.html",
+      "aggregate_json": "monitoring.json",
+      "simulation": {
+        "scenario": "control",
+        "selection_seed": 42,
+        "selection": "uniforme",
+        "labels_status": "original_labels",
+        "counterfactual": true,
+        "rows": 2500
+      },
+      "prediction_monitoring": {
+        "status": "ok",
+        "score": {
+          "psi": 0.004823817386427742,
+          "ks": 0.012311111111111111,
+          "pvalue": 0.965289027564727,
+          "drift": false,
+          "psi_drift": false,
+          "ks_alpha": 0.05,
+          "ks_min_effect": 0.1,
+          "psi_threshold": 0.2,
+          "rule": "KS p <= alpha e D >= efeito mínimo; PSI é sinal complementar separado.",
+          "multiplicity": "Teste único do score; não integra a família BH dos atributos de X."
+        },
+        "threshold": 0.3,
+        "reference_positive_rate": 0.2111111111111111,
+        "current_positive_rate": 0.214,
+        "reference_prevalence": 0.22133333333333333,
+        "current_prevalence": 0.214,
+        "interpretation": "Score e taxa de decisões positivas descrevem saídas do modelo. Prevalência descreve rótulos disponíveis, que podem ser contrafactuais na simulação. Nenhum desses sinais isolados comprova alteração em P(Y|X)."
+      },
+      "evidently": {
+        "status": "success",
+        "decision_role": "Relatório bruto complementar; a decisão primária está em drift.",
+        "differences": "Evidently usa KS por coluna sem BH nem efeito mínimo, PSI com suavização própria e regra agregada própria. Essas decisões não substituem a política do projeto.",
+        "html": "evidently.html",
+        "json": "evidently.json",
+        "classification_included": true
+      },
+      "rows": 2500,
+      "ids_sha256": "cd56f206c288c153a42eb7d11d327dc0b7f8994c000b8afe504a8fee7bf5224c",
+      "data_sha256": "99807a78fcd5d00dd6b21ef6e3578ef316cf14723aa4fd61685a7e99b7b477f4",
+      "features_sha256": "cb9b1c7a14ccb1be51d8e0805f8ba63de3f12ba7b76fdb0fb25229ca3f921643",
+      "class_rate": 0.214,
+      "execution_id": "20261116T215129_2bee07608434",
+      "scenario": "control",
+      "config_sha256": "25e79a5462f77c394b2162d8989651682614cd2172cd66d5f68181d750441790",
+      "model_sha256": "c499470682cef36df9d787c799db428f645661d5f4831ad98b06485fdfcad3f7",
+      "simulated_window": "T0",
+      "window_index": 0
+    },
+    "covariate": {
+      "status": "success",
+      "performance": {
+        "roc_auc": 0.7964995507073278,
+        "average_precision": 0.6350864521773996,
+        "f1": 0.6357918810748999,
+        "recall": 0.7155727155727156,
+        "precision": 0.5720164609053497,
+        "accuracy": 0.7452,
+        "brier_score": 0.15972377494360196,
+        "status": "ok",
+        "label_count": 2500,
+        "prevalence": 0.3108,
+        "label_coverage": 1.0,
+        "confusion_matrix": [
+          [
+            1307,
+            416
+          ],
+          [
+            221,
+            556
+          ]
+        ]
+      },
+      "reference_performance": {
+        "roc_auc": 0.7673506526104418,
+        "average_precision": 0.5415303005988966,
+        "f1": 0.5292908530318602,
+        "recall": 0.5170682730923695,
+        "precision": 0.5421052631578948,
+        "accuracy": 0.7964444444444444,
+        "brier_score": 0.1379710776238617,
+        "status": "ok",
+        "label_count": 4500,
+        "prevalence": 0.22133333333333333,
+        "label_coverage": 1.0,
+        "confusion_matrix": [
+          [
+            3069,
+            435
+          ],
+          [
+            481,
+            515
+          ]
+        ]
+      },
+      "drift": {
+        "features": {
+          "limit_bal": {
+            "method": "ks_bh_effect",
+            "score": 0.18151111111111112,
+            "psi": 0.1312393442241331,
+            "ks": 0.18151111111111112,
+            "pvalue": 9.95125935260897e-47,
+            "pvalue_adjusted": 1.3931763093652557e-45,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": true
+          },
+          "age": {
+            "method": "ks_bh_effect",
+            "score": 0.03897777777777778,
+            "psi": 0.014467480190368621,
+            "ks": 0.03897777777777778,
+            "pvalue": 0.014723933932083648,
+            "pvalue_adjusted": 0.01585654423455162,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "pay_0": {
+            "method": "psi",
+            "score": 0.2053078182096538,
+            "psi": 0.2053078182096538,
+            "ks": null,
+            "pvalue": null,
+            "pvalue_adjusted": null,
+            "threshold": 0.2,
+            "min_effect": null,
+            "drift": true
+          },
+          "pay_2": {
+            "method": "psi",
+            "score": 0.1309014741253702,
+            "psi": 0.1309014741253702,
+            "ks": null,
+            "pvalue": null,
+            "pvalue_adjusted": null,
+            "threshold": 0.2,
+            "min_effect": null,
+            "drift": false
+          },
+          "pay_3": {
+            "method": "psi",
+            "score": 0.07916526738415393,
+            "psi": 0.07916526738415393,
+            "ks": null,
+            "pvalue": null,
+            "pvalue_adjusted": null,
+            "threshold": 0.2,
+            "min_effect": null,
+            "drift": false
+          },
+          "pay_4": {
+            "method": "psi",
+            "score": 0.06259272380051033,
+            "psi": 0.06259272380051033,
+            "ks": null,
+            "pvalue": null,
+            "pvalue_adjusted": null,
+            "threshold": 0.2,
+            "min_effect": null,
+            "drift": false
+          },
+          "pay_5": {
+            "method": "psi",
+            "score": 0.04098321464476585,
+            "psi": 0.04098321464476585,
+            "ks": null,
+            "pvalue": null,
+            "pvalue_adjusted": null,
+            "threshold": 0.2,
+            "min_effect": null,
+            "drift": false
+          },
+          "pay_6": {
+            "method": "psi",
+            "score": 0.029191653332940992,
+            "psi": 0.029191653332940992,
+            "ks": null,
+            "pvalue": null,
+            "pvalue_adjusted": null,
+            "threshold": 0.2,
+            "min_effect": null,
+            "drift": false
+          },
+          "bill_amt1": {
+            "method": "ks_bh_effect",
+            "score": 0.04017777777777778,
+            "psi": 0.03573135926546185,
+            "ks": 0.04017777777777778,
+            "pvalue": 0.01083948682034997,
+            "pvalue_adjusted": 0.012646067957074967,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "bill_amt2": {
+            "method": "ks_bh_effect",
+            "score": 0.044844444444444444,
+            "psi": 0.034150784218259386,
+            "ks": 0.044844444444444444,
+            "pvalue": 0.003016114191658075,
+            "pvalue_adjusted": 0.0052781998354016315,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "bill_amt3": {
+            "method": "ks_bh_effect",
+            "score": 0.04031111111111111,
+            "psi": 0.030276780051228552,
+            "ks": 0.04031111111111111,
+            "pvalue": 0.010470820646218987,
+            "pvalue_adjusted": 0.012646067957074967,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "bill_amt4": {
+            "method": "ks_bh_effect",
+            "score": 0.04062222222222222,
+            "psi": 0.03157337855488328,
+            "ks": 0.04062222222222222,
+            "pvalue": 0.00965432840242057,
+            "pvalue_adjusted": 0.012646067957074967,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "bill_amt5": {
+            "method": "ks_bh_effect",
+            "score": 0.037333333333333336,
+            "psi": 0.02916091175380172,
+            "ks": 0.037333333333333336,
+            "pvalue": 0.0220680954504983,
+            "pvalue_adjusted": 0.022068095450498298,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "bill_amt6": {
+            "method": "ks_bh_effect",
+            "score": 0.042444444444444444,
+            "psi": 0.035220799292698196,
+            "ks": 0.042444444444444444,
+            "pvalue": 0.005926138588852449,
+            "pvalue_adjusted": 0.009218437804881586,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "pay_amt1": {
+            "method": "ks_bh_effect",
+            "score": 0.07288888888888889,
+            "psi": 0.045875976770250584,
+            "ks": 0.07288888888888889,
+            "pvalue": 7.188874059215065e-08,
+            "pvalue_adjusted": 2.012884736580218e-07,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "pay_amt2": {
+            "method": "ks_bh_effect",
+            "score": 0.076,
+            "psi": 0.03218804831958555,
+            "ks": 0.076,
+            "pvalue": 1.6141933626996623e-08,
+            "pvalue_adjusted": 7.53290235926509e-08,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "pay_amt3": {
+            "method": "ks_bh_effect",
+            "score": 0.08022222222222222,
+            "psi": 0.03620207693765529,
+            "ks": 0.08022222222222222,
+            "pvalue": 1.923502359249488e-09,
+            "pvalue_adjusted": 1.3464516514746415e-08,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "pay_amt4": {
+            "method": "ks_bh_effect",
+            "score": 0.07382222222222222,
+            "psi": 0.031011563912112503,
+            "ks": 0.07382222222222222,
+            "pvalue": 4.622771397271554e-08,
+            "pvalue_adjusted": 1.617969989045044e-07,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "pay_amt5": {
+            "method": "ks_bh_effect",
+            "score": 0.058977777777777775,
+            "psi": 0.01929118042440971,
+            "ks": 0.058977777777777775,
+            "pvalue": 2.661630185341663e-05,
+            "pvalue_adjusted": 5.323260370683325e-05,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "pay_amt6": {
+            "method": "ks_bh_effect",
+            "score": 0.07115555555555556,
+            "psi": 0.029955152958858144,
+            "ks": 0.07115555555555556,
+            "pvalue": 1.6080410543206822e-07,
+            "pvalue_adjusted": 3.752095793414925e-07,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          }
+        },
+        "summary": {
+          "status": "ok",
+          "reference_rows": 4500,
+          "current_rows": 2500,
+          "min_rows": 200,
+          "drift_detected": true,
+          "drifted_features": [
+            "limit_bal",
+            "pay_0"
+          ],
+          "n_features": 20,
+          "drift_share": 0.1,
+          "rules": {
+            "continuous": "p ajustado BH <= alpha e KS D >= efeito mínimo",
+            "categorical": "PSI >= limiar; suporte é a união das categorias observadas",
+            "bh_family": [
+              "limit_bal",
+              "age",
+              "bill_amt1",
+              "bill_amt2",
+              "bill_amt3",
+              "bill_amt4",
+              "bill_amt5",
+              "bill_amt6",
+              "pay_amt1",
+              "pay_amt2",
+              "pay_amt3",
+              "pay_amt4",
+              "pay_amt5",
+              "pay_amt6"
+            ],
+            "continuous_psi": "Complementar; quantis da referência com extremos abertos",
+            "interpretation": "Drift de X não comprova alteração em P(Y|X)."
+          }
+        }
+      },
+      "labels_status": "original_labels",
+      "label_count": 2500,
+      "label_coverage": 1.0,
+      "label_delay": "Não observado; cenários acadêmicos contrafactuais.",
+      "concept_status": "requires_pair",
+      "evidently_html": "evidently.html",
+      "aggregate_json": "monitoring.json",
+      "simulation": {
+        "scenario": "covariate",
+        "selection_seed": 43,
+        "selection": "ponderada_somente_por_X",
+        "labels_status": "original_labels",
+        "counterfactual": true,
+        "rows": 2500
+      },
+      "prediction_monitoring": {
+        "status": "ok",
+        "score": {
+          "psi": 0.18949446400483194,
+          "ks": 0.18337777777777778,
+          "pvalue": 1.0853311832181104e-47,
+          "drift": true,
+          "psi_drift": false,
+          "ks_alpha": 0.05,
+          "ks_min_effect": 0.1,
+          "psi_threshold": 0.2,
+          "rule": "KS p <= alpha e D >= efeito mínimo; PSI é sinal complementar separado.",
+          "multiplicity": "Teste único do score; não integra a família BH dos atributos de X."
+        },
+        "threshold": 0.3,
+        "reference_positive_rate": 0.2111111111111111,
+        "current_positive_rate": 0.3888,
+        "reference_prevalence": 0.22133333333333333,
+        "current_prevalence": 0.3108,
+        "interpretation": "Score e taxa de decisões positivas descrevem saídas do modelo. Prevalência descreve rótulos disponíveis, que podem ser contrafactuais na simulação. Nenhum desses sinais isolados comprova alteração em P(Y|X)."
+      },
+      "evidently": {
+        "status": "success",
+        "decision_role": "Relatório bruto complementar; a decisão primária está em drift.",
+        "differences": "Evidently usa KS por coluna sem BH nem efeito mínimo, PSI com suavização própria e regra agregada própria. Essas decisões não substituem a política do projeto.",
+        "html": "evidently.html",
+        "json": "evidently.json",
+        "classification_included": true
+      },
+      "rows": 2500,
+      "ids_sha256": "cf1940673251597c8e00c3d9ff21bf4f1754b9010ec71b984b947b0631daac20",
+      "data_sha256": "c82d5add8e32c5cb03200af98de3abdd4f533ad852e3c3b3e0a589e60232f0e6",
+      "features_sha256": "25fb33a316d9c372a6aeeb310ddaf49ea14f32015f142f14b7e121c604e3e2c3",
+      "class_rate": 0.3108,
+      "execution_id": "20261116T215129_2bee07608434",
+      "scenario": "covariate",
+      "config_sha256": "25e79a5462f77c394b2162d8989651682614cd2172cd66d5f68181d750441790",
+      "model_sha256": "c499470682cef36df9d787c799db428f645661d5f4831ad98b06485fdfcad3f7",
+      "simulated_window": "T1",
+      "window_index": 1
+    },
+    "concept": {
+      "status": "success",
+      "performance": {
+        "roc_auc": 0.40733930348258707,
+        "average_precision": 0.6347849543503578,
+        "f1": 0.28868778280542984,
+        "recall": 0.19044776119402984,
+        "precision": 0.5962616822429907,
+        "accuracy": 0.3712,
+        "brier_score": 0.47754173815199574,
+        "status": "ok",
+        "label_count": 2500,
+        "prevalence": 0.67,
+        "label_coverage": 1.0,
+        "confusion_matrix": [
+          [
+            609,
+            216
+          ],
+          [
+            1356,
+            319
+          ]
+        ]
+      },
+      "reference_performance": {
+        "roc_auc": 0.7673506526104418,
+        "average_precision": 0.5415303005988966,
+        "f1": 0.5292908530318602,
+        "recall": 0.5170682730923695,
+        "precision": 0.5421052631578948,
+        "accuracy": 0.7964444444444444,
+        "brier_score": 0.1379710776238617,
+        "status": "ok",
+        "label_count": 4500,
+        "prevalence": 0.22133333333333333,
+        "label_coverage": 1.0,
+        "confusion_matrix": [
+          [
+            3069,
+            435
+          ],
+          [
+            481,
+            515
+          ]
+        ]
+      },
+      "drift": {
+        "features": {
+          "limit_bal": {
+            "method": "ks_bh_effect",
+            "score": 0.02008888888888889,
+            "psi": 0.0037399137182989365,
+            "ks": 0.02008888888888889,
+            "pvalue": 0.5284341492364966,
+            "pvalue_adjusted": 0.871999695035092,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "age": {
+            "method": "ks_bh_effect",
+            "score": 0.015288888888888888,
+            "psi": 0.0020482781844997342,
+            "ks": 0.015288888888888888,
+            "pvalue": 0.8406330145857932,
+            "pvalue_adjusted": 0.871999695035092,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "pay_0": {
+            "method": "psi",
+            "score": 0.008373284656922516,
+            "psi": 0.008373284656922516,
+            "ks": null,
+            "pvalue": null,
+            "pvalue_adjusted": null,
+            "threshold": 0.2,
+            "min_effect": null,
+            "drift": false
+          },
+          "pay_2": {
+            "method": "psi",
+            "score": 0.004460757750726691,
+            "psi": 0.004460757750726691,
+            "ks": null,
+            "pvalue": null,
+            "pvalue_adjusted": null,
+            "threshold": 0.2,
+            "min_effect": null,
+            "drift": false
+          },
+          "pay_3": {
+            "method": "psi",
+            "score": 0.00514312482365616,
+            "psi": 0.00514312482365616,
+            "ks": null,
+            "pvalue": null,
+            "pvalue_adjusted": null,
+            "threshold": 0.2,
+            "min_effect": null,
+            "drift": false
+          },
+          "pay_4": {
+            "method": "psi",
+            "score": 0.0057616230278864766,
+            "psi": 0.0057616230278864766,
+            "ks": null,
+            "pvalue": null,
+            "pvalue_adjusted": null,
+            "threshold": 0.2,
+            "min_effect": null,
+            "drift": false
+          },
+          "pay_5": {
+            "method": "psi",
+            "score": 0.007384946679026846,
+            "psi": 0.007384946679026846,
+            "ks": null,
+            "pvalue": null,
+            "pvalue_adjusted": null,
+            "threshold": 0.2,
+            "min_effect": null,
+            "drift": false
+          },
+          "pay_6": {
+            "method": "psi",
+            "score": 0.0032707132978892182,
+            "psi": 0.0032707132978892182,
+            "ks": null,
+            "pvalue": null,
+            "pvalue_adjusted": null,
+            "threshold": 0.2,
+            "min_effect": null,
+            "drift": false
+          },
+          "bill_amt1": {
+            "method": "ks_bh_effect",
+            "score": 0.01608888888888889,
+            "psi": 0.006340941949122834,
+            "ks": 0.01608888888888889,
+            "pvalue": 0.7930389736607638,
+            "pvalue_adjusted": 0.871999695035092,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "bill_amt2": {
+            "method": "ks_bh_effect",
+            "score": 0.020133333333333333,
+            "psi": 0.012088318044711978,
+            "ks": 0.020133333333333333,
+            "pvalue": 0.5255694334601893,
+            "pvalue_adjusted": 0.871999695035092,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "bill_amt3": {
+            "method": "ks_bh_effect",
+            "score": 0.016577777777777778,
+            "psi": 0.006014747173518632,
+            "ks": 0.016577777777777778,
+            "pvalue": 0.762124189318566,
+            "pvalue_adjusted": 0.871999695035092,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "bill_amt4": {
+            "method": "ks_bh_effect",
+            "score": 0.01471111111111111,
+            "psi": 0.0036834887564153964,
+            "ks": 0.01471111111111111,
+            "pvalue": 0.871999695035092,
+            "pvalue_adjusted": 0.871999695035092,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "bill_amt5": {
+            "method": "ks_bh_effect",
+            "score": 0.021644444444444445,
+            "psi": 0.006484007122178068,
+            "ks": 0.021644444444444445,
+            "pvalue": 0.4324228186229073,
+            "pvalue_adjusted": 0.871999695035092,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "bill_amt6": {
+            "method": "ks_bh_effect",
+            "score": 0.029155555555555556,
+            "psi": 0.0063285724130684425,
+            "ks": 0.029155555555555556,
+            "pvalue": 0.12745484730123843,
+            "pvalue_adjusted": 0.871999695035092,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "pay_amt1": {
+            "method": "ks_bh_effect",
+            "score": 0.018755555555555557,
+            "psi": 0.0019078103451189402,
+            "ks": 0.018755555555555557,
+            "pvalue": 0.6166556005509695,
+            "pvalue_adjusted": 0.871999695035092,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "pay_amt2": {
+            "method": "ks_bh_effect",
+            "score": 0.022266666666666667,
+            "psi": 0.002910706003543234,
+            "ks": 0.022266666666666667,
+            "pvalue": 0.3968607430269949,
+            "pvalue_adjusted": 0.871999695035092,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "pay_amt3": {
+            "method": "ks_bh_effect",
+            "score": 0.01671111111111111,
+            "psi": 0.0013771354287486423,
+            "ks": 0.01671111111111111,
+            "pvalue": 0.7535077383224694,
+            "pvalue_adjusted": 0.871999695035092,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "pay_amt4": {
+            "method": "ks_bh_effect",
+            "score": 0.015644444444444443,
+            "psi": 0.0034538916130767245,
+            "ks": 0.015644444444444443,
+            "pvalue": 0.820008820856235,
+            "pvalue_adjusted": 0.871999695035092,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "pay_amt5": {
+            "method": "ks_bh_effect",
+            "score": 0.0312,
+            "psi": 0.006100901102131401,
+            "ks": 0.0312,
+            "pvalue": 0.08561096777396045,
+            "pvalue_adjusted": 0.871999695035092,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "pay_amt6": {
+            "method": "ks_bh_effect",
+            "score": 0.017644444444444445,
+            "psi": 0.005258708922377853,
+            "ks": 0.017644444444444445,
+            "pvalue": 0.6916751577271042,
+            "pvalue_adjusted": 0.871999695035092,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          }
+        },
+        "summary": {
+          "status": "ok",
+          "reference_rows": 4500,
+          "current_rows": 2500,
+          "min_rows": 200,
+          "drift_detected": false,
+          "drifted_features": [],
+          "n_features": 20,
+          "drift_share": 0.0,
+          "rules": {
+            "continuous": "p ajustado BH <= alpha e KS D >= efeito mínimo",
+            "categorical": "PSI >= limiar; suporte é a união das categorias observadas",
+            "bh_family": [
+              "limit_bal",
+              "age",
+              "bill_amt1",
+              "bill_amt2",
+              "bill_amt3",
+              "bill_amt4",
+              "bill_amt5",
+              "bill_amt6",
+              "pay_amt1",
+              "pay_amt2",
+              "pay_amt3",
+              "pay_amt4",
+              "pay_amt5",
+              "pay_amt6"
+            ],
+            "continuous_psi": "Complementar; quantis da referência com extremos abertos",
+            "interpretation": "Drift de X não comprova alteração em P(Y|X)."
+          }
+        }
+      },
+      "labels_status": "counterfactual_simulated",
+      "label_count": 2500,
+      "label_coverage": 1.0,
+      "label_delay": "Não observado; cenários acadêmicos contrafactuais.",
+      "concept_status": "requires_pair",
+      "evidently_html": "evidently.html",
+      "aggregate_json": "monitoring.json",
+      "simulation": {
+        "scenario": "concept",
+        "selection_seed": 42,
+        "selection": "uniforme",
+        "labels_status": "counterfactual_simulated",
+        "counterfactual": true,
+        "rows": 2500,
+        "paired_with": "control",
+        "flip_seed": 44,
+        "flip_assignment": "SHA-256 estável de seed e record_id; compartilhado entre cenários",
+        "eligible_rows": 1935,
+        "flipped_rows": 1544,
+        "flip_probability": 0.8
+      },
+      "prediction_monitoring": {
+        "status": "ok",
+        "score": {
+          "psi": 0.004823817386427742,
+          "ks": 0.012311111111111111,
+          "pvalue": 0.965289027564727,
+          "drift": false,
+          "psi_drift": false,
+          "ks_alpha": 0.05,
+          "ks_min_effect": 0.1,
+          "psi_threshold": 0.2,
+          "rule": "KS p <= alpha e D >= efeito mínimo; PSI é sinal complementar separado.",
+          "multiplicity": "Teste único do score; não integra a família BH dos atributos de X."
+        },
+        "threshold": 0.3,
+        "reference_positive_rate": 0.2111111111111111,
+        "current_positive_rate": 0.214,
+        "reference_prevalence": 0.22133333333333333,
+        "current_prevalence": 0.67,
+        "interpretation": "Score e taxa de decisões positivas descrevem saídas do modelo. Prevalência descreve rótulos disponíveis, que podem ser contrafactuais na simulação. Nenhum desses sinais isolados comprova alteração em P(Y|X)."
+      },
+      "evidently": {
+        "status": "success",
+        "decision_role": "Relatório bruto complementar; a decisão primária está em drift.",
+        "differences": "Evidently usa KS por coluna sem BH nem efeito mínimo, PSI com suavização própria e regra agregada própria. Essas decisões não substituem a política do projeto.",
+        "html": "evidently.html",
+        "json": "evidently.json",
+        "classification_included": true
+      },
+      "rows": 2500,
+      "ids_sha256": "cd56f206c288c153a42eb7d11d327dc0b7f8994c000b8afe504a8fee7bf5224c",
+      "data_sha256": "0a1b0476ef67fc59f536440423b6bd58e5bc01d625f748b1a4a9a9a8d76c3c00",
+      "features_sha256": "cb9b1c7a14ccb1be51d8e0805f8ba63de3f12ba7b76fdb0fb25229ca3f921643",
+      "class_rate": 0.67,
+      "execution_id": "20261116T215129_2bee07608434",
+      "scenario": "concept",
+      "config_sha256": "25e79a5462f77c394b2162d8989651682614cd2172cd66d5f68181d750441790",
+      "model_sha256": "c499470682cef36df9d787c799db428f645661d5f4831ad98b06485fdfcad3f7",
+      "simulated_window": "T2",
+      "window_index": 2
+    },
+    "combined": {
+      "status": "success",
+      "performance": {
+        "roc_auc": 0.46489499020207004,
+        "average_precision": 0.633578755699617,
+        "f1": 0.4549424374751886,
+        "recall": 0.3703943115707822,
+        "precision": 0.5895061728395061,
+        "accuracy": 0.4508,
+        "brier_score": 0.3878599845308037,
+        "status": "ok",
+        "label_count": 2500,
+        "prevalence": 0.6188,
+        "label_coverage": 1.0,
+        "confusion_matrix": [
+          [
+            554,
+            399
+          ],
+          [
+            974,
+            573
+          ]
+        ]
+      },
+      "reference_performance": {
+        "roc_auc": 0.7673506526104418,
+        "average_precision": 0.5415303005988966,
+        "f1": 0.5292908530318602,
+        "recall": 0.5170682730923695,
+        "precision": 0.5421052631578948,
+        "accuracy": 0.7964444444444444,
+        "brier_score": 0.1379710776238617,
+        "status": "ok",
+        "label_count": 4500,
+        "prevalence": 0.22133333333333333,
+        "label_coverage": 1.0,
+        "confusion_matrix": [
+          [
+            3069,
+            435
+          ],
+          [
+            481,
+            515
+          ]
+        ]
+      },
+      "drift": {
+        "features": {
+          "limit_bal": {
+            "method": "ks_bh_effect",
+            "score": 0.18151111111111112,
+            "psi": 0.1312393442241331,
+            "ks": 0.18151111111111112,
+            "pvalue": 9.95125935260897e-47,
+            "pvalue_adjusted": 1.3931763093652557e-45,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": true
+          },
+          "age": {
+            "method": "ks_bh_effect",
+            "score": 0.03897777777777778,
+            "psi": 0.014467480190368621,
+            "ks": 0.03897777777777778,
+            "pvalue": 0.014723933932083648,
+            "pvalue_adjusted": 0.01585654423455162,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "pay_0": {
+            "method": "psi",
+            "score": 0.2053078182096538,
+            "psi": 0.2053078182096538,
+            "ks": null,
+            "pvalue": null,
+            "pvalue_adjusted": null,
+            "threshold": 0.2,
+            "min_effect": null,
+            "drift": true
+          },
+          "pay_2": {
+            "method": "psi",
+            "score": 0.1309014741253702,
+            "psi": 0.1309014741253702,
+            "ks": null,
+            "pvalue": null,
+            "pvalue_adjusted": null,
+            "threshold": 0.2,
+            "min_effect": null,
+            "drift": false
+          },
+          "pay_3": {
+            "method": "psi",
+            "score": 0.07916526738415393,
+            "psi": 0.07916526738415393,
+            "ks": null,
+            "pvalue": null,
+            "pvalue_adjusted": null,
+            "threshold": 0.2,
+            "min_effect": null,
+            "drift": false
+          },
+          "pay_4": {
+            "method": "psi",
+            "score": 0.06259272380051033,
+            "psi": 0.06259272380051033,
+            "ks": null,
+            "pvalue": null,
+            "pvalue_adjusted": null,
+            "threshold": 0.2,
+            "min_effect": null,
+            "drift": false
+          },
+          "pay_5": {
+            "method": "psi",
+            "score": 0.04098321464476585,
+            "psi": 0.04098321464476585,
+            "ks": null,
+            "pvalue": null,
+            "pvalue_adjusted": null,
+            "threshold": 0.2,
+            "min_effect": null,
+            "drift": false
+          },
+          "pay_6": {
+            "method": "psi",
+            "score": 0.029191653332940992,
+            "psi": 0.029191653332940992,
+            "ks": null,
+            "pvalue": null,
+            "pvalue_adjusted": null,
+            "threshold": 0.2,
+            "min_effect": null,
+            "drift": false
+          },
+          "bill_amt1": {
+            "method": "ks_bh_effect",
+            "score": 0.04017777777777778,
+            "psi": 0.03573135926546185,
+            "ks": 0.04017777777777778,
+            "pvalue": 0.01083948682034997,
+            "pvalue_adjusted": 0.012646067957074967,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "bill_amt2": {
+            "method": "ks_bh_effect",
+            "score": 0.044844444444444444,
+            "psi": 0.034150784218259386,
+            "ks": 0.044844444444444444,
+            "pvalue": 0.003016114191658075,
+            "pvalue_adjusted": 0.0052781998354016315,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "bill_amt3": {
+            "method": "ks_bh_effect",
+            "score": 0.04031111111111111,
+            "psi": 0.030276780051228552,
+            "ks": 0.04031111111111111,
+            "pvalue": 0.010470820646218987,
+            "pvalue_adjusted": 0.012646067957074967,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "bill_amt4": {
+            "method": "ks_bh_effect",
+            "score": 0.04062222222222222,
+            "psi": 0.03157337855488328,
+            "ks": 0.04062222222222222,
+            "pvalue": 0.00965432840242057,
+            "pvalue_adjusted": 0.012646067957074967,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "bill_amt5": {
+            "method": "ks_bh_effect",
+            "score": 0.037333333333333336,
+            "psi": 0.02916091175380172,
+            "ks": 0.037333333333333336,
+            "pvalue": 0.0220680954504983,
+            "pvalue_adjusted": 0.022068095450498298,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "bill_amt6": {
+            "method": "ks_bh_effect",
+            "score": 0.042444444444444444,
+            "psi": 0.035220799292698196,
+            "ks": 0.042444444444444444,
+            "pvalue": 0.005926138588852449,
+            "pvalue_adjusted": 0.009218437804881586,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "pay_amt1": {
+            "method": "ks_bh_effect",
+            "score": 0.07288888888888889,
+            "psi": 0.045875976770250584,
+            "ks": 0.07288888888888889,
+            "pvalue": 7.188874059215065e-08,
+            "pvalue_adjusted": 2.012884736580218e-07,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "pay_amt2": {
+            "method": "ks_bh_effect",
+            "score": 0.076,
+            "psi": 0.03218804831958555,
+            "ks": 0.076,
+            "pvalue": 1.6141933626996623e-08,
+            "pvalue_adjusted": 7.53290235926509e-08,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "pay_amt3": {
+            "method": "ks_bh_effect",
+            "score": 0.08022222222222222,
+            "psi": 0.03620207693765529,
+            "ks": 0.08022222222222222,
+            "pvalue": 1.923502359249488e-09,
+            "pvalue_adjusted": 1.3464516514746415e-08,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "pay_amt4": {
+            "method": "ks_bh_effect",
+            "score": 0.07382222222222222,
+            "psi": 0.031011563912112503,
+            "ks": 0.07382222222222222,
+            "pvalue": 4.622771397271554e-08,
+            "pvalue_adjusted": 1.617969989045044e-07,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "pay_amt5": {
+            "method": "ks_bh_effect",
+            "score": 0.058977777777777775,
+            "psi": 0.01929118042440971,
+            "ks": 0.058977777777777775,
+            "pvalue": 2.661630185341663e-05,
+            "pvalue_adjusted": 5.323260370683325e-05,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          },
+          "pay_amt6": {
+            "method": "ks_bh_effect",
+            "score": 0.07115555555555556,
+            "psi": 0.029955152958858144,
+            "ks": 0.07115555555555556,
+            "pvalue": 1.6080410543206822e-07,
+            "pvalue_adjusted": 3.752095793414925e-07,
+            "threshold": 0.05,
+            "min_effect": 0.1,
+            "drift": false
+          }
+        },
+        "summary": {
+          "status": "ok",
+          "reference_rows": 4500,
+          "current_rows": 2500,
+          "min_rows": 200,
+          "drift_detected": true,
+          "drifted_features": [
+            "limit_bal",
+            "pay_0"
+          ],
+          "n_features": 20,
+          "drift_share": 0.1,
+          "rules": {
+            "continuous": "p ajustado BH <= alpha e KS D >= efeito mínimo",
+            "categorical": "PSI >= limiar; suporte é a união das categorias observadas",
+            "bh_family": [
+              "limit_bal",
+              "age",
+              "bill_amt1",
+              "bill_amt2",
+              "bill_amt3",
+              "bill_amt4",
+              "bill_amt5",
+              "bill_amt6",
+              "pay_amt1",
+              "pay_amt2",
+              "pay_amt3",
+              "pay_amt4",
+              "pay_amt5",
+              "pay_amt6"
+            ],
+            "continuous_psi": "Complementar; quantis da referência com extremos abertos",
+            "interpretation": "Drift de X não comprova alteração em P(Y|X)."
+          }
+        }
+      },
+      "labels_status": "counterfactual_simulated",
+      "label_count": 2500,
+      "label_coverage": 1.0,
+      "label_delay": "Não observado; cenários acadêmicos contrafactuais.",
+      "concept_status": "requires_pair",
+      "evidently_html": "evidently.html",
+      "aggregate_json": "monitoring.json",
+      "simulation": {
+        "scenario": "combined",
+        "selection_seed": 43,
+        "selection": "ponderada_somente_por_X",
+        "labels_status": "counterfactual_simulated",
+        "counterfactual": true,
+        "rows": 2500,
+        "paired_with": "covariate",
+        "flip_seed": 44,
+        "flip_assignment": "SHA-256 estável de seed e record_id; compartilhado entre cenários",
+        "eligible_rows": 1416,
+        "flipped_rows": 1114,
+        "flip_probability": 0.8
+      },
+      "prediction_monitoring": {
+        "status": "ok",
+        "score": {
+          "psi": 0.18949446400483194,
+          "ks": 0.18337777777777778,
+          "pvalue": 1.0853311832181104e-47,
+          "drift": true,
+          "psi_drift": false,
+          "ks_alpha": 0.05,
+          "ks_min_effect": 0.1,
+          "psi_threshold": 0.2,
+          "rule": "KS p <= alpha e D >= efeito mínimo; PSI é sinal complementar separado.",
+          "multiplicity": "Teste único do score; não integra a família BH dos atributos de X."
+        },
+        "threshold": 0.3,
+        "reference_positive_rate": 0.2111111111111111,
+        "current_positive_rate": 0.3888,
+        "reference_prevalence": 0.22133333333333333,
+        "current_prevalence": 0.6188,
+        "interpretation": "Score e taxa de decisões positivas descrevem saídas do modelo. Prevalência descreve rótulos disponíveis, que podem ser contrafactuais na simulação. Nenhum desses sinais isolados comprova alteração em P(Y|X)."
+      },
+      "evidently": {
+        "status": "success",
+        "decision_role": "Relatório bruto complementar; a decisão primária está em drift.",
+        "differences": "Evidently usa KS por coluna sem BH nem efeito mínimo, PSI com suavização própria e regra agregada própria. Essas decisões não substituem a política do projeto.",
+        "html": "evidently.html",
+        "json": "evidently.json",
+        "classification_included": true
+      },
+      "rows": 2500,
+      "ids_sha256": "cf1940673251597c8e00c3d9ff21bf4f1754b9010ec71b984b947b0631daac20",
+      "data_sha256": "ef50f0ff617ceed6c048825e66ef7fcd88629c70067c31c25d356b13f1df8c53",
+      "features_sha256": "25fb33a316d9c372a6aeeb310ddaf49ea14f32015f142f14b7e121c604e3e2c3",
+      "class_rate": 0.6188,
+      "execution_id": "20261116T215129_2bee07608434",
+      "scenario": "combined",
+      "config_sha256": "25e79a5462f77c394b2162d8989651682614cd2172cd66d5f68181d750441790",
+      "model_sha256": "c499470682cef36df9d787c799db428f645661d5f4831ad98b06485fdfcad3f7",
+      "simulated_window": "T3",
+      "window_index": 3
+    }
+  },
+  "concept": {
+    "status": "ok",
+    "same_features": true,
+    "same_predictions": true,
+    "brier_increase": 0.34719822721851484,
+    "ci95": [
+      0.32720595690886195,
+      0.3676461667773631
+    ],
+    "effect_threshold": 0.05,
+    "bootstrap_samples": 500,
+    "bootstrap_seed": 46,
+    "conditional_change_evidence": true,
+    "interpretation": "A comparação pareada contextualiza a alteração condicional simulada conhecida. Em dados reais, piora supervisionada isolada não prova mudança em P(Y|X).",
+    "control_brier": 0.13034351093348087,
+    "concept_brier": 0.47754173815199574,
+    "control_auc": 0.7825126631946921,
+    "concept_auc": 0.40733930348258707,
+    "auc_drop": 0.3751733597121051,
+    "auc_drop_threshold": 0.05,
+    "control_prevalence": 0.214,
+    "concept_prevalence": 0.67,
+    "label_count": 2500
+  },
+  "tracking": {
+    "status": "completed",
+    "uri": "sqlite:///C:/estudos/Tech-Challenge-fase-4/artifacts/mlflow.db",
+    "run_id": "a3cff0b470994809b9e85c89b001c5c5"
+  },
+  "versions": {
+    "python": "3.11.9",
+    "pandas": "2.3.3",
+    "numpy": "2.4.6",
+    "scikit-learn": "1.9.1",
+    "pandera": "0.36.0",
+    "evidently": "0.7.23",
+    "mlflow": "3.18.0",
+    "scipy": "1.17.1"
+  },
+  "git_revision": "22313dd90a88bded39fa6865493c58d5ee692abf",
+  "source": {
+    "git_dirty": true,
+    "files_sha256": {
+      ".gitattributes": "cc2a0632e5ffc1805397163f172e3dbbfdc15387a905d7151cf6c4470f36f966",
+      ".github/workflows/ci.yml": "ceee6c7362e799facf4e32ba5b795653eac4c6d00b5cdd8e7caab6c7524b1042",
+      ".python-version": "49a506dd32096b010d75205acf3430c9ae6c40351888129499e5a5e487126c93",
+      "params.yaml": "960457bed592d56eed3be60cd5fe77d5314ae8238160ddede1dd04f73c42b587",
+      "pyproject.toml": "d6b5380b058ccbba97dfc06892742f0379d5408708701bcbb548f33337533e58",
+      "scripts/exportar_evidencias.py": "10bdcf07cb8c7e6446e1681ac4865c4670c132526f6f30e930bda1c3a8529997",
+      "scripts/revisar_bloco.py": "314a160c45a09014fc53d9879cd495ad4a28694184ea894b99ed6f51323d3463",
+      "scripts/verificar_entrega.py": "ff7377ffae870a252e4b218f3037d7a867c297504324acb0571f1219b1352be2",
+      "src/credito_monitorado/__init__.py": "5820b97cde3e99153ba0e10b807389c8b513c855038dfe33d654ff18d2396d66",
+      "src/credito_monitorado/__main__.py": "9f54bc706dc938319cba3e178b0ee6128478c5dc3609be4753bf39fdb5f9e92c",
+      "src/credito_monitorado/cli.py": "7c92a0d4fc6687246a622e28deb687edc8f4873be8af799cb645a45ab9896865",
+      "src/credito_monitorado/config.py": "1faea8d833bad0d9be2ff60c1501dbc7b08725467c6150a4862011857c6f1c49",
+      "src/credito_monitorado/contracts.py": "ead91d56ea0d4a5ce504dcbbd18b40eaf98c5d1484e65fa0a55c1539ce62c799",
+      "src/credito_monitorado/data.py": "816126f70b650bcb50860019aa3d204b970785b75ff9284d0d903e0b0084fa35",
+      "src/credito_monitorado/drift.py": "41192efced1412a446f8a236c776181a84a9e34c7d722f4556a62bcfc656a79d",
+      "src/credito_monitorado/fairness.py": "d03dd50658639e19153787d0989d5acbf4a632c2615763a8a08d1ad084de7f20",
+      "src/credito_monitorado/model.py": "a8bda692f7fed9915efd8cb53942e50b1fd9f3e478dbc526f1fc8bd2519ba661",
+      "src/credito_monitorado/monitoring.py": "8e90fe7aed02aa9dabf5b738f803af298ff70abde64610693728e9a51f3a1179",
+      "src/credito_monitorado/pipeline.py": "42bfe5389eec050c45d02861d3e764118dca3cc9cd914e4d61cbe763f0bbf699",
+      "src/credito_monitorado/reporting.py": "3a1c16ef82cd9e67ac64abbe71cf1d6caeb77d4b00ae0749b7508cfbcc2541e8",
+      "src/credito_monitorado/telemetry.py": "226ed0795bf85c8553fd701b500b26723e004e782958a2ef26c01747944c4001",
+      "src/credito_monitorado/tracking.py": "d81f0ba4ed9dd14e1e8840eb9bc5403d8b24f2ab41007aa355ace15010712ecd",
+      "tests/test_contracts.py": "eb32d9b3d2bebddd670f20101b9bf41ce0217e541abf74b2d382f28bcc67f8fb",
+      "tests/test_data_model.py": "92ec6c71b7e1dc1c748403dc9a2eb9f05ec608e355f8b5111aa9cb77b3b2f0ba",
+      "tests/test_drift.py": "03dd9a5ee64cb93b57a57c8610ab2c7662dbd49b8fc5989c70319f51e2b30513",
+      "tests/test_fairness.py": "753bdc9bfd1ccaa0ecae6f278c83cdc094ffc28b6d58f64008cfa5b7534ff9d6",
+      "tests/test_monitoring.py": "33dcd1b1be22e666867a771fe47209c03e57947d9c3aea192f087412cb338b1c",
+      "tests/test_pipeline.py": "4488369a03d35a1d4ad60ff392733b9b2972e3c073ce61c65728418e38e3e347",
+      "tests/test_telemetry.py": "d26cb66d88da1076d0baed221966dddaa583c5b60039bb56a8adbc665916d0e6",
+      "tests/test_verificar_entrega.py": "e82cce41ee49e5173ccda4b0745b81a87d103630a2d884bd4dbca42eb5227b75",
+      "uv.lock": "ee99b859174f1b6acee5d1a55922a03c0a007c93e4c481cfca79af21edd07215"
+    },
+    "source_sha256": "312c6ae2f7e8cecf07e52930e28172bf34a44de4021c80e7cf10bf72061d3c73"
+  },
+  "contracts": {
+    "status": "blocked_as_expected",
+    "rows_received": 10,
+    "rejected_rows": 10,
+    "inference_calls": 0,
+    "inference_calls_evidence": "garantia_do_fluxo_sem_contador_instrumentado",
+    "positive_control_validated": true,
+    "rules": [
+      {
+        "rule": "nulo",
+        "blocked": true,
+        "rejected_rows": 10
+      },
+      {
+        "rule": "idade",
+        "blocked": true,
+        "rejected_rows": 10
+      },
+      {
+        "rule": "duplicidade",
+        "blocked": true,
+        "rejected_rows": 10
+      },
+      {
+        "rule": "combinado",
+        "blocked": true,
+        "rejected_rows": 10
+      }
+    ]
+  },
+  "concept_combined": {
+    "status": "ok",
+    "same_features": true,
+    "same_predictions": true,
+    "brier_increase": 0.22813620958720177,
+    "ci95": [
+      0.21119623585660952,
+      0.24452939193135956
+    ],
+    "effect_threshold": 0.05,
+    "bootstrap_samples": 500,
+    "bootstrap_seed": 46,
+    "conditional_change_evidence": true,
+    "interpretation": "A comparação pareada contextualiza a alteração condicional simulada conhecida. Em dados reais, piora supervisionada isolada não prova mudança em P(Y|X).",
+    "control_brier": 0.15972377494360196,
+    "concept_brier": 0.3878599845308037,
+    "control_auc": 0.7964995507073278,
+    "concept_auc": 0.46489499020207004,
+    "auc_drop": 0.3316045605052578,
+    "auc_drop_threshold": 0.05,
+    "control_prevalence": 0.3108,
+    "concept_prevalence": 0.6188,
+    "label_count": 2500
+  },
+  "fairness": {
+    "population": "reference",
+    "rows": 4500,
+    "threshold": 0.3,
+    "minimum_group_size": 30,
+    "suppression_policy": "Grupo não vazio abaixo do mínimo suprime taxas de toda a dimensão. TPR e FPR exigem denominador específico de pelo menos 30 observações.",
+    "groups": {
+      "sex": {
+        "codigo_1": {
+          "rows": 1802,
+          "status": "ok",
+          "approval_rate": 0.7758046614872364,
+          "default_rate": 0.23751387347391786,
+          "tpr": 0.5257009345794392,
+          "fpr": 0.13027656477438138,
+          "roc_auc": 0.7654742956644764
+        },
+        "codigo_2": {
+          "rows": 2698,
+          "status": "ok",
+          "approval_rate": 0.7976278724981468,
+          "default_rate": 0.21052631578947367,
+          "tpr": 0.5105633802816901,
+          "fpr": 0.12018779342723004,
+          "roc_auc": 0.7680147788137273
+        }
+      },
+      "age": {
+        "19_29": {
+          "rows": 1453,
+          "status": "ok",
+          "approval_rate": 0.7825189263592567,
+          "default_rate": 0.21335168616655195,
+          "tpr": 0.532258064516129,
+          "fpr": 0.1321084864391951,
+          "roc_auc": 0.7706079078824823
+        },
+        "30_49": {
+          "rows": 2618,
+          "status": "ok",
+          "approval_rate": 0.8002291825821237,
+          "default_rate": 0.2184873949579832,
+          "tpr": 0.5052447552447552,
+          "fpr": 0.11436950146627566,
+          "roc_auc": 0.7695678588273897
+        },
+        "50_mais": {
+          "rows": 429,
+          "status": "ok",
+          "approval_rate": 0.7412587412587412,
+          "default_rate": 0.26573426573426573,
+          "tpr": 0.5350877192982456,
+          "fpr": 0.15873015873015872,
+          "roc_auc": 0.7477304372041214
+        }
+      }
+    },
+    "approval_rate_gaps": {
+      "sex": 0.021823211010910448,
+      "age": 0.05897044132338247
+    },
+    "interpretation": "Diferenças descritivas na referência; não são estimativas causais ou prova de discriminação. Amostragem, composição, dados de Taiwan/2005 e proxies limitam generalização. Excluir atributos demográficos do modelo não garante ausência de viés. Taxas e métricas de grupos pequenos são suprimidas; AUROC requer ambas as classes."
+  },
+  "duration_seconds": 23.767508,
+  "events": [
+    {
+      "timestamp_utc": "2026-11-16T21:51:29.529465+00:00",
+      "stage": "configuracao",
+      "rows": 0,
+      "status": "sucesso",
+      "execution_id": "20261116T215129_2bee07608434",
+      "expected_failure": false,
+      "duration_seconds": 0.048645,
+      "rss_mb": 173.16,
+      "cpu_seconds": 1.75,
+      "disk_free_gb": 4.57
+    },
+    {
+      "timestamp_utc": "2026-11-16T21:51:29.578995+00:00",
+      "stage": "aquisicao",
+      "rows": 0,
+      "status": "sucesso",
+      "execution_id": "20261116T215129_2bee07608434",
+      "expected_failure": false,
+      "duration_seconds": 0.054044,
+      "rss_mb": 173.17,
+      "cpu_seconds": 1.797,
+      "disk_free_gb": 4.57
+    },
+    {
+      "timestamp_utc": "2026-11-16T21:51:29.634093+00:00",
+      "stage": "validacao_origem",
+      "rows": 0,
+      "status": "sucesso",
+      "execution_id": "20261116T215129_2bee07608434",
+      "expected_failure": false,
+      "duration_seconds": 1.114875,
+      "rss_mb": 219.04,
+      "cpu_seconds": 2.844,
+      "disk_free_gb": 4.57
+    },
+    {
+      "timestamp_utc": "2026-11-16T21:51:30.749007+00:00",
+      "stage": "particionamento",
+      "rows": 30000,
+      "status": "sucesso",
+      "execution_id": "20261116T215129_2bee07608434",
+      "expected_failure": false,
+      "duration_seconds": 0.11664,
+      "rss_mb": 231.73,
+      "cpu_seconds": 2.938,
+      "disk_free_gb": 4.57
+    },
+    {
+      "timestamp_utc": "2026-11-16T21:51:30.866931+00:00",
+      "stage": "contrato_controle_positivo",
+      "rows": 10,
+      "status": "sucesso",
+      "execution_id": "20261116T215129_2bee07608434",
+      "expected_failure": false,
+      "duration_seconds": 0.011479,
+      "rss_mb": 231.77,
+      "cpu_seconds": 2.953,
+      "disk_free_gb": 4.57
+    },
+    {
+      "timestamp_utc": "2026-11-16T21:51:30.879939+00:00",
+      "stage": "contrato_invalido_nulo",
+      "rows": 10,
+      "status": "falha",
+      "execution_id": "20261116T215129_2bee07608434",
+      "expected_failure": true,
+      "error_type": "DataContractError",
+      "duration_seconds": 0.000129,
+      "rss_mb": 231.77,
+      "cpu_seconds": 2.953,
+      "disk_free_gb": 4.57
+    },
+    {
+      "timestamp_utc": "2026-11-16T21:51:30.880940+00:00",
+      "stage": "contrato_invalido_idade",
+      "rows": 10,
+      "status": "falha",
+      "execution_id": "20261116T215129_2bee07608434",
+      "expected_failure": true,
+      "error_type": "DataContractError",
+      "duration_seconds": 0.015703,
+      "rss_mb": 231.8,
+      "cpu_seconds": 2.969,
+      "disk_free_gb": 4.57
+    },
+    {
+      "timestamp_utc": "2026-11-16T21:51:30.897449+00:00",
+      "stage": "contrato_invalido_duplicidade",
+      "rows": 10,
+      "status": "falha",
+      "execution_id": "20261116T215129_2bee07608434",
+      "expected_failure": true,
+      "error_type": "DataContractError",
+      "duration_seconds": 0.01537,
+      "rss_mb": 231.85,
+      "cpu_seconds": 2.984,
+      "disk_free_gb": 4.57
+    },
+    {
+      "timestamp_utc": "2026-11-16T21:51:30.913655+00:00",
+      "stage": "contrato_invalido_combinado",
+      "rows": 10,
+      "status": "falha",
+      "execution_id": "20261116T215129_2bee07608434",
+      "expected_failure": true,
+      "error_type": "DataContractError",
+      "duration_seconds": 0.000216,
+      "rss_mb": 231.85,
+      "cpu_seconds": 2.984,
+      "disk_free_gb": 4.57
+    },
+    {
+      "timestamp_utc": "2026-11-16T21:51:30.914565+00:00",
+      "stage": "treinamento",
+      "rows": 15000,
+      "status": "sucesso",
+      "execution_id": "20261116T215129_2bee07608434",
+      "expected_failure": false,
+      "duration_seconds": 0.313371,
+      "rss_mb": 237.59,
+      "cpu_seconds": 4.047,
+      "disk_free_gb": 4.57
+    },
+    {
+      "timestamp_utc": "2026-11-16T21:51:31.228723+00:00",
+      "stage": "persistencia_modelo",
+      "rows": 4500,
+      "status": "sucesso",
+      "execution_id": "20261116T215129_2bee07608434",
+      "expected_failure": false,
+      "duration_seconds": 0.143289,
+      "rss_mb": 235.45,
+      "cpu_seconds": 4.594,
+      "disk_free_gb": 4.57
+    },
+    {
+      "timestamp_utc": "2026-11-16T21:51:31.372935+00:00",
+      "stage": "geracao_cenarios",
+      "rows": 6000,
+      "status": "sucesso",
+      "execution_id": "20261116T215129_2bee07608434",
+      "expected_failure": false,
+      "duration_seconds": 0.01808,
+      "rss_mb": 235.5,
+      "cpu_seconds": 4.656,
+      "disk_free_gb": 4.57
+    },
+    {
+      "timestamp_utc": "2026-11-16T21:51:31.391934+00:00",
+      "stage": "monitoramento_control",
+      "rows": 2500,
+      "status": "sucesso",
+      "execution_id": "20261116T215129_2bee07608434",
+      "expected_failure": false,
+      "duration_seconds": 6.602432,
+      "rss_mb": 291.96,
+      "cpu_seconds": 9.359,
+      "disk_free_gb": 4.57
+    },
+    {
+      "timestamp_utc": "2026-11-16T21:51:37.995141+00:00",
+      "stage": "monitoramento_covariate",
+      "rows": 2500,
+      "status": "sucesso",
+      "execution_id": "20261116T215129_2bee07608434",
+      "expected_failure": false,
+      "duration_seconds": 2.897601,
+      "rss_mb": 294.7,
+      "cpu_seconds": 11.891,
+      "disk_free_gb": 4.56
+    },
+    {
+      "timestamp_utc": "2026-11-16T21:51:40.893832+00:00",
+      "stage": "monitoramento_concept",
+      "rows": 2500,
+      "status": "sucesso",
+      "execution_id": "20261116T215129_2bee07608434",
+      "expected_failure": false,
+      "duration_seconds": 2.496191,
+      "rss_mb": 293.54,
+      "cpu_seconds": 14.031,
+      "disk_free_gb": 4.56
+    },
+    {
+      "timestamp_utc": "2026-11-16T21:51:43.390793+00:00",
+      "stage": "monitoramento_combined",
+      "rows": 2500,
+      "status": "sucesso",
+      "execution_id": "20261116T215129_2bee07608434",
+      "expected_failure": false,
+      "duration_seconds": 2.697736,
+      "rss_mb": 305.97,
+      "cpu_seconds": 16.422,
+      "disk_free_gb": 4.56
+    },
+    {
+      "timestamp_utc": "2026-11-16T21:51:46.089029+00:00",
+      "stage": "comparacao_conceito",
+      "rows": 2500,
+      "status": "sucesso",
+      "execution_id": "20261116T215129_2bee07608434",
+      "expected_failure": false,
+      "duration_seconds": 0.133669,
+      "rss_mb": 305.98,
+      "cpu_seconds": 16.938,
+      "disk_free_gb": 4.56
+    },
+    {
+      "timestamp_utc": "2026-11-16T21:51:46.223567+00:00",
+      "stage": "auditoria_grupos",
+      "rows": 4500,
+      "status": "sucesso",
+      "execution_id": "20261116T215129_2bee07608434",
+      "expected_failure": false,
+      "duration_seconds": 0.054654,
+      "rss_mb": 306.84,
+      "cpu_seconds": 17.109,
+      "disk_free_gb": 4.56
+    },
+    {
+      "timestamp_utc": "2026-11-16T21:51:46.279028+00:00",
+      "stage": "preparacao_relatorio",
+      "rows": 0,
+      "status": "sucesso",
+      "execution_id": "20261116T215129_2bee07608434",
+      "expected_failure": false,
+      "duration_seconds": 3.016881,
+      "rss_mb": 306.84,
+      "cpu_seconds": 17.344,
+      "disk_free_gb": 4.56
+    },
+    {
+      "timestamp_utc": "2026-11-16T21:51:49.296149+00:00",
+      "stage": "rastreamento_mlflow",
+      "rows": 0,
+      "status": "sucesso",
+      "execution_id": "20261116T215129_2bee07608434",
+      "expected_failure": false,
+      "duration_seconds": 3.710447,
+      "rss_mb": 368.42,
+      "cpu_seconds": 19.609,
+      "disk_free_gb": 4.56
+    },
+    {
+      "timestamp_utc": "2026-11-16T21:51:53.007701+00:00",
+      "stage": "finalizacao_artefatos",
+      "rows": 0,
+      "status": "sucesso",
+      "execution_id": "20261116T215129_2bee07608434",
+      "expected_failure": false,
+      "duration_seconds": 0.04778,
+      "rss_mb": 369.17,
+      "cpu_seconds": 19.656,
+      "disk_free_gb": 4.56
+    },
+    {
+      "timestamp_utc": "2026-11-16T21:51:53.104523+00:00",
+      "stage": "sincronizacao_mlflow",
+      "rows": 0,
+      "status": "sucesso",
+      "execution_id": "20261116T215129_2bee07608434",
+      "expected_failure": false,
+      "duration_seconds": 0.162452,
+      "rss_mb": 369.18,
+      "cpu_seconds": 19.828,
+      "disk_free_gb": 4.54
+    }
+  ],
+  "alerts": [
+    {
+      "timestamp_utc": "2026-11-16T21:51:30.914565+00:00",
+      "code": "BLOQUEIO_CONTRATO",
+      "severity": "aviso",
+      "scenario": "lote_invalido",
+      "message": "Lote de demonstração rejeitado integralmente antes da inferência.",
+      "execution_id": "20261116T215129_2bee07608434",
+      "observed": 10,
+      "threshold": 0,
+      "recommended_action": "Corrigir a origem e validar novamente o lote completo."
+    },
+    {
+      "timestamp_utc": "2026-11-16T21:51:40.892833+00:00",
+      "code": "DRIFT_ENTRADAS",
+      "severity": "aviso",
+      "scenario": "covariate",
+      "message": "Atributos ultrapassaram a política estatística configurada; investigar entradas.",
+      "execution_id": "20261116T215129_2bee07608434",
+      "observed": 2,
+      "threshold": 1,
+      "recommended_action": "Revisar distribuição, coleta e seleção; drift de X não prova conceito."
+    },
+    {
+      "timestamp_utc": "2026-11-16T21:51:43.388822+00:00",
+      "code": "QUEDA_AUROC",
+      "severity": "critico",
+      "scenario": "concept",
+      "message": "Degradação supervisionada material em relação à referência congelada.",
+      "execution_id": "20261116T215129_2bee07608434",
+      "observed": 0.3600113491278547,
+      "threshold": 0.05,
+      "recommended_action": "Investigar rótulos, seleção e desempenho; exigir revisão humana."
+    },
+    {
+      "timestamp_utc": "2026-11-16T21:51:43.389737+00:00",
+      "code": "AUMENTO_BRIER",
+      "severity": "critico",
+      "scenario": "concept",
+      "message": "Degradação supervisionada material em relação à referência congelada.",
+      "execution_id": "20261116T215129_2bee07608434",
+      "observed": 0.339570660528134,
+      "threshold": 0.05,
+      "recommended_action": "Investigar rótulos, seleção e desempenho; exigir revisão humana."
+    },
+    {
+      "timestamp_utc": "2026-11-16T21:51:46.086126+00:00",
+      "code": "DRIFT_ENTRADAS",
+      "severity": "aviso",
+      "scenario": "combined",
+      "message": "Atributos ultrapassaram a política estatística configurada; investigar entradas.",
+      "execution_id": "20261116T215129_2bee07608434",
+      "observed": 2,
+      "threshold": 1,
+      "recommended_action": "Revisar distribuição, coleta e seleção; drift de X não prova conceito."
+    },
+    {
+      "timestamp_utc": "2026-11-16T21:51:46.086126+00:00",
+      "code": "QUEDA_AUROC",
+      "severity": "critico",
+      "scenario": "combined",
+      "message": "Degradação supervisionada material em relação à referência congelada.",
+      "execution_id": "20261116T215129_2bee07608434",
+      "observed": 0.30245566240837174,
+      "threshold": 0.05,
+      "recommended_action": "Investigar rótulos, seleção e desempenho; exigir revisão humana."
+    },
+    {
+      "timestamp_utc": "2026-11-16T21:51:46.087031+00:00",
+      "code": "AUMENTO_BRIER",
+      "severity": "critico",
+      "scenario": "combined",
+      "message": "Degradação supervisionada material em relação à referência congelada.",
+      "execution_id": "20261116T215129_2bee07608434",
+      "observed": 0.24988890690694202,
+      "threshold": 0.05,
+      "recommended_action": "Investigar rótulos, seleção e desempenho; exigir revisão humana."
+    },
+    {
+      "timestamp_utc": "2026-11-16T21:51:46.152535+00:00",
+      "code": "CONCEITO_SIMULADO",
+      "severity": "critico",
+      "scenario": "concept",
+      "message": "A intervenção conhecida nos rótulos gerou degradação pareada material.",
+      "execution_id": "20261116T215129_2bee07608434",
+      "observed": 0.34719822721851484,
+      "threshold": 0.05,
+      "recommended_action": "Validar o experimento; em produção investigar causas e rótulos."
+    }
+  ],
+  "resources": [
+    {
+      "rss_mb": 173.16,
+      "cpu_seconds": 1.75,
+      "disk_free_gb": 4.57
+    },
+    {
+      "rss_mb": 173.17,
+      "cpu_seconds": 1.797,
+      "disk_free_gb": 4.57
+    },
+    {
+      "rss_mb": 219.04,
+      "cpu_seconds": 2.844,
+      "disk_free_gb": 4.57
+    },
+    {
+      "rss_mb": 231.73,
+      "cpu_seconds": 2.938,
+      "disk_free_gb": 4.57
+    },
+    {
+      "rss_mb": 231.77,
+      "cpu_seconds": 2.953,
+      "disk_free_gb": 4.57
+    },
+    {
+      "rss_mb": 231.77,
+      "cpu_seconds": 2.953,
+      "disk_free_gb": 4.57
+    },
+    {
+      "rss_mb": 231.8,
+      "cpu_seconds": 2.969,
+      "disk_free_gb": 4.57
+    },
+    {
+      "rss_mb": 231.85,
+      "cpu_seconds": 2.984,
+      "disk_free_gb": 4.57
+    },
+    {
+      "rss_mb": 231.85,
+      "cpu_seconds": 2.984,
+      "disk_free_gb": 4.57
+    },
+    {
+      "rss_mb": 237.59,
+      "cpu_seconds": 4.047,
+      "disk_free_gb": 4.57
+    },
+    {
+      "rss_mb": 235.45,
+      "cpu_seconds": 4.594,
+      "disk_free_gb": 4.57
+    },
+    {
+      "rss_mb": 235.5,
+      "cpu_seconds": 4.656,
+      "disk_free_gb": 4.57
+    },
+    {
+      "rss_mb": 291.96,
+      "cpu_seconds": 9.359,
+      "disk_free_gb": 4.57
+    },
+    {
+      "rss_mb": 294.7,
+      "cpu_seconds": 11.891,
+      "disk_free_gb": 4.56
+    },
+    {
+      "rss_mb": 293.54,
+      "cpu_seconds": 14.031,
+      "disk_free_gb": 4.56
+    },
+    {
+      "rss_mb": 305.97,
+      "cpu_seconds": 16.422,
+      "disk_free_gb": 4.56
+    },
+    {
+      "rss_mb": 305.98,
+      "cpu_seconds": 16.938,
+      "disk_free_gb": 4.56
+    },
+    {
+      "rss_mb": 306.84,
+      "cpu_seconds": 17.109,
+      "disk_free_gb": 4.56
+    },
+    {
+      "rss_mb": 306.84,
+      "cpu_seconds": 17.344,
+      "disk_free_gb": 4.56
+    },
+    {
+      "rss_mb": 368.42,
+      "cpu_seconds": 19.609,
+      "disk_free_gb": 4.56
+    },
+    {
+      "rss_mb": 369.17,
+      "cpu_seconds": 19.656,
+      "disk_free_gb": 4.56
+    },
+    {
+      "rss_mb": 369.18,
+      "cpu_seconds": 19.828,
+      "disk_free_gb": 4.54
+    }
+  ],
+  "finalization": {
+    "duration_scope": "Inclui a sincronização medida; exclui a cópia final dos snapshots.",
+    "snapshot_publication": "Cópia de fechamento sem reabrir a medição de si própria."
+  }
+}
