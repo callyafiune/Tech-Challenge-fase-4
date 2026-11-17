@@ -15,8 +15,6 @@
 
 Pipeline de sustentação de um classificador de inadimplência: valida dados antes da inferência, simula e detecta drift, acompanha desempenho e registra a saúde da execução. **Pandera + scikit-learn + Evidently + MLflow**, com relatórios HTML e plano de governança.
 
-Consulte o [enunciado](docs/enunciado.md) e o [roteiro da apresentação STAR](docs/roteiro_star.md).
-
 ## Pré-requisitos e execução
 
 | Requisito | Observação |
@@ -69,7 +67,7 @@ São retratos de execuções, sem monitoramento ao vivo. Dados completos, modelo
 
 | Item | Implementação |
 |---|---|
-| Base | UCI *Default of Credit Card Clients*: 30.000 registros de Taiwan, licença CC BY 4.0 e hashes de integridade. |
+| Base | [UCI — *Default of Credit Card Clients*](https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients): 30.000 registros de Taiwan, licença CC BY 4.0 e integridade verificada por SHA-256 no pipeline. [Download oficial utilizado pelo pipeline (ZIP)](https://archive.ics.uci.edu/static/public/350/default+of+credit+card+clients.zip). |
 | Partições | Treino: 15.000; validação: 4.500; referência: 4.500; pool de produção: 6.000. Clientes exclusivos entre partições. |
 | Modelo | `HistGradientBoostingClassifier`; limiar fixo de 0,30. Ajustado apenas no treino e congelado nos cenários. |
 | Contratos | Sem nulos ou valores não finitos; ID único; idade de 19 a 100 anos; limite de crédito positivo; domínios financeiros e categóricos válidos. |
