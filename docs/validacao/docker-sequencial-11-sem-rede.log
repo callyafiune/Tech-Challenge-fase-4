@@ -1,0 +1,12 @@
+ Container credito-verificacao-20261117133825-pipeline-1 Recreate 
+ Container credito-verificacao-20261117133825-pipeline-1 Recreated 
+Attaching to pipeline-1
+ Container credito-verificacao-20261117133825-pipeline-1 Starting 
+ Container credito-verificacao-20261117133825-pipeline-1 Started 
+pipeline-1  | Execução concluída: 20261117T134033_21c1ae771f44
+pipeline-1  | Relatório: /app/artifacts/20261117T134033_21c1ae771f44/index.html
+pipeline-1  | Resumo: /app/artifacts/20261117T134033_21c1ae771f44/resumo.json
+[Kpipeline-1 exited with code 0
+ Compose Stopping Aborting on container exit...
+ Container credito-verificacao-20261117133825-pipeline-1 Stopping 
+ Container credito-verificacao-20261117133825-pipeline-1 Stopped 

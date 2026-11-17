@@ -19,7 +19,7 @@ O manifesto local registra origem, licença, aquisição, hashes e natureza real
 | `sex` | Código UCI: 1 masculino, 2 feminino | Não preditor; auditoria agregada; fonte não cobre outras identidades. |
 | `education` | 1 pós-graduação, 2 universidade, 3 ensino médio, 4 outros | Inteiros 0–6; códigos 0, 5, 6 observados são preservados, sem significado inventado; não preditor. |
 | `marriage` | 1 casado, 2 solteiro, 3 outros | Inteiros 0–3; código 0 não descrito é preservado; não preditor. |
-| `pay_0`, `pay_2`…`pay_6` | Situação do pagamento de setembro, agosto…abril | Inteiros -2 a 8 observados na versão aprovada; -1 pagamento em dia, valores positivos representam meses de atraso conforme catálogo; não inventar semântica para todos os códigos. Preditores. |
+| `pay_0`, `pay_2`…`pay_6` | Situação do pagamento de setembro, agosto…abril | Inteiros -2 a 8 observados na fonte; -1 indica pagamento em dia e valores positivos representam meses de atraso conforme catálogo. Os demais códigos são preservados sem interpretação adicional. Preditores. |
 | `bill_amt1`…`bill_amt6` | Fatura em NT$, setembro…abril | -1.000.000 a 2.000.000, finita; saldo negativo pode ser legítimo; preditores. |
 | `pay_amt1`…`pay_amt6` | Pagamento anterior em NT$, setembro…abril | 0 a 2.000.000, finito; preditores. |
 | `target` | Inadimplência no mês seguinte | Inteiro binário: 1 inadimplência, 0 não inadimplência. Nunca preditor. |

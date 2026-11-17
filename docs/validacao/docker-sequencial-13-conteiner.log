@@ -1,0 +1,270 @@
+[
+    {
+        "Id": "71e0347d4e31c6757d4094f1670abd3efeb0c46ae0a11de69bd1b9f557f4c3f5",
+        "Created": "2026-11-17T13:40:27.943667674Z",
+        "Path": "python",
+        "Args": [
+            "-m",
+            "credito_monitorado.cli",
+            "run",
+            "--config",
+            "/app/params.yaml",
+            "--output",
+            "/app/artifacts",
+            "--data-dir",
+            "/app/data/raw"
+        ],
+        "State": {
+            "Status": "exited",
+            "Running": false,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 0,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-11-17T13:40:28.341812087Z",
+            "FinishedAt": "2026-11-17T13:40:59.839187326Z"
+        },
+        "Image": "sha256:e52e07fcf2ec7221a280fcaaf55dead94413f65089e76e9bfe7db9b7305a60ff",
+        "ResolvConfPath": "/var/lib/docker/containers/71e0347d4e31c6757d4094f1670abd3efeb0c46ae0a11de69bd1b9f557f4c3f5/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/71e0347d4e31c6757d4094f1670abd3efeb0c46ae0a11de69bd1b9f557f4c3f5/hostname",
+        "HostsPath": "/var/lib/docker/containers/71e0347d4e31c6757d4094f1670abd3efeb0c46ae0a11de69bd1b9f557f4c3f5/hosts",
+        "LogPath": "/var/lib/docker/containers/71e0347d4e31c6757d4094f1670abd3efeb0c46ae0a11de69bd1b9f557f4c3f5/71e0347d4e31c6757d4094f1670abd3efeb0c46ae0a11de69bd1b9f557f4c3f5-json.log",
+        "Name": "/credito-verificacao-20261117133825-pipeline-1",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "credito-verificacao-20261117133825_dados:/app/data:rw",
+                "credito-verificacao-20261117133825_artefatos:/app/artifacts:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "none",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": [
+                "ALL"
+            ],
+            "CgroupnsMode": "host",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": true,
+            "SecurityOpt": [
+                "no-new-privileges:true"
+            ],
+            "Tmpfs": {
+                "/tmp": "size=512m,mode=1777"
+            },
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": false,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ],
+            "Init": true
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [
+            {
+                "Type": "volume",
+                "Name": "credito-verificacao-20261117133825_dados",
+                "Source": "/var/lib/docker/volumes/credito-verificacao-20261117133825_dados/_data",
+                "Destination": "/app/data",
+                "Driver": "local",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": ""
+            },
+            {
+                "Type": "volume",
+                "Name": "credito-verificacao-20261117133825_artefatos",
+                "Source": "/var/lib/docker/volumes/credito-verificacao-20261117133825_artefatos/_data",
+                "Destination": "/app/artifacts",
+                "Driver": "local",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": ""
+            }
+        ],
+        "Config": {
+            "Hostname": "71e0347d4e31",
+            "Domainname": "",
+            "User": "10001:10001",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/opt/venv/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=A035C8C19219BA821ECEA86B64E628F8D684696D",
+                "PYTHON_VERSION=3.11.18",
+                "PYTHON_SHA256=9120e0a653868f6e3698d36cdd99e5a58903ec9469e448f21d98f7b16d8fa290",
+                "PYTHONPATH=/app/src",
+                "PYTHONDONTWRITEBYTECODE=1",
+                "PYTHONUNBUFFERED=1",
+                "PYTHONUTF8=1",
+                "HOME=/tmp",
+                "GIT_PYTHON_REFRESH=quiet",
+                "DO_NOT_TRACK=1",
+                "ITERATIVE_DO_NOT_TRACK=1",
+                "MLFLOW_DISABLE_TELEMETRY=true",
+                "MLFLOW_DISABLE_AGENT_HINT=1",
+                "OMP_NUM_THREADS=1",
+                "OPENBLAS_NUM_THREADS=1"
+            ],
+            "Cmd": [
+                "run",
+                "--config",
+                "/app/params.yaml",
+                "--output",
+                "/app/artifacts",
+                "--data-dir",
+                "/app/data/raw"
+            ],
+            "Image": "credito-monitorado:local",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": [
+                "python",
+                "-m",
+                "credito_monitorado.cli"
+            ],
+            "Labels": {
+                "com.docker.compose.config-hash": "b715af0069cce78cf21c55bf66f92eb8f2158b7cff58efcbaf9229ae0ef141d6",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:e52e07fcf2ec7221a280fcaaf55dead94413f65089e76e9bfe7db9b7305a60ff",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "credito-verificacao-20261117133825",
+                "com.docker.compose.project.config_files": "C:\\estudos\\Tech-Challenge-fase-4\\compose.yaml,C:\\estudos\\Tech-Challenge-fase-4\\compose.sem-rede.yaml",
+                "com.docker.compose.project.working_dir": "C:\\estudos\\Tech-Challenge-fase-4",
+                "com.docker.compose.replace": "pipeline-1",
+                "com.docker.compose.service": "pipeline",
+                "com.docker.compose.version": "5.2.0"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "",
+            "SandboxKey": "",
+            "Ports": {},
+            "Networks": {
+                "none": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "80b6e55082871703e7284dc7556c8d7d30d19be0d757c2b75f0652c7612d3f25",
+                    "EndpointID": "",
+                    "Gateway": "",
+                    "IPAddress": "",
+                    "MacAddress": "",
+                    "IPPrefixLen": 0,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": null
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:e364bc4c9b5f0803b1aeba0a406b9980d7ee282d77f5265b839725b5d838dff5",
+            "size": 2006,
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]

@@ -39,6 +39,5 @@
     "reports/execucao_validada/publicacao.json": "d77a50ab94943b4120055d04ca55c41f9dedbca4ce71f7bef8eb05527617b595",
     "scripts/exportar_evidencias.py": "10bdcf07cb8c7e6446e1681ac4865c4670c132526f6f30e930bda1c3a8529997"
   },
-  "foco": "Audite documentação, governança/LGPD, roteiro sem vídeo, rastreabilidade e coerência dos números com resumo real fornecido. O histórico de commits está bloqueado por hook corporativo e depende de decisão do usuário; não foi ignorado ou contornado. Não trate vídeo excluído expressamente ou limitação de produção declarada como alegação de atendimento. Aponte erros concretos, afirmações exageradas ou links incompatíveis.",
   "prompt_sha256": "e5698b8fcf3160e3543fd14f52845cfcabe006c3ea72c2a9cd6b0f4c7df1c589"
 }

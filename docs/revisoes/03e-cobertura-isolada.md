@@ -1,6 +1,6 @@
 # Revisão adversarial — 03e-cobertura-isolada
 
-Modelo solicitado: `fable`. Modelo retornado: `claude-fable-5-2`.
+Ferramenta de revisão: Claude Code, modelo `claude-fable-5-2`.
 
 # Revisão final: Important de cobertura 03d (casos negativos ID / status / escape)
 

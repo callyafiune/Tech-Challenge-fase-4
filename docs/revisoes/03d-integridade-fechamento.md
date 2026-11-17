@@ -1,6 +1,6 @@
 # Revisão adversarial — 03d-integridade-fechamento
 
-Modelo solicitado: `fable`. Modelo retornado: `claude-fable-5-2`.
+Ferramenta de revisão: Claude Code, modelo `claude-fable-5-2`.
 
 # Rechecagem 03d — itens 1 a 3 da 03c
 
@@ -42,7 +42,7 @@ O código está correto; o defeito é só de cobertura.
 
 ## Menores
 
-1. **Caminho pessoal em evidência versionada** (`scripts/verificar_entrega.py`, comando 7). O `--verbose` grava `C:\Users\Cally\.config\git/ignore` em `07-comando.log` e em `verificacao.json`. É regressão de privacidade deste diff, de baixo impacto. Correção: neutralizar o ambiente desse comando ou aceitar e documentar.
+1. **Caminho pessoal em evidência versionada** (`scripts/verificar_entrega.py`, comando 7). O `--verbose` registra um caminho absoluto de configuração do perfil local em `07-comando.log` e em `verificacao.json`. É uma exposição de metadados de baixo impacto. Correção: neutralizar o ambiente desse comando ou documentar o limite.
 2. **`evidencias_adicionais_sha256` não amarra o conteúdo à execução.** `docs/evidencias_mlflow.json` é hasheado sem conferir `execution_id` e `source_sha256`, e é omitido em silêncio se faltar, mantendo "aprovado". Neste pacote os valores batem. Correção: validar os dois campos e falhar na ausência.
 3. **Conjunto mínimo de artefatos não é exigido.** Um manifesto reduzido a `resumo.json` passa; a própria fixture tem 2 arquivos. A validação é de consistência interna, não de autenticidade. Correção: reutilizar a lista de `_verify_artifacts`.
 4. **Config relida com `yaml.safe_load` em vez de `load_config`.** Se `load_config` passar a normalizar ou aplicar defaults, execuções legítimas serão rejeitadas. Falha fechada, então é só fragilidade.
@@ -55,7 +55,6 @@ O código está correto; o defeito é só de cobertura.
 
 - **Hashes:** não recalculei nenhum além do de saída vazia.
 - **Arquivos ausentes:** `resumo.json`, `manifesto.json`, `pytest.xml`, `07-comando.log` e os `.md` não vieram. A explicação do Ruff em MD e a ausência de alegação de captura nos demais documentos ficam sem julgamento; só o JSON e o script foram vistos.
-- **Staging:** o retrato do Git do início da sessão não mostra `docs/validacao/07-comando.log` no índice. Como o `verificacao.json` o referencia, ele precisa entrar no commit, quando autorizado, sem conversão de fim de linha.
 
 ## Veredito
 

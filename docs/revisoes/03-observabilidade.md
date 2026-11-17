@@ -1,6 +1,6 @@
 # Revisão adversarial — 03-observabilidade
 
-Modelo solicitado: `fable`. Modelo retornado: `claude-fable-5-2`.
+Ferramenta de revisão: Claude Code, modelo `claude-fable-5-2`.
 
 # Revisão adversarial: pacote `credito_monitorado`
 
@@ -21,7 +21,7 @@ Nenhum defeito crítico comprovável no código fornecido. A ressalva é de esco
 
 2. **`pipeline.py::_git_revision`: proveniência sem indicador de árvore suja.**
    - O manifesto grava apenas o `HEAD`, sem indicar alterações não commitadas.
-   - No estado do repositório no início desta sessão (fora do pacote), `src/`, `tests/` e `params.yaml` estavam não rastreados, com um único commit. Uma execução nesse estado é atribuída a um commit que não contém o código.
+   - No estado do repositório na versão analisada (fora do pacote), `src/`, `tests/` e `params.yaml` estavam não rastreados, com um único commit. Uma execução nesse estado é atribuída a um commit que não contém o código.
    - Esse mesmo estado não atende a "histórico de commits semântico e organizado".
    - Correção: gravar `git status --porcelain` e o hash do `uv.lock` no manifesto.
 

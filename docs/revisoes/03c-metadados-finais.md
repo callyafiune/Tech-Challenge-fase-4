@@ -1,6 +1,6 @@
 # Revisão adversarial — 03c-metadados-finais
 
-Modelo solicitado: `fable`. Modelo retornado: `claude-fable-5-2`.
+Ferramenta de revisão: Claude Code, modelo `claude-fable-5-2`.
 
 # Revisão adversarial dos resíduos 03b
 
@@ -28,7 +28,7 @@ Nenhum.
 3. **`verificar_entrega.py`: a comparação `_source_identity() != summary["source"]` inclui `git_dirty`.**
    - **Impacto:** se a execução validada partiu da árvore suja que o git status mostra, ela é rejeitada pelo próprio verificador após o commit, mesmo com arquivos idênticos.
    - **Agravante:** o único commit é `22313dd`, e os fontes aparecem apenas como adicionados no índice. Se o `git_revision` do resumo for esse, ele aponta para um commit sem o código, e `source_sha256` é o único vínculo real.
-   - **Correção:** comparar apenas `files_sha256`, manter `git_dirty` como informação e regenerar a evidência após o commit autorizado.
+   - **Correção:** comparar apenas `files_sha256`, manter `git_dirty` como informação e regenerar a evidência após o versionamento das fontes.
 
 4. **Cobertura: as correções de identidade e de registro não têm teste de regressão no pacote.**
    - Nada em `tests/test_pipeline.py` afirma que `scripts/*.py`, `ci.yml`, `.python-version` e `.gitattributes` entram em `files_sha256`, nem que alterá-los muda `source_sha256`.
@@ -74,4 +74,4 @@ Nenhum.
 ## Veredito
 
 - **Conformidade:** quatro resíduos estão corrigidos (`failed_stage`, rótulos, runs filhos, composição da identidade). Dois estão parciais: URI (item 1) e registro da execução real (itens 2 e 3).
-- **Qualidade:** boa, **aprovado com ressalvas**. Os itens 1 a 3 são correções pequenas e devem entrar antes do fechamento. A evidência final precisa ser regenerada após o commit pendente de autorização.
+- **Qualidade:** boa, **aprovado com ressalvas**. Os itens 1 a 3 são correções pequenas e devem entrar antes do fechamento. A evidência final precisa ser regenerada após o versionamento das fontes.

@@ -28,7 +28,7 @@ Dummy AUROC na validação: **0,50**. Limiar fixo 0,30; o carregamento do bundle
 
 No covariável, `limit_bal` tem **KS D = 0,181511**, p ajustado BH = **1,393 × 10⁻⁴⁵**; `pay_0` tem **PSI = 0,205308**, acima do limiar 0,20. Pesos 3 e 4, seed 42 e limiares estão registrados na configuração e reproduzem esta demonstração; não representam calibração operacional.
 
-A margem do PSI é apenas 0,0053 e não há intervalo bootstrap desse índice. A flag demonstra a política na seed fixada; não garante estabilidade da decisão em novas amostras. O Evidently bruto marca **15 de 20 colunas** no covariável e combinado, contra **duas** na política BH/efeito. Seu PSI de `pay_0` é **0,202018**, e o KS bruto de `limit_bal` tem p de **9,951 × 10⁻⁴⁷**. Ambos também cruzam seus limiares no Evidently. Controle e conceito têm zero colunas com drift bruto. As listas são distintas por política, sem contradição oculta.
+A margem do PSI é apenas 0,0053 e não há intervalo bootstrap desse índice. A flag demonstra a política na seed fixada; não garante estabilidade da decisão em novas amostras. O Evidently bruto marca **15 de 20 colunas** no covariável e combinado, contra **duas** na política BH/efeito. Seu PSI de `pay_0` é **0,202018**, e o KS bruto de `limit_bal` tem p de **9,951 × 10⁻⁴⁷**. Ambos também cruzam seus limiares no Evidently. Controle e conceito têm zero colunas com drift bruto. As listas diferem porque as políticas de detecção usam critérios distintos.
 
 | Par contrafactual | Aumento Brier | IC95% pareado | X e probabilidades idênticos |
 |---|---:|---|---|
@@ -47,10 +47,10 @@ O [resumo](../reports/execucao_validada/resumo.json) contém amostras RSS, CPU e
 
 Hash canônico da configuração: `25e79a5462f77c394b2162d8989651682614cd2172cd66d5f68181d750441790`.
 
-Hash agregado de fontes/configuração/lock: `312c6ae2f7e8cecf07e52930e28172bf34a44de4021c80e7cf10bf72061d3c73`. O manifesto traz os hashes individuais de 31 arquivos. A execução partiu da **árvore limpa**, no commit **`11dd2b83b57a77ceda8186d6c61b79e20e0dca35`**, que já contém o código e o histórico por blocos. A atualização posterior apenas consolida estas evidências. Hooks locais foram autorizados somente para este repositório acadêmico; a configuração global do trabalho foi preservada.
+Hash agregado de fontes/configuração/lock: `312c6ae2f7e8cecf07e52930e28172bf34a44de4021c80e7cf10bf72061d3c73`. O manifesto traz os hashes individuais de 31 arquivos. A execução partiu da **árvore limpa**, no commit **`11dd2b83b57a77ceda8186d6c61b79e20e0dca35`**, que já contém o código e o histórico por blocos.
 
 ## Verificação e limites
 
 [Registro literal dos comandos](verificacao.json): Ruff aprovado e **150 testes passaram**, com **11 avisos de depreciação** das dependências, sem skips na máquina com cache UCI. O [log literal](validacao/03-comando.log) e o [JUnit](validacao/pytest.xml) acompanham horários e hash das fontes. Incluem Evidently real, sucesso SQLite, links dos artefatos e rejeição de evidências adulteradas. O verificador identifica o estado do pipeline como derivado de seu resumo; a [captura independente da CLI original](execucao_cli.json) e seu [stdout literal](validacao/00-pipeline-cli.log) registram comando, horários e código de saída zero observado. Esta evidência é local; o [CI remoto](https://github.com/callyafiune/Tech-Challenge-fase-4/actions/workflows/ci.yml) tem seu estado próprio.
 
-O navegador foi interrompido por não confirmar a URL; não houve validação visual manual. O retrato contém apenas relatórios e indicadores agregados; modelo, base completa, predições individuais e banco foram excluídos. Governança no README é plano contextualizado, não certificado de conformidade. Vídeo e link estão fora do escopo: somente roteiro.
+Os HTMLs foram verificados automaticamente quanto a conteúdo, links e integridade. O retrato contém apenas relatórios e indicadores agregados; modelo, base completa, predições individuais e banco foram excluídos. O resumo de governança no README e o plano em [governança](governanca.md) são contextualizados para o exercício acadêmico, sem certificação de conformidade.

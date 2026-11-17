@@ -1,0 +1,89 @@
+[
+    {
+        "Id": "sha256:e52e07fcf2ec7221a280fcaaf55dead94413f65089e76e9bfe7db9b7305a60ff",
+        "RepoTags": [
+            "credito-monitorado:local"
+        ],
+        "RepoDigests": [
+            "credito-monitorado@sha256:e52e07fcf2ec7221a280fcaaf55dead94413f65089e76e9bfe7db9b7305a60ff"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-11-17T13:17:04.547098666Z",
+        "Config": {
+            "User": "10001:10001",
+            "Env": [
+                "PATH=/opt/venv/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=A035C8C19219BA821ECEA86B64E628F8D684696D",
+                "PYTHON_VERSION=3.11.18",
+                "PYTHON_SHA256=9120e0a653868f6e3698d36cdd99e5a58903ec9469e448f21d98f7b16d8fa290",
+                "PYTHONPATH=/app/src",
+                "PYTHONDONTWRITEBYTECODE=1",
+                "PYTHONUNBUFFERED=1",
+                "PYTHONUTF8=1",
+                "HOME=/tmp",
+                "GIT_PYTHON_REFRESH=quiet",
+                "DO_NOT_TRACK=1",
+                "ITERATIVE_DO_NOT_TRACK=1",
+                "MLFLOW_DISABLE_TELEMETRY=true",
+                "MLFLOW_DISABLE_AGENT_HINT=1",
+                "OMP_NUM_THREADS=1",
+                "OPENBLAS_NUM_THREADS=1"
+            ],
+            "Entrypoint": [
+                "python",
+                "-m",
+                "credito_monitorado.cli"
+            ],
+            "Cmd": [
+                "run",
+                "--config",
+                "/app/params.yaml",
+                "--output",
+                "/app/artifacts",
+                "--data-dir",
+                "/app/data/raw"
+            ],
+            "WorkingDir": "/app",
+            "Labels": {
+                "com.docker.compose.project": "credito-verificacao-20261117133825",
+                "com.docker.compose.service": "pipeline",
+                "com.docker.compose.version": "5.2.0"
+            },
+            "ArgsEscaped": true
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 287387540,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:1d7b9dd8778ebc4d9bf2f64436dd358640718cb349f5640b33bebaea4ffd62c2",
+                "sha256:9ae7def604682355f0b9a3468566bbb06aaae177e47a961444995169178590d2",
+                "sha256:bd3e172fa0bc2e7382210f6ffe9292e1ce66a4962721cc583787fe726d705f53",
+                "sha256:3306b96cb7baf10267980832b85ae4056efdc2b3dd659fa42d77af2f850e778d",
+                "sha256:c630723292a00fff9bf1e9aee9722cc296c1614a08a7b7150e26e5431ee644fb",
+                "sha256:9619b387c386316722d0441e28c3cd908c92715e50ec0742c7c70c6c220d1969",
+                "sha256:bdcd536315b53aba6cfbfcc4ecee3b852d7cb51c5296c2204a2ff1a1e390b12e",
+                "sha256:c3cfc0ab779750dde00eaece567fb1553db536e243e74570573e34ca6b6de0bf",
+                "sha256:7e791336754d9528db45528917eab09e6af480db993092144805de414c8f864a"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-17T13:38:32.505979561Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:e52e07fcf2ec7221a280fcaaf55dead94413f65089e76e9bfe7db9b7305a60ff",
+            "size": 856
+        },
+        "Identity": {
+            "Build": [
+                {
+                    "Ref": "14olnz5p0y6mxyoih68ey3udh",
+                    "CreatedAt": "2026-11-17T13:38:32.537393504Z"
+                }
+            ]
+        }
+    }
+]

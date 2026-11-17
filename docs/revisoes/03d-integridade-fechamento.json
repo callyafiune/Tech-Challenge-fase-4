@@ -29,6 +29,5 @@
     "docs/validacao/03-comando.log": "fe22a7a2c914334bca47225d157b4cad51958f0cc2325adb173002c2863b971f",
     "docs/evidencias_mlflow.json": "3bfd33618c2236251067a6b15624701abb47e61a8365df8edf6ece75fc5e776e"
   },
-  "foco": "Última rechecagem estritamente limitada aos itens1a3 da03c. Julgue CORRIGIDO/EMABERTO para (1) URIremota retorna constante sem nenhum caractere do input, (2) evidência CLI anterior rotulada derivada, sem alegar captura, com validação de IDdiretório/status/config/manifesto/TODOS17hashes e caminhos, (3) source compara bytes/sourcehash ignorando gitdirty; mais regressões negativas. Confira registro literal150testes e32? nenhuma imposição de contagemesperada: use a contagem real31fonte informada, MDexplicaRuff. Não reabra o desenho ML, governança ou novas funcionalidades. Flagre apenas regressões introduzidas por esse diff. Gitcommits seguem dependentes de autorização e não foram contornados. Contexto adicional do arquivo completo não amplia o escopo da rechecagem.",
   "prompt_sha256": "e821274bd457b0b1ce98ea3210042ef09bfc56b628d4d72bab4fbb5ed13a32e4"
 }

@@ -1,0 +1,23 @@
+[
+  {
+    "arquivo": "docs/verificacao_docker.json",
+    "atributo": "docs/verificacao_docker.json: text: unset",
+    "objeto_git_sem_filtros": "99c22ed19a833bc46f799af366c190e3caef536a",
+    "objeto_git_com_filtros": "99c22ed19a833bc46f799af366c190e3caef536a",
+    "sha256": "b791e3e20fa24e446a5d0973054c9d66c1bc1d47bc7023689c5dc4d393e09f3c"
+  },
+  {
+    "arquivo": "docs/validacao/docker-sequencial-04-build.log",
+    "atributo": "docs/validacao/docker-sequencial-04-build.log: text: unset",
+    "objeto_git_sem_filtros": "a383ac7afa58a1d5176d4f9adc8673c68e2efdec",
+    "objeto_git_com_filtros": "a383ac7afa58a1d5176d4f9adc8673c68e2efdec",
+    "sha256": "ac61253a0c00ee943c155d429cbf5325044da6050f787d4f39198c02daf10063"
+  },
+  {
+    "arquivo": "scripts/verificar_docker.py",
+    "atributo": "scripts/verificar_docker.py: text: unset",
+    "objeto_git_sem_filtros": "f57feccd011c5cfc160296ff711ac0fb83c531d1",
+    "objeto_git_com_filtros": "f57feccd011c5cfc160296ff711ac0fb83c531d1",
+    "sha256": "3ed00845b6ea7ea2c049ecaecbf338e9d2487012674a9aaeb41b7cfc9951f7ab"
+  }
+]

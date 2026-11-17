@@ -1,0 +1,23 @@
+Check complete, no warnings found.
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 1.51kB 0.0s done
+#1 DONE 0.2s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1
+#2 DONE 1.3s
+
+#3 docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+#3 resolve docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e 0.0s done
+#3 CACHED
+
+#4 [internal] load metadata for ghcr.io/astral-sh/uv:0.11.6
+#4 DONE 1.0s
+
+#5 [internal] load metadata for docker.io/library/python:3.11.18-slim-bookworm
+#5 DONE 1.0s
+
+#6 [internal] load .dockerignore
+#6 transferring context: 241B done
+#6 DONE 0.0s

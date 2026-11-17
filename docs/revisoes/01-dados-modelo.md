@@ -1,6 +1,6 @@
 # Revisão adversarial — 01-dados-modelo
 
-Modelo solicitado: `fable`. Modelo retornado: `claude-fable-5-2`.
+Ferramenta de revisão: Claude Code, modelo `claude-fable-5-2`.
 
 # Revisão adversarial: pacote `credito_monitorado` (config, contrato, dados, baseline)
 

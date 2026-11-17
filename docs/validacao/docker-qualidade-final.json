@@ -1,0 +1,52 @@
+{
+  "inicio_utc": "2026-11-17T13:50:29.347264+00:00",
+  "coletor_sha256": "d8f4425a38a870ffe9931877718477784a94cdf01c099f73693370ffe054766b",
+  "comandos": [
+    {
+      "comando": [
+        "uv",
+        "run",
+        "ruff",
+        "check",
+        "."
+      ],
+      "inicio_utc": "2026-11-17T13:50:29.347264+00:00",
+      "fim_utc": "2026-11-17T13:50:29.479515+00:00",
+      "codigo_saida": 0,
+      "saida_esperada": 0,
+      "log": "validacao/docker-qualidade-final-ruff.log",
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "comando": [
+        "uv",
+        "run",
+        "ruff",
+        "format",
+        "--check",
+        "."
+      ],
+      "inicio_utc": "2026-11-17T13:50:29.481526+00:00",
+      "fim_utc": "2026-11-17T13:50:29.619193+00:00",
+      "codigo_saida": 0,
+      "saida_esperada": 0,
+      "log": "validacao/docker-qualidade-final-formato.log",
+      "log_sha256": "67cca57c8096c7b0f6763ed13c5b7c3a1194d2853ed367fb1800e9bfbe7442ad"
+    },
+    {
+      "comando": [
+        "uv",
+        "run",
+        "pytest",
+        "-q"
+      ],
+      "inicio_utc": "2026-11-17T13:50:29.620192+00:00",
+      "fim_utc": "2026-11-17T13:51:32.972422+00:00",
+      "codigo_saida": 0,
+      "saida_esperada": 0,
+      "log": "validacao/docker-qualidade-final-pytest.log",
+      "log_sha256": "b603c8666853b27530cf8f0603930249cedba1d671d6acbc0f13e1094c9d9326"
+    }
+  ],
+  "fim_utc": "2026-11-17T13:51:32.972422+00:00"
+}

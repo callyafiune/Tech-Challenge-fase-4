@@ -1,0 +1,445 @@
+{
+  "inicio_utc": "2026-11-17T13:17:51.381221+00:00",
+  "comandos": [
+    {
+      "etapa": "01-build-check",
+      "comando": [
+        "docker",
+        "build",
+        "--check",
+        "."
+      ],
+      "inicio_utc": "2026-11-17T13:17:51.381221+00:00",
+      "fim_utc": "2026-11-17T13:17:59.395485+00:00",
+      "codigo_saida": 0,
+      "log": "validacao/docker-01-build-check.log",
+      "log_sha256": "990f31f98fab8df4ec900eef3e9324d8b65e0a8d48b4671bd4d1f53c04dd2a0f"
+    },
+    {
+      "etapa": "02-com-rede",
+      "comando": [
+        "docker",
+        "compose",
+        "--ansi",
+        "never",
+        "up",
+        "--build",
+        "--abort-on-container-exit",
+        "--exit-code-from",
+        "pipeline"
+      ],
+      "inicio_utc": "2026-11-17T13:17:59.407080+00:00",
+      "fim_utc": "2026-11-17T13:23:10.800980+00:00",
+      "codigo_saida": 0,
+      "log": "validacao/docker-02-com-rede.log",
+      "log_sha256": "524ce6b5b2ef417a784f34b07da065420babdf4c7afc05ffb6327e5efde925d9"
+    },
+    {
+      "etapa": "03-sem-rede",
+      "comando": [
+        "docker",
+        "compose",
+        "--ansi",
+        "never",
+        "-f",
+        "compose.yaml",
+        "-f",
+        "compose.sem-rede.yaml",
+        "up",
+        "--abort-on-container-exit",
+        "--exit-code-from",
+        "pipeline"
+      ],
+      "inicio_utc": "2026-11-17T13:23:10.819044+00:00",
+      "fim_utc": "2026-11-17T13:24:37.552961+00:00",
+      "codigo_saida": 0,
+      "log": "validacao/docker-03-sem-rede.log",
+      "log_sha256": "65f8a92c7f1a99dcf44805ec516c36d783f434a9f93ba0d1196220c1051e8796"
+    },
+    {
+      "etapa": "04-inspecao",
+      "comando": [
+        "docker",
+        "compose",
+        "run",
+        "--rm",
+        "--no-deps",
+        "-T",
+        "--entrypoint",
+        "python",
+        "pipeline",
+        "-c",
+        "\nimport importlib.util, json, os, shutil, sqlite3\nfrom pathlib import Path\nfrom urllib.parse import urlsplit\nimport re\nassert os.getuid() == 10001\nassert not any(importlib.util.find_spec(n) for n in ('pytest', 'ruff'))\nassert shutil.which('uv') is None\nassert all(not Path('/app', n).exists() for n in ('.git', 'tests', 'docs', 'reports'))\nassert not list(Path('/app/data').iterdir()) == []\nassert os.environ['MLFLOW_DISABLE_TELEMETRY'] == 'true'\ntry:\n    Path('/app/escrita_proibida').write_text('teste')\nexcept OSError:\n    pass\nelse:\n    raise AssertionError('Codigo deve permanecer somente leitura.')\ndb = sqlite3.connect('file:/app/artifacts/mlflow.db?mode=ro', uri=True)\nsumarios = []\nfor path in sorted(Path('/app/artifacts').glob('*/resumo.json')):\n    s = json.loads(path.read_text())\n    assert s['status'] == 'sucesso'\n    assert s['dataset']['rows'] == 30000\n    assert s['contracts']['status'] == 'blocked_as_expected'\n    assert s['model']['roundtrip_predictions_equal']\n    assert set(s['scenarios']) == {'control', 'covariate', 'concept', 'combined'}\n    assert s['tracking']['status'] == 'completed'\n    pai = s['tracking']['run_id']\n    assert db.execute('select status from runs where run_uuid=?', (pai,)).fetchone()[0] == 'FINISHED'\n    filhos = db.execute(\"select r.run_uuid,r.status from runs r join tags t on r.run_uuid=t.run_uuid where t.key='mlflow.parentRunId' and t.value=?\", (pai,)).fetchall()\n    assert len(filhos) == 4 and all(f[1] == 'FINISHED' for f in filhos)\n    cenarios = {}\n    for nome, c in s['scenarios'].items():\n        assert c['rows'] == 2500\n        assert (path.parent / nome / c['evidently_html']).is_file()\n        assert (path.parent / nome / 'evidently.json').is_file()\n        esperados = [] if nome in ('control', 'concept') else ['limit_bal', 'pay_0']\n        assert sorted(c['drift']['summary']['drifted_features']) == sorted(esperados)\n        cenarios[nome] = {'linhas': c['rows'], 'metricas': c['performance'], 'drift': esperados}\n    html = (path.parent / 'index.html').read_text()\n    for link in re.findall(r'href=[\\\"\\']([^\\\"\\']+)[\\\"\\']', html):\n        if not urlsplit(link).scheme and not link.startswith('#'):\n            assert (path.parent / urlsplit(link).path).is_file(), link\n    sumarios.append({'execucao': s['execution_id'], 'status': s['status'], 'duracao_segundos': s['duration_seconds'], 'eventos': len(s['events']), 'alertas': len(s['alerts']), 'cenarios': cenarios, 'mlflow_pai': pai, 'mlflow_filhos': filhos})\nassert len(sumarios) == 2\nassert sumarios[0]['cenarios'] == sumarios[1]['cenarios']\nprint(json.dumps({'uid': os.getuid(), 'sem_dependencias_dev': True, 'codigo_somente_leitura': True, 'metricas_repetidas_identicas': True, 'sumarios': sumarios}))\n"
+      ],
+      "inicio_utc": "2026-11-17T13:24:37.565845+00:00",
+      "fim_utc": "2026-11-17T13:24:39.244102+00:00",
+      "codigo_saida": 0,
+      "log": "validacao/docker-04-inspecao.log",
+      "log_sha256": "2ec01fe4570aaf22cd9dd74fcc4f1bb80ef590aa596f4a0709d19e5f09641f37"
+    },
+    {
+      "etapa": "05-imagem",
+      "comando": [
+        "docker",
+        "image",
+        "inspect",
+        "credito-monitorado:local"
+      ],
+      "inicio_utc": "2026-11-17T13:24:39.255381+00:00",
+      "fim_utc": "2026-11-17T13:24:39.370478+00:00",
+      "codigo_saida": 0,
+      "log": "validacao/docker-05-imagem.log",
+      "log_sha256": "04130c7cbd47246367d43532d38fb603a9bff4e2c5f70aceae429ffece453fa8"
+    }
+  ],
+  "inspecao": {
+    "uid": 10001,
+    "sem_dependencias_dev": true,
+    "codigo_somente_leitura": true,
+    "metricas_repetidas_identicas": true,
+    "sumarios": [
+      {
+        "execucao": "20261117T132115_6dcbb77ae8fb",
+        "status": "sucesso",
+        "duracao_segundos": 111.886814,
+        "eventos": 22,
+        "alertas": 8,
+        "cenarios": {
+          "control": {
+            "linhas": 2500,
+            "metricas": {
+              "roc_auc": 0.7825126631946921,
+              "average_precision": 0.5479240855220944,
+              "f1": 0.5420560747663551,
+              "recall": 0.5420560747663551,
+              "precision": 0.5420560747663551,
+              "accuracy": 0.804,
+              "brier_score": 0.13034351093348087,
+              "status": "ok",
+              "label_count": 2500,
+              "prevalence": 0.214,
+              "label_coverage": 1.0,
+              "confusion_matrix": [
+                [
+                  1720,
+                  245
+                ],
+                [
+                  245,
+                  290
+                ]
+              ]
+            },
+            "drift": []
+          },
+          "covariate": {
+            "linhas": 2500,
+            "metricas": {
+              "roc_auc": 0.7964995507073278,
+              "average_precision": 0.6350864521773996,
+              "f1": 0.6357918810748999,
+              "recall": 0.7155727155727156,
+              "precision": 0.5720164609053497,
+              "accuracy": 0.7452,
+              "brier_score": 0.15972377494360196,
+              "status": "ok",
+              "label_count": 2500,
+              "prevalence": 0.3108,
+              "label_coverage": 1.0,
+              "confusion_matrix": [
+                [
+                  1307,
+                  416
+                ],
+                [
+                  221,
+                  556
+                ]
+              ]
+            },
+            "drift": [
+              "limit_bal",
+              "pay_0"
+            ]
+          },
+          "concept": {
+            "linhas": 2500,
+            "metricas": {
+              "roc_auc": 0.40733930348258707,
+              "average_precision": 0.6347849543503578,
+              "f1": 0.28868778280542984,
+              "recall": 0.19044776119402984,
+              "precision": 0.5962616822429907,
+              "accuracy": 0.3712,
+              "brier_score": 0.47754173815199574,
+              "status": "ok",
+              "label_count": 2500,
+              "prevalence": 0.67,
+              "label_coverage": 1.0,
+              "confusion_matrix": [
+                [
+                  609,
+                  216
+                ],
+                [
+                  1356,
+                  319
+                ]
+              ]
+            },
+            "drift": []
+          },
+          "combined": {
+            "linhas": 2500,
+            "metricas": {
+              "roc_auc": 0.46489499020207004,
+              "average_precision": 0.633578755699617,
+              "f1": 0.4549424374751886,
+              "recall": 0.3703943115707822,
+              "precision": 0.5895061728395061,
+              "accuracy": 0.4508,
+              "brier_score": 0.38785998453080367,
+              "status": "ok",
+              "label_count": 2500,
+              "prevalence": 0.6188,
+              "label_coverage": 1.0,
+              "confusion_matrix": [
+                [
+                  554,
+                  399
+                ],
+                [
+                  974,
+                  573
+                ]
+              ]
+            },
+            "drift": [
+              "limit_bal",
+              "pay_0"
+            ]
+          }
+        },
+        "mlflow_pai": "f478690f22544d5a95edfdfbb5c16734",
+        "mlflow_filhos": [
+          [
+            "0e4c942005a94a7fad6bd4f3c97cb036",
+            "FINISHED"
+          ],
+          [
+            "36cc3ae0ef74415296aa6f5e4535bc04",
+            "FINISHED"
+          ],
+          [
+            "407e329474d2430184b53eb534caea05",
+            "FINISHED"
+          ],
+          [
+            "f2918ad65c624b45b283a12c4b1cb574",
+            "FINISHED"
+          ]
+        ]
+      },
+      {
+        "execucao": "20261117T132325_08e2cb92bfed",
+        "status": "sucesso",
+        "duracao_segundos": 70.084214,
+        "eventos": 22,
+        "alertas": 8,
+        "cenarios": {
+          "control": {
+            "linhas": 2500,
+            "metricas": {
+              "roc_auc": 0.7825126631946921,
+              "average_precision": 0.5479240855220944,
+              "f1": 0.5420560747663551,
+              "recall": 0.5420560747663551,
+              "precision": 0.5420560747663551,
+              "accuracy": 0.804,
+              "brier_score": 0.13034351093348087,
+              "status": "ok",
+              "label_count": 2500,
+              "prevalence": 0.214,
+              "label_coverage": 1.0,
+              "confusion_matrix": [
+                [
+                  1720,
+                  245
+                ],
+                [
+                  245,
+                  290
+                ]
+              ]
+            },
+            "drift": []
+          },
+          "covariate": {
+            "linhas": 2500,
+            "metricas": {
+              "roc_auc": 0.7964995507073278,
+              "average_precision": 0.6350864521773996,
+              "f1": 0.6357918810748999,
+              "recall": 0.7155727155727156,
+              "precision": 0.5720164609053497,
+              "accuracy": 0.7452,
+              "brier_score": 0.15972377494360196,
+              "status": "ok",
+              "label_count": 2500,
+              "prevalence": 0.3108,
+              "label_coverage": 1.0,
+              "confusion_matrix": [
+                [
+                  1307,
+                  416
+                ],
+                [
+                  221,
+                  556
+                ]
+              ]
+            },
+            "drift": [
+              "limit_bal",
+              "pay_0"
+            ]
+          },
+          "concept": {
+            "linhas": 2500,
+            "metricas": {
+              "roc_auc": 0.40733930348258707,
+              "average_precision": 0.6347849543503578,
+              "f1": 0.28868778280542984,
+              "recall": 0.19044776119402984,
+              "precision": 0.5962616822429907,
+              "accuracy": 0.3712,
+              "brier_score": 0.47754173815199574,
+              "status": "ok",
+              "label_count": 2500,
+              "prevalence": 0.67,
+              "label_coverage": 1.0,
+              "confusion_matrix": [
+                [
+                  609,
+                  216
+                ],
+                [
+                  1356,
+                  319
+                ]
+              ]
+            },
+            "drift": []
+          },
+          "combined": {
+            "linhas": 2500,
+            "metricas": {
+              "roc_auc": 0.46489499020207004,
+              "average_precision": 0.633578755699617,
+              "f1": 0.4549424374751886,
+              "recall": 0.3703943115707822,
+              "precision": 0.5895061728395061,
+              "accuracy": 0.4508,
+              "brier_score": 0.38785998453080367,
+              "status": "ok",
+              "label_count": 2500,
+              "prevalence": 0.6188,
+              "label_coverage": 1.0,
+              "confusion_matrix": [
+                [
+                  554,
+                  399
+                ],
+                [
+                  974,
+                  573
+                ]
+              ]
+            },
+            "drift": [
+              "limit_bal",
+              "pay_0"
+            ]
+          }
+        },
+        "mlflow_pai": "304ac1ee3e41484fafed0caee8ae5898",
+        "mlflow_filhos": [
+          [
+            "1be254c45e0c41f580a83e5a3cf4027f",
+            "FINISHED"
+          ],
+          [
+            "3e3b3ef1a42a410c989e9cffd50a2655",
+            "FINISHED"
+          ],
+          [
+            "83add426d2894f8684e4e4da1f0ec60d",
+            "FINISHED"
+          ],
+          [
+            "df9e6f6d55e648fbad640aec48b3618f",
+            "FINISHED"
+          ]
+        ]
+      }
+    ]
+  },
+  "imagem": {
+    "id": "sha256:2d5072fda4bed68adff0233a9bd05a144dbaca9deb9a0677ecbec8bb74a9d9f2",
+    "tamanho_content_bytes": 287387527,
+    "usuario": "10001:10001"
+  },
+  "arquivos_sha256": {
+    "Dockerfile": "ed846ed4f02a722598565f15f74136581f1f81b95042b7ccee530f092dab8212",
+    ".dockerignore": "72c2e689a2e5b8fed5c1107b117a23989fef9b4be1006f5e91e48fe560d746b7",
+    "compose.yaml": "ebdb699dd11c85b2ec8d26cff6f2c719137745c6986b8e5b0861e3e8505c1467",
+    "compose.sem-rede.yaml": "48280f0e1d90765ba387c85608cad9adfdbfb7a9268a0bdcd7649ca599d0f16b",
+    "pyproject.toml": "d6b5380b058ccbba97dfc06892742f0379d5408708701bcbb548f33337533e58",
+    "uv.lock": "ee99b859174f1b6acee5d1a55922a03c0a007c93e4c481cfca79af21edd07215",
+    "params.yaml": "960457bed592d56eed3be60cd5fe77d5314ae8238160ddede1dd04f73c42b587"
+  },
+  "fim_utc": "2026-11-17T13:24:39.396163+00:00",
+  "ui_mlflow": {
+    "saude_http": 200,
+    "runs_visiveis": 10,
+    "todos_finalizados": true,
+    "publicacao": "127.0.0.1:5000"
+  },
+  "copia_conteiner_parado": {
+    "codigo_saida": 0,
+    "arquivos_no_tar": 87,
+    "bytes_tar": 82289152,
+    "destino": "stream em memoria, sem duplicar os artefatos no disco do host"
+  },
+  "bases_build": {
+    "python": "python:3.11.18-slim-bookworm@sha256:a83ba18aef0f865b1a4a611c2cf460fe446f2795673bbb9fe43be570439e3b39",
+    "uv": "ghcr.io/astral-sh/uv:0.11.6@sha256:b1e699368d24c57cda93c338a57a8c5a119009ba809305cc8e86986d4a006754",
+    "frontend": "docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e"
+  },
+  "conteiner_verificado": {
+    "estado": "exited",
+    "codigo_saida": 0,
+    "rede": "none",
+    "raiz_somente_leitura": true,
+    "capacidades_removidas": [
+      "ALL"
+    ],
+    "seguranca": [
+      "no-new-privileges:true"
+    ],
+    "temporarios": {
+      "/tmp": "size=512m,mode=1777"
+    },
+    "volumes": [
+      {
+        "nome": "tech-challenge-fase-4_dados",
+        "destino": "/app/data"
+      },
+      {
+        "nome": "tech-challenge-fase-4_artefatos",
+        "destino": "/app/artifacts"
+      }
+    ]
+  },
+  "consolidacao_utc": "2026-11-17T13:32:34.807158+00:00"
+}

@@ -1,0 +1,3 @@
+ Container credito-verificacao-20261117133825-sem-cache-pipeline-run-0e3af41ce94a Creating 
+ Container credito-verificacao-20261117133825-sem-cache-pipeline-run-0e3af41ce94a Created 
+[{"execucao": "20261117T133846_fdabcdc54b37", "falha": {"error_type": "RuntimeError", "message": "Falha operacional; consulte etapas e contagens agregadas.", "failed_stage": "aquisicao"}}]

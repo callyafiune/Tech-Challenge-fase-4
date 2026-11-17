@@ -1,0 +1,13 @@
+Attaching to pipeline-1
+pipeline-1  | Execução concluída: 20261117T132325_08e2cb92bfed
+pipeline-1  | Relatório: /app/artifacts/20261117T132325_08e2cb92bfed/index.html
+pipeline-1  | Resumo: /app/artifacts/20261117T132325_08e2cb92bfed/resumo.json
+
+[Kpipeline-1 exited with code 0
+ Container tech-challenge-fase-4-pipeline-1 Recreate 
+ Container tech-challenge-fase-4-pipeline-1 Recreated 
+ Container tech-challenge-fase-4-pipeline-1 Starting 
+ Container tech-challenge-fase-4-pipeline-1 Started 
+ Compose Stopping Aborting on container exit...
+ Container tech-challenge-fase-4-pipeline-1 Stopping 
+ Container tech-challenge-fase-4-pipeline-1 Stopped 

@@ -1,6 +1,6 @@
 # Revisão adversarial — 01b-correcao-dados
 
-Modelo solicitado: `fable`. Modelo retornado: `claude-fable-5-2`.
+Ferramenta de revisão: Claude Code, modelo `claude-fable-5-2`.
 
 # Revisão adversarial: `credito_monitorado` (config, contrato, dados, baseline), 2ª passagem
 

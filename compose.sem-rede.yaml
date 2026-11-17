@@ -1,0 +1,4 @@
+# Reutiliza o cache já validado, impedindo qualquer acesso à rede na execução.
+services:
+  pipeline:
+    network_mode: none

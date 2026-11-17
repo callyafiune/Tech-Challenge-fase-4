@@ -1,0 +1,16 @@
+ Volume credito-verificacao-20261117133825-sem-cache_dados Creating 
+ Volume credito-verificacao-20261117133825-sem-cache_dados Created 
+ Volume credito-verificacao-20261117133825-sem-cache_artefatos Creating 
+ Volume credito-verificacao-20261117133825-sem-cache_artefatos Created 
+ Container credito-verificacao-20261117133825-sem-cache-pipeline-1 Creating 
+ Container credito-verificacao-20261117133825-sem-cache-pipeline-1 Created 
+Attaching to pipeline-1
+ Container credito-verificacao-20261117133825-sem-cache-pipeline-1 Starting 
+ Container credito-verificacao-20261117133825-sem-cache-pipeline-1 Started 
+pipeline-1  | Execução interrompida.
+pipeline-1  | Diretório de evidências da execução: /app/artifacts/20261117T133846_fdabcdc54b37
+[Kpipeline-1 exited with code 1
+ Compose Stopping Aborting on container exit...
+ Container credito-verificacao-20261117133825-sem-cache-pipeline-1 Stopping 
+ Container credito-verificacao-20261117133825-sem-cache-pipeline-1 Stopped 
+

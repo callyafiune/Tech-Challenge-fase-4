@@ -1,0 +1,20 @@
+ Network credito-verificacao-20261117133825_default Creating 
+ Network credito-verificacao-20261117133825_default Created 
+ Volume credito-verificacao-20261117133825_dados Creating 
+ Volume credito-verificacao-20261117133825_dados Created 
+ Volume credito-verificacao-20261117133825_artefatos Creating 
+ Volume credito-verificacao-20261117133825_artefatos Created 
+ Container credito-verificacao-20261117133825-pipeline-1 Creating 
+ Container credito-verificacao-20261117133825-pipeline-1 Created 
+Attaching to pipeline-1
+ Container credito-verificacao-20261117133825-pipeline-1 Starting 
+ Container credito-verificacao-20261117133825-pipeline-1 Started 
+pipeline-1  | 2026/11/17 13:40:13 INFO mlflow.store.db.utils: Creating initial MLflow database tables...
+pipeline-1  | 2026/11/17 13:40:13 INFO mlflow.store.db.utils: Updating database tables
+pipeline-1  | Execução concluída: 20261117T133902_2f14e3220cab
+pipeline-1  | Relatório: /app/artifacts/20261117T133902_2f14e3220cab/index.html
+pipeline-1  | Resumo: /app/artifacts/20261117T133902_2f14e3220cab/resumo.json
+[Kpipeline-1 exited with code 0
+ Compose Stopping Aborting on container exit...
+ Container credito-verificacao-20261117133825-pipeline-1 Stopping 
+ Container credito-verificacao-20261117133825-pipeline-1 Stopped 

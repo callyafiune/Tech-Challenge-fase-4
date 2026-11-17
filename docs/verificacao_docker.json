@@ -1,0 +1,750 @@
+{
+  "inicio_utc": "2026-11-17T13:38:25.863800+00:00",
+  "projeto": "credito-verificacao-20261117133825",
+  "comandos": [
+    {
+      "etapa": "config",
+      "comando": [
+        "docker",
+        "compose",
+        "--ansi",
+        "never",
+        "-p",
+        "credito-verificacao-20261117133825",
+        "-f",
+        "compose.yaml",
+        "config",
+        "--quiet"
+      ],
+      "inicio_utc": "2026-11-17T13:38:25.863800+00:00",
+      "fim_utc": "2026-11-17T13:38:26.174134+00:00",
+      "codigo_saida": 0,
+      "saida_esperada": 0,
+      "log": "validacao/docker-sequencial-01-config.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "etapa": "config-sem-rede",
+      "comando": [
+        "docker",
+        "compose",
+        "--ansi",
+        "never",
+        "-p",
+        "credito-verificacao-20261117133825",
+        "-f",
+        "compose.yaml",
+        "-f",
+        "compose.sem-rede.yaml",
+        "config",
+        "--quiet"
+      ],
+      "inicio_utc": "2026-11-17T13:38:26.175132+00:00",
+      "fim_utc": "2026-11-17T13:38:26.522661+00:00",
+      "codigo_saida": 0,
+      "saida_esperada": 0,
+      "log": "validacao/docker-sequencial-02-config-sem-rede.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "etapa": "build-check",
+      "comando": [
+        "docker",
+        "build",
+        "--check",
+        "."
+      ],
+      "inicio_utc": "2026-11-17T13:38:26.524681+00:00",
+      "fim_utc": "2026-11-17T13:38:29.502484+00:00",
+      "codigo_saida": 0,
+      "saida_esperada": 0,
+      "log": "validacao/docker-sequencial-03-build-check.log",
+      "log_sha256": "596528d196046ca0107ecf3071aa30e244eab2aa509c068f59203867650ef9e1"
+    },
+    {
+      "etapa": "build",
+      "comando": [
+        "docker",
+        "compose",
+        "--ansi",
+        "never",
+        "-p",
+        "credito-verificacao-20261117133825",
+        "-f",
+        "compose.yaml",
+        "--progress",
+        "plain",
+        "build",
+        "pipeline"
+      ],
+      "inicio_utc": "2026-11-17T13:38:29.518820+00:00",
+      "fim_utc": "2026-11-17T13:38:33.041624+00:00",
+      "codigo_saida": 0,
+      "saida_esperada": 0,
+      "log": "validacao/docker-sequencial-04-build.log",
+      "log_sha256": "ac61253a0c00ee943c155d429cbf5325044da6050f787d4f39198c02daf10063"
+    },
+    {
+      "etapa": "imagem-inicial",
+      "comando": [
+        "docker",
+        "image",
+        "inspect",
+        "credito-monitorado:local"
+      ],
+      "inicio_utc": "2026-11-17T13:38:33.070968+00:00",
+      "fim_utc": "2026-11-17T13:38:33.336110+00:00",
+      "codigo_saida": 0,
+      "saida_esperada": 0,
+      "log": "validacao/docker-sequencial-05-imagem-inicial.log",
+      "log_sha256": "618c885988f73dd4fe8daf43bfd369254154ee28322b70444c72415fad39ddd5"
+    },
+    {
+      "etapa": "tamanho",
+      "comando": [
+        "docker",
+        "image",
+        "ls",
+        "--format",
+        "{{json .}}",
+        "credito-monitorado:local"
+      ],
+      "inicio_utc": "2026-11-17T13:38:33.359332+00:00",
+      "fim_utc": "2026-11-17T13:38:33.579105+00:00",
+      "codigo_saida": 0,
+      "saida_esperada": 0,
+      "log": "validacao/docker-sequencial-06-tamanho.log",
+      "log_sha256": "5f9a27dbbb2795994f8617ad5e35e67a49c85cac7471a40fabc7ba218a1e37d8"
+    },
+    {
+      "etapa": "imagem-sem-volumes",
+      "comando": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--read-only",
+        "--tmpfs",
+        "/tmp",
+        "-e",
+        "SONDA_IMAGEM=1",
+        "--entrypoint",
+        "python",
+        "-i",
+        "credito-monitorado:local",
+        "-"
+      ],
+      "inicio_utc": "2026-11-17T13:38:33.593225+00:00",
+      "fim_utc": "2026-11-17T13:38:34.870006+00:00",
+      "codigo_saida": 0,
+      "saida_esperada": 0,
+      "log": "validacao/docker-sequencial-07-imagem-sem-volumes.log",
+      "log_sha256": "eb0137c2ccd059856bbfe2cd28452781cc935a8877613a1d17fec0a58e851190",
+      "entrada_sha256": "85dd13a58e402144b7107faca29c14b6c6a54b78c9a07bbfa96e9be6c8761eb7"
+    },
+    {
+      "etapa": "falha-sem-cache",
+      "comando": [
+        "docker",
+        "compose",
+        "--ansi",
+        "never",
+        "-p",
+        "credito-verificacao-20261117133825-sem-cache",
+        "-f",
+        "compose.yaml",
+        "-f",
+        "compose.sem-rede.yaml",
+        "up",
+        "--no-build",
+        "--abort-on-container-exit",
+        "--exit-code-from",
+        "pipeline"
+      ],
+      "inicio_utc": "2026-11-17T13:38:34.873536+00:00",
+      "fim_utc": "2026-11-17T13:38:46.822906+00:00",
+      "codigo_saida": 1,
+      "saida_esperada": 1,
+      "log": "validacao/docker-sequencial-08-falha-sem-cache.log",
+      "log_sha256": "89f13d47afe3562fe5b58ea92efdb68bde9d3f38c95f2709f7d607ebeb60b2bf"
+    },
+    {
+      "etapa": "diagnostico-falha",
+      "comando": [
+        "docker",
+        "compose",
+        "--ansi",
+        "never",
+        "-p",
+        "credito-verificacao-20261117133825-sem-cache",
+        "-f",
+        "compose.yaml",
+        "-f",
+        "compose.sem-rede.yaml",
+        "run",
+        "--rm",
+        "--no-deps",
+        "-T",
+        "-e",
+        "SONDA_FALHA=1",
+        "--entrypoint",
+        "python",
+        "pipeline",
+        "-"
+      ],
+      "inicio_utc": "2026-11-17T13:38:46.837420+00:00",
+      "fim_utc": "2026-11-17T13:38:48.042080+00:00",
+      "codigo_saida": 0,
+      "saida_esperada": 0,
+      "log": "validacao/docker-sequencial-09-diagnostico-falha.log",
+      "log_sha256": "9591a8f58c383bde13d0525c1f9722851762f0b34d462043307f963f34d3b335",
+      "entrada_sha256": "85dd13a58e402144b7107faca29c14b6c6a54b78c9a07bbfa96e9be6c8761eb7"
+    },
+    {
+      "etapa": "com-rede",
+      "comando": [
+        "docker",
+        "compose",
+        "--ansi",
+        "never",
+        "-p",
+        "credito-verificacao-20261117133825",
+        "-f",
+        "compose.yaml",
+        "up",
+        "--no-build",
+        "--abort-on-container-exit",
+        "--exit-code-from",
+        "pipeline"
+      ],
+      "inicio_utc": "2026-11-17T13:38:48.058823+00:00",
+      "fim_utc": "2026-11-17T13:40:27.682717+00:00",
+      "codigo_saida": 0,
+      "saida_esperada": 0,
+      "log": "validacao/docker-sequencial-10-com-rede.log",
+      "log_sha256": "5d4335e7caec8b6be2460df172b0c677c75533dd917a246029911791d8c85472"
+    },
+    {
+      "etapa": "sem-rede",
+      "comando": [
+        "docker",
+        "compose",
+        "--ansi",
+        "never",
+        "-p",
+        "credito-verificacao-20261117133825",
+        "-f",
+        "compose.yaml",
+        "-f",
+        "compose.sem-rede.yaml",
+        "up",
+        "--no-build",
+        "--abort-on-container-exit",
+        "--exit-code-from",
+        "pipeline"
+      ],
+      "inicio_utc": "2026-11-17T13:40:27.690883+00:00",
+      "fim_utc": "2026-11-17T13:41:00.317190+00:00",
+      "codigo_saida": 0,
+      "saida_esperada": 0,
+      "log": "validacao/docker-sequencial-11-sem-rede.log",
+      "log_sha256": "a9dd86fd2b8e66f414f2b140c2d557507f41eced9bcad5bf53b2fcea3c829aa7"
+    },
+    {
+      "etapa": "sonda",
+      "comando": [
+        "docker",
+        "compose",
+        "--ansi",
+        "never",
+        "-p",
+        "credito-verificacao-20261117133825",
+        "-f",
+        "compose.yaml",
+        "run",
+        "--rm",
+        "--no-deps",
+        "-T",
+        "--entrypoint",
+        "python",
+        "pipeline",
+        "-"
+      ],
+      "inicio_utc": "2026-11-17T13:41:00.328925+00:00",
+      "fim_utc": "2026-11-17T13:41:01.525438+00:00",
+      "codigo_saida": 0,
+      "saida_esperada": 0,
+      "log": "validacao/docker-sequencial-12-sonda.log",
+      "log_sha256": "5506c8cd5ac0c1a0d6e9377190e3037243ee4aba088e415a006c1418c373a26b",
+      "entrada_sha256": "85dd13a58e402144b7107faca29c14b6c6a54b78c9a07bbfa96e9be6c8761eb7"
+    },
+    {
+      "etapa": "conteiner",
+      "comando": [
+        "docker",
+        "inspect",
+        "credito-verificacao-20261117133825-pipeline-1"
+      ],
+      "inicio_utc": "2026-11-17T13:41:01.538282+00:00",
+      "fim_utc": "2026-11-17T13:41:01.600179+00:00",
+      "codigo_saida": 0,
+      "saida_esperada": 0,
+      "log": "validacao/docker-sequencial-13-conteiner.log",
+      "log_sha256": "bd7917f92569ccff6864446cf95d2013d86cbb4d9c5d22132de6c8ce0e7f56e1"
+    },
+    {
+      "etapa": "exportacao",
+      "comando": [
+        "docker",
+        "compose",
+        "--ansi",
+        "never",
+        "-p",
+        "credito-verificacao-20261117133825",
+        "-f",
+        "compose.yaml",
+        "cp",
+        "pipeline:/app/artifacts/.",
+        "-"
+      ],
+      "inicio_utc": "2026-11-17T13:41:01.611672+00:00",
+      "fim_utc": "2026-11-17T13:41:03.744346+00:00",
+      "codigo_saida": 0,
+      "saida_esperada": 0,
+      "log": "validacao/docker-sequencial-14-exportacao.log",
+      "log_sha256": "53555d55722d1cd2ff3c354fc64ef362cf859abd854b116864f6d1d3b0078b68"
+    },
+    {
+      "etapa": "iniciar-ui",
+      "comando": [
+        "docker",
+        "compose",
+        "--ansi",
+        "never",
+        "-p",
+        "credito-verificacao-20261117133825",
+        "-f",
+        "compose.yaml",
+        "run",
+        "--rm",
+        "-d",
+        "--name",
+        "credito-verificacao-20261117133825-ui",
+        "-p",
+        "127.0.0.1:5000:5000",
+        "--entrypoint",
+        "mlflow",
+        "pipeline",
+        "ui",
+        "--backend-store-uri",
+        "sqlite:////app/artifacts/mlflow.db",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "5000"
+      ],
+      "inicio_utc": "2026-11-17T13:41:03.843243+00:00",
+      "fim_utc": "2026-11-17T13:41:04.824049+00:00",
+      "codigo_saida": 0,
+      "saida_esperada": 0,
+      "log": "validacao/docker-sequencial-15-iniciar-ui.log",
+      "log_sha256": "fda5f339a1676b22ef8e1e89ec3ce45b563461285dab79bfd1948d42c84f59c0"
+    },
+    {
+      "etapa": "ui-inspecao",
+      "comando": [
+        "docker",
+        "inspect",
+        "credito-verificacao-20261117133825-ui"
+      ],
+      "inicio_utc": "2026-11-17T13:41:44.482079+00:00",
+      "fim_utc": "2026-11-17T13:41:44.669675+00:00",
+      "codigo_saida": 0,
+      "saida_esperada": 0,
+      "log": "validacao/docker-sequencial-16-ui-inspecao.log",
+      "log_sha256": "eab4f8d7c41ea8fec63094ae450a096a15ee3982e9a7bf4ab42117bb61311734"
+    },
+    {
+      "etapa": "encerrar-ui",
+      "comando": [
+        "docker",
+        "stop",
+        "credito-verificacao-20261117133825-ui"
+      ],
+      "inicio_utc": "2026-11-17T13:41:44.711879+00:00",
+      "fim_utc": "2026-11-17T13:41:50.306300+00:00",
+      "codigo_saida": 0,
+      "saida_esperada": 0,
+      "log": "validacao/docker-sequencial-17-encerrar-ui.log",
+      "log_sha256": "0c60f017c27ec8a13355a30785a9dd84567268a6d84a6d5267bafbcf6e0b5282"
+    }
+  ],
+  "imagem": {
+    "id": "sha256:e52e07fcf2ec7221a280fcaaf55dead94413f65089e76e9bfe7db9b7305a60ff",
+    "conteudo_bytes": 287387540,
+    "arquitetura": "amd64",
+    "sistema": "linux"
+  },
+  "bases_build": [
+    "docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e",
+    "docker.io/library/python:3.11.18-slim-bookworm@sha256:a83ba18aef0f865b1a4a611c2cf460fe446f2795673bbb9fe43be570439e3b39",
+    "ghcr.io/astral-sh/uv:0.11.6@sha256:b1e699368d24c57cda93c338a57a8c5a119009ba809305cc8e86986d4a006754"
+  ],
+  "tamanho_docker": {
+    "Containers": "0",
+    "CreatedAt": "2026-11-17 10:17:04 -0300 -03",
+    "CreatedSince": "21 minutes ago",
+    "Digest": "<none>",
+    "ID": "e52e07fcf2ec",
+    "Repository": "credito-monitorado",
+    "SharedSize": "N/A",
+    "Size": "1.38GB",
+    "Tag": "local",
+    "UniqueSize": "N/A"
+  },
+  "imagem_sem_volumes": {
+    "uid": 10001,
+    "diretorios_de_dados_vazios": true,
+    "arquivos_app": [
+      ".gitattributes",
+      ".python-version",
+      "artifacts",
+      "data",
+      "params.yaml",
+      "pyproject.toml",
+      "src",
+      "uv.lock"
+    ],
+    "sem_dependencias_dev": true
+  },
+  "falha_esperada": [
+    {
+      "execucao": "20261117T133846_fdabcdc54b37",
+      "falha": {
+        "error_type": "RuntimeError",
+        "message": "Falha operacional; consulte etapas e contagens agregadas.",
+        "failed_stage": "aquisicao"
+      }
+    }
+  ],
+  "execucoes": [
+    {
+      "execucao": "20261117T133902_2f14e3220cab",
+      "status": "sucesso",
+      "duracao_segundos": 82.935031,
+      "eventos": 22,
+      "alertas": 8,
+      "cenarios": {
+        "control": {
+          "linhas": 2500,
+          "metricas": {
+            "roc_auc": 0.7825126631946921,
+            "average_precision": 0.5479240855220944,
+            "f1": 0.5420560747663551,
+            "recall": 0.5420560747663551,
+            "precision": 0.5420560747663551,
+            "accuracy": 0.804,
+            "brier_score": 0.13034351093348087,
+            "status": "ok",
+            "label_count": 2500,
+            "prevalence": 0.214,
+            "label_coverage": 1.0,
+            "confusion_matrix": [
+              [
+                1720,
+                245
+              ],
+              [
+                245,
+                290
+              ]
+            ]
+          }
+        },
+        "covariate": {
+          "linhas": 2500,
+          "metricas": {
+            "roc_auc": 0.7964995507073278,
+            "average_precision": 0.6350864521773996,
+            "f1": 0.6357918810748999,
+            "recall": 0.7155727155727156,
+            "precision": 0.5720164609053497,
+            "accuracy": 0.7452,
+            "brier_score": 0.15972377494360196,
+            "status": "ok",
+            "label_count": 2500,
+            "prevalence": 0.3108,
+            "label_coverage": 1.0,
+            "confusion_matrix": [
+              [
+                1307,
+                416
+              ],
+              [
+                221,
+                556
+              ]
+            ]
+          }
+        },
+        "concept": {
+          "linhas": 2500,
+          "metricas": {
+            "roc_auc": 0.40733930348258707,
+            "average_precision": 0.6347849543503578,
+            "f1": 0.28868778280542984,
+            "recall": 0.19044776119402984,
+            "precision": 0.5962616822429907,
+            "accuracy": 0.3712,
+            "brier_score": 0.47754173815199574,
+            "status": "ok",
+            "label_count": 2500,
+            "prevalence": 0.67,
+            "label_coverage": 1.0,
+            "confusion_matrix": [
+              [
+                609,
+                216
+              ],
+              [
+                1356,
+                319
+              ]
+            ]
+          }
+        },
+        "combined": {
+          "linhas": 2500,
+          "metricas": {
+            "roc_auc": 0.46489499020207004,
+            "average_precision": 0.633578755699617,
+            "f1": 0.4549424374751886,
+            "recall": 0.3703943115707822,
+            "precision": 0.5895061728395061,
+            "accuracy": 0.4508,
+            "brier_score": 0.38785998453080367,
+            "status": "ok",
+            "label_count": 2500,
+            "prevalence": 0.6188,
+            "label_coverage": 1.0,
+            "confusion_matrix": [
+              [
+                554,
+                399
+              ],
+              [
+                974,
+                573
+              ]
+            ]
+          }
+        }
+      },
+      "mlflow_pai": "2d290a5c4b704ce99d21e63aa83eaaac",
+      "mlflow_filhos": [
+        [
+          "0a582c9f6e1e48639dffe17b7fd6abe2",
+          "FINISHED"
+        ],
+        [
+          "2676224ed91d4c89a84d7e4dcab97271",
+          "FINISHED"
+        ],
+        [
+          "7abb0544c4c349de9a9bf03748ad6bf1",
+          "FINISHED"
+        ],
+        [
+          "f105f7ba4e1444f78c4ca7c6098f927c",
+          "FINISHED"
+        ]
+      ],
+      "dataset_sha256": "30c6be3abd8dcfd3e6096c828bad8c2f011238620f5369220bd60cfc82700933",
+      "modelo_sha256": "ea105dde177e4a16051b88bf5f708b03a454703574826e97e3072e534692d5eb",
+      "source_sha256": "fb0c32ce469ca28275ab1c14c06164b5c792375d82e824a938c719e8e2c17e35"
+    },
+    {
+      "execucao": "20261117T134033_21c1ae771f44",
+      "status": "sucesso",
+      "duracao_segundos": 25.234282,
+      "eventos": 22,
+      "alertas": 8,
+      "cenarios": {
+        "control": {
+          "linhas": 2500,
+          "metricas": {
+            "roc_auc": 0.7825126631946921,
+            "average_precision": 0.5479240855220944,
+            "f1": 0.5420560747663551,
+            "recall": 0.5420560747663551,
+            "precision": 0.5420560747663551,
+            "accuracy": 0.804,
+            "brier_score": 0.13034351093348087,
+            "status": "ok",
+            "label_count": 2500,
+            "prevalence": 0.214,
+            "label_coverage": 1.0,
+            "confusion_matrix": [
+              [
+                1720,
+                245
+              ],
+              [
+                245,
+                290
+              ]
+            ]
+          }
+        },
+        "covariate": {
+          "linhas": 2500,
+          "metricas": {
+            "roc_auc": 0.7964995507073278,
+            "average_precision": 0.6350864521773996,
+            "f1": 0.6357918810748999,
+            "recall": 0.7155727155727156,
+            "precision": 0.5720164609053497,
+            "accuracy": 0.7452,
+            "brier_score": 0.15972377494360196,
+            "status": "ok",
+            "label_count": 2500,
+            "prevalence": 0.3108,
+            "label_coverage": 1.0,
+            "confusion_matrix": [
+              [
+                1307,
+                416
+              ],
+              [
+                221,
+                556
+              ]
+            ]
+          }
+        },
+        "concept": {
+          "linhas": 2500,
+          "metricas": {
+            "roc_auc": 0.40733930348258707,
+            "average_precision": 0.6347849543503578,
+            "f1": 0.28868778280542984,
+            "recall": 0.19044776119402984,
+            "precision": 0.5962616822429907,
+            "accuracy": 0.3712,
+            "brier_score": 0.47754173815199574,
+            "status": "ok",
+            "label_count": 2500,
+            "prevalence": 0.67,
+            "label_coverage": 1.0,
+            "confusion_matrix": [
+              [
+                609,
+                216
+              ],
+              [
+                1356,
+                319
+              ]
+            ]
+          }
+        },
+        "combined": {
+          "linhas": 2500,
+          "metricas": {
+            "roc_auc": 0.46489499020207004,
+            "average_precision": 0.633578755699617,
+            "f1": 0.4549424374751886,
+            "recall": 0.3703943115707822,
+            "precision": 0.5895061728395061,
+            "accuracy": 0.4508,
+            "brier_score": 0.38785998453080367,
+            "status": "ok",
+            "label_count": 2500,
+            "prevalence": 0.6188,
+            "label_coverage": 1.0,
+            "confusion_matrix": [
+              [
+                554,
+                399
+              ],
+              [
+                974,
+                573
+              ]
+            ]
+          }
+        }
+      },
+      "mlflow_pai": "2a69026e89664eb9a44d9403c4a8ae20",
+      "mlflow_filhos": [
+        [
+          "885c0b7c4fe044cc9408ff35c42ed8d9",
+          "FINISHED"
+        ],
+        [
+          "ba99979205394405bc41ab0d357bed7d",
+          "FINISHED"
+        ],
+        [
+          "c4c74632753e4aa1a1aa9943b3483c4f",
+          "FINISHED"
+        ],
+        [
+          "de9389a56dd04d158f9e9905c8824710",
+          "FINISHED"
+        ]
+      ],
+      "dataset_sha256": "30c6be3abd8dcfd3e6096c828bad8c2f011238620f5369220bd60cfc82700933",
+      "modelo_sha256": "ea105dde177e4a16051b88bf5f708b03a454703574826e97e3072e534692d5eb",
+      "source_sha256": "fb0c32ce469ca28275ab1c14c06164b5c792375d82e824a938c719e8e2c17e35"
+    }
+  ],
+  "imagem_executada": "sha256:e52e07fcf2ec7221a280fcaaf55dead94413f65089e76e9bfe7db9b7305a60ff",
+  "exportacao": {
+    "arquivos_com_hash_verificado": 34
+  },
+  "ui": {
+    "inicio_utc": "2026-11-17T13:41:04.839191+00:00",
+    "fim_utc": "2026-11-17T13:41:44.691652+00:00",
+    "saude_http": 200,
+    "runs_finalizados": 10,
+    "consultas": [
+      "GET /health",
+      "POST /api/2.0/mlflow/runs/search"
+    ],
+    "destino": "http://127.0.0.1:5000",
+    "experimentos": [
+      "1"
+    ],
+    "log": "validacao/docker-sequencial-http.json",
+    "log_sha256": "83b19c6c5c2bc29c649c238a7c59adc0c414d0c0bc4214d5f30cfb10db94c953"
+  },
+  "arquivos_sha256": {
+    "Dockerfile": "ed846ed4f02a722598565f15f74136581f1f81b95042b7ccee530f092dab8212",
+    ".dockerignore": "72c2e689a2e5b8fed5c1107b117a23989fef9b4be1006f5e91e48fe560d746b7",
+    "compose.yaml": "ebdb699dd11c85b2ec8d26cff6f2c719137745c6986b8e5b0861e3e8505c1467",
+    "compose.sem-rede.yaml": "48280f0e1d90765ba387c85608cad9adfdbfb7a9268a0bdcd7649ca599d0f16b",
+    "pyproject.toml": "d6b5380b058ccbba97dfc06892742f0379d5408708701bcbb548f33337533e58",
+    "uv.lock": "ee99b859174f1b6acee5d1a55922a03c0a007c93e4c481cfca79af21edd07215",
+    "params.yaml": "960457bed592d56eed3be60cd5fe77d5314ae8238160ddede1dd04f73c42b587",
+    ".python-version": "49a506dd32096b010d75205acf3430c9ae6c40351888129499e5a5e487126c93",
+    ".gitattributes": "cc2a0632e5ffc1805397163f172e3dbbfdc15387a905d7151cf6c4470f36f966",
+    "scripts/verificar_docker.py": "3ed00845b6ea7ea2c049ecaecbf338e9d2487012674a9aaeb41b7cfc9951f7ab",
+    "src/credito_monitorado/cli.py": "7c92a0d4fc6687246a622e28deb687edc8f4873be8af799cb645a45ab9896865",
+    "src/credito_monitorado/config.py": "1faea8d833bad0d9be2ff60c1501dbc7b08725467c6150a4862011857c6f1c49",
+    "src/credito_monitorado/contracts.py": "ead91d56ea0d4a5ce504dcbbd18b40eaf98c5d1484e65fa0a55c1539ce62c799",
+    "src/credito_monitorado/data.py": "816126f70b650bcb50860019aa3d204b970785b75ff9284d0d903e0b0084fa35",
+    "src/credito_monitorado/drift.py": "41192efced1412a446f8a236c776181a84a9e34c7d722f4556a62bcfc656a79d",
+    "src/credito_monitorado/fairness.py": "d03dd50658639e19153787d0989d5acbf4a632c2615763a8a08d1ad084de7f20",
+    "src/credito_monitorado/model.py": "a8bda692f7fed9915efd8cb53942e50b1fd9f3e478dbc526f1fc8bd2519ba661",
+    "src/credito_monitorado/monitoring.py": "8e90fe7aed02aa9dabf5b738f803af298ff70abde64610693728e9a51f3a1179",
+    "src/credito_monitorado/pipeline.py": "42bfe5389eec050c45d02861d3e764118dca3cc9cd914e4d61cbe763f0bbf699",
+    "src/credito_monitorado/reporting.py": "3a1c16ef82cd9e67ac64abbe71cf1d6caeb77d4b00ae0749b7508cfbcc2541e8",
+    "src/credito_monitorado/telemetry.py": "226ed0795bf85c8553fd701b500b26723e004e782958a2ef26c01747944c4001",
+    "src/credito_monitorado/tracking.py": "d81f0ba4ed9dd14e1e8840eb9bc5403d8b24f2ab41007aa355ace15010712ecd",
+    "src/credito_monitorado/__init__.py": "5820b97cde3e99153ba0e10b807389c8b513c855038dfe33d654ff18d2396d66",
+    "src/credito_monitorado/__main__.py": "9f54bc706dc938319cba3e178b0ee6128478c5dc3609be4753bf39fdb5f9e92c"
+  },
+  "fim_utc": "2026-11-17T13:41:50.518243+00:00"
+}

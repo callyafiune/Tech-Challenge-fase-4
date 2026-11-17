@@ -132,7 +132,7 @@ Logs não incluem linhas individuais, identificadores de clientes, valores sens�
 
 O uso acadêmico de uma base pública não autoriza inferir que toda combinação de atributos é anônima ou aplicar o modelo no Brasil. O projeto não concede crédito real, não tenta reidentificação e usa apenas os campos necessários. Para uma fintech, proteção do crédito pode ser base aplicável (art. 7º, X); o controlador deve justificar finalidade, necessidade e enquadramento, com revisão jurídica do caso. Há direitos do titular e revisão de decisões automatizadas (arts. 18 e 20). [LGPD, texto atualizado da Câmara](https://www2.camara.leg.br/legin/fed/lei/2018/lei-13709-14-agosto-2018-787077-normaatualizada-pl.html).
 
-O plano operacional atribui ao executor local a reprodução e inspeção dos artefatos. Em uma fintech, designar responsáveis por integridade dos dados, risco, segurança e atendimento; não inventar integrantes ou contatos institucionais. Aplicar acesso local mínimo, segredos fora do repositório, backups controlados e relatórios agregados. Suprimir grupos de auditoria com menos de 30 pessoas; publicar contagem e diferenças de taxas/métricas por sexo e faixa etária quando houver amostra suficiente, observando necessidade de supressão complementar. Excluir atributos do modelo não garante ausência de viés por proxies. Revisão por pessoa habilitada é política recomendada, sem atribuir ao art. 20 uma obrigação geral de revisão humana.
+O plano operacional atribui ao executor local a reprodução e inspeção dos artefatos. Em uma fintech, designar responsáveis por integridade dos dados, risco, segurança e atendimento. Aplicar acesso local mínimo, segredos fora do repositório, backups controlados e relatórios agregados. Suprimir grupos de auditoria com menos de 30 pessoas; publicar contagem e diferenças de taxas/métricas por sexo e faixa etária quando houver amostra suficiente, observando necessidade de supressão complementar. Excluir atributos do modelo não garante ausência de viés por proxies. Revisão por pessoa habilitada é política recomendada, sem atribuir ao art. 20 uma obrigação geral de revisão humana.
 
 Como política acadêmica proposta, reter dados e artefatos locais até 90 dias após avaliação, eliminar caches e backups no mesmo ciclo e preservar apenas código e resultados agregados inspecionados. Esse prazo não é prazo legal obrigatório. Em uma fintech, a tabela de retenção deve distinguir finalidade, obrigação regulatória e exceções à eliminação (arts. 15 e 16), com registro da justificativa. O README deve conter inventário, retenção, canal de direitos, revisão humana, riscos de reidentificação, resposta a incidentes e limites de generalização. [Término e conservação na LGPD](https://normas.leg.br/?urn=urn%3Alex%3Abr%3Afederal%3Alei%3A2018-08-14%3B13709%402022-06-13%21art16).
 
@@ -149,9 +149,7 @@ Como política acadêmica proposta, reter dados e artefatos locais até 90 dias 
 | R07 — observabilidade (20%) | HTML consolidado, logs e runs MLflow | Sucesso, bloqueio esperado, duração, volumes, recursos e alertas visíveis |
 | R08 — governança (15%) | README e model/dataset cards | Finalidade, minimização, base legal contextualizada, retenção, direitos, vieses e resposta descritos |
 | R09 — reprodução e histórico | uv.lock, CI, comandos e commits semânticos | Clone limpo executa verificação; evidências identificam configuração/modelo/dados |
-| R10 — vídeo STAR (15%) | Roteiro demonstrativo textual | Somente roteiro <= 5 minutos; gravação e link excluídos do escopo autorizado |
-
-O enunciado original exige vídeo e link. A execução autorizada nesta sessão entrega o roteiro e não grava vídeo; essa diferença deve ficar explícita no README, sem declarar cumprimento integral desse critério.
+| R10 — vídeo STAR (15%) | Apresentação gravada e link, conforme o enunciado | Roteiro STAR disponível; gravação e link pendentes |
 
 ## Riscos e decisões de execução
 
@@ -165,5 +163,3 @@ O enunciado original exige vídeo e link. A execução autorizada nesta sessão 
 | Vazamento ou repetição indevida | Manifesto de IDs, fit somente em treino e teste de exclusão de colunas |
 | Evidência desatualizada | Cada execução grava diretório próprio e hashes; índice aponta execução concluída |
 | Alegação de conformidade/causalidade excessiva | Limites no README; experimento sintético identificado; plano contextualizado |
-
-Esforços solicitados: arquitetura e auditoria **xhigh**; pipelines e modelo **high**; estatística **high**; testes e refatorações **medium**; debugging **xhigh**. Velocidade **standard**, sem modo fast. Esses são parâmetros desejados do trabalho, não evidência de que um runtime sem controle explícito os aplicou. A revisão adversarial externa deve solicitar literalmente o modelo `fable`, registrar o identificador resolvido `claude-fable-5-2`, achados e correções, sem enviar dados individuais ou segredos.

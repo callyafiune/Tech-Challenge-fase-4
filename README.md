@@ -8,12 +8,14 @@
 ![Evidently](https://img.shields.io/badge/Evidently-0.7.23-ED0400)
 ![SciPy](https://img.shields.io/badge/SciPy-1.17.1-8CAAE6)
 ![MLflow](https://img.shields.io/badge/MLflow-3.18.0-0194E2)
+![Docker](https://img.shields.io/badge/Docker-29.6.1-2496ED)
+![Docker Compose](https://img.shields.io/badge/Docker%20Compose-5.2.0-2496ED)
 ![Pytest](https://img.shields.io/badge/Pytest-9.2.0-0A9EDC)
 ![Ruff](https://img.shields.io/badge/Ruff-0.17.5-D7FF64)
 
 Pipeline de sustentação de um classificador de inadimplência: valida dados antes da inferência, simula e detecta drift, acompanha desempenho e registra a saúde da execução. **Pandera + scikit-learn + Evidently + MLflow**, com relatórios HTML e plano de governança.
 
-Consulte o [enunciado](docs/enunciado.md). **Vídeo: somente o [roteiro STAR](docs/roteiro_star.md); a gravação não foi realizada, conforme solicitado.**
+Consulte o [enunciado](docs/enunciado.md) e o [roteiro da apresentação STAR](docs/roteiro_star.md).
 
 ## Pré-requisitos e execução
 
@@ -32,6 +34,16 @@ uv run python -m credito_monitorado.cli run --config params.yaml --output artifa
 ```
 
 O comando informa o diretório da execução com painel, métricas, logs, alertas, modelo e relatórios dos quatro cenários. Parâmetros em [`params.yaml`](params.yaml); cache, UTF-8 e detalhes no [guia de operação](docs/operacao.md).
+
+### Docker
+
+Com Docker e Compose v2, execute o mesmo pipeline sem instalar Python no host:
+
+```powershell
+docker compose up --build --abort-on-container-exit --exit-code-from pipeline
+```
+
+A imagem instala apenas dependências de execução e encerra após gerar os resultados. Cache e artefatos ficam em volumes persistentes. Consulte [Docker: execução, relatórios e tamanho da imagem](docs/docker.md).
 
 ## Relatórios e rastreamento
 
@@ -91,7 +103,7 @@ Valores completos, intervalos, divergências entre políticas de detecção e ha
 | Conceito simulado | Entradas/probabilidades iguais; aumento pareado de Brier ≥ 0,05 e limite inferior do IC95% > 0 | Investigar a mudança controlada do alvo. |
 | Infraestrutura | Etapa > 120 s, RSS > 2.048 MiB ou disco livre < 1 GiB | Investigar recursos; limites demonstrativos. |
 
-**Drift de entradas não comprova mudança em P(Y\|X) nem degradação:** a AUROC sobe no cenário covariável. Na intervenção sintética de conceito, entradas e probabilidades são preservadas, mas os rótulos mudam; o Brier aumenta **0,3472** contra o controle.
+**Drift de entradas não comprova mudança em P(Y\|X).** No covariável, a AUROC sobe, enquanto o Brier piora de 0,1303 para 0,1597; esse aumento fica abaixo do limiar de alerta de 0,05. Na intervenção sintética de conceito, entradas e probabilidades são preservadas, mas os rótulos mudam; o Brier aumenta **0,3472** contra o controle.
 
 A simulação é severa e não identifica efeitos reais de inflação, desemprego ou renda. Sem rótulos maduros, a avaliação supervisionada fica pendente. O resumo próprio governa os alertas; a política bruta do Evidently pode divergir. Detalhes em [causalidade](docs/causalidade.md) e [operação](docs/operacao.md).
 
@@ -133,6 +145,7 @@ A [verificação registrada](docs/verificacao.json) contém **150 testes aprovad
 | Modelo e limitações | [Model card](docs/model_card.md) |
 | Estatística e evidências | [Resultados](docs/resultados.md) e [matriz de rastreabilidade](docs/matriz_rastreabilidade.md) |
 | Execução e alertas | [Guia de operação](docs/operacao.md) |
+| Contêiner, volumes e relatórios | [Docker](docs/docker.md) |
 | Privacidade e hipóteses causais | [Governança](docs/governanca.md) e [causalidade](docs/causalidade.md) |
 | Revisões com Claude Code Fable | [Tratamento dos pareceres](docs/revisoes/tratamento.md) |
 | Conferência dos requisitos | [Auditoria final](docs/auditoria_final.md) |

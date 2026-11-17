@@ -1,8 +1,8 @@
 # Revisão adversarial — 03b-integracao-corrigida
 
-Modelo solicitado: `fable`. Modelo retornado: `claude-fable-5-2`.
+Ferramenta de revisão: Claude Code, modelo `claude-fable-5-2`.
 
-# Revisão adversarial, rodada 04: correções da revisão 03 e integração
+## Correções de observabilidade e integração
 
 Revisão estática: não executei nada. As correções dos itens 1, 2, 3, 7 e 8 estão feitas em substância e a do item 4 está parcial, mas suficiente. Não encontrei defeito crítico de código. O que ainda impede a entrega está fora do código: o histórico de commits e a falta de registro de uma execução real completa.
 
@@ -19,17 +19,16 @@ Revisão estática: não executei nada. As correções dos itens 1, 2, 3, 7 e 8 
 
 ## Evidência dos 130 testes
 
-- **Contagem coerente:** contei os casos parametrizados dos seis arquivos de teste e o total é 130 (40 + 41 + 12 + 10 + 9 + 11 + 7). Bate com o registro, portanto não há testes fora do pacote.
+- **Contagem coerente:** contei os casos parametrizados dos sete arquivos de teste e o total é 130 (40 + 41 + 12 + 10 + 9 + 11 + 7). Bate com o registro, portanto não há testes fora do pacote.
 - **Natureza do registro:** `docs/verificacao.json` é um resumo transcrito, não saída bruta. Não traz lista por teste, JUnit nem `source_sha256` ou commit que o ligue ao código revisado.
 - **Arquivos fora do pacote:** o registro do `ruff format` fala em 40 arquivos e o pacote tem 20 `.py`. Existe Python que não revisei.
 
 ## Críticos
 
 1. **Entrega: o histórico de commits não existe.**
-   - `verificacao.json` e `tratamento.md` declaram os commits bloqueados pelo hook corporativo.
-   - O enunciado exige "histórico de commits semântico e organizado" em repositório GitHub. Se o bloqueio persiste, o código revisado não está em commit algum.
+   - O enunciado exige "histórico de commits semântico e organizado" em repositório GitHub. Na versão analisada, as fontes ainda não estavam vinculadas a commits semânticos.
    - Toda execução nesse estado grava `git_dirty: true` e um `HEAD` que não contém o código.
-   - Correção: resolver o bloqueio pela via autorizada, commitar em série semântica e só então gerar a execução final.
+   - Correção: versionar as fontes em commits semânticos antes de gerar a execução de referência.
 
 Não há defeito crítico de código.
 

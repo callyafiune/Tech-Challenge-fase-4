@@ -1,0 +1,45 @@
+{
+  "session_id": "0a81ad33-833e-4bed-9e22-7094f47cf593",
+  "duration_ms": 204479,
+  "num_turns": 1,
+  "is_error": false,
+  "subtype": "success",
+  "modelos": [
+    "claude-fable-5-2"
+  ],
+  "velocidade": "standard",
+  "instante_utc": "2026-11-17T13:47:47.467815+00:00",
+  "arquivos": [
+    "Dockerfile",
+    ".dockerignore",
+    "compose.yaml",
+    "compose.sem-rede.yaml",
+    "scripts/verificar_docker.py",
+    "docs/docker.md",
+    "docs/verificacao_docker.json",
+    "docs/revisoes/08-docker-tratamento.md",
+    "docs/validacao/docker-sequencial-04-build.log",
+    "docs/validacao/docker-sequencial-05-imagem-inicial.log",
+    "docs/validacao/docker-sequencial-08-falha-sem-cache.log",
+    "docs/validacao/docker-sequencial-http.json",
+    "docs/validacao/docker-qualidade.json",
+    "docs/validacao/docker-qualidade-pytest.log"
+  ],
+  "sha256": {
+    "Dockerfile": "ed846ed4f02a722598565f15f74136581f1f81b95042b7ccee530f092dab8212",
+    ".dockerignore": "72c2e689a2e5b8fed5c1107b117a23989fef9b4be1006f5e91e48fe560d746b7",
+    "compose.yaml": "ebdb699dd11c85b2ec8d26cff6f2c719137745c6986b8e5b0861e3e8505c1467",
+    "compose.sem-rede.yaml": "48280f0e1d90765ba387c85608cad9adfdbfb7a9268a0bdcd7649ca599d0f16b",
+    "scripts/verificar_docker.py": "3ed00845b6ea7ea2c049ecaecbf338e9d2487012674a9aaeb41b7cfc9951f7ab",
+    "docs/docker.md": "f8e9a58feca60f1057da809be73acafff795e3a63e6296152d36f6966f213a07",
+    "docs/verificacao_docker.json": "f6835fc364788e1b1c2dff30a4dae0fcf045eeab000cb19e50187f1970311cda",
+    "docs/revisoes/08-docker-tratamento.md": "d63804434a0a5080ef7d6bdb1adcfb309024ee053eef74bed4daeb16ed0d93c9",
+    "docs/validacao/docker-sequencial-04-build.log": "ac61253a0c00ee943c155d429cbf5325044da6050f787d4f39198c02daf10063",
+    "docs/validacao/docker-sequencial-05-imagem-inicial.log": "618c885988f73dd4fe8daf43bfd369254154ee28322b70444c72415fad39ddd5",
+    "docs/validacao/docker-sequencial-08-falha-sem-cache.log": "89f13d47afe3562fe5b58ea92efdb68bde9d3f38c95f2709f7d607ebeb60b2bf",
+    "docs/validacao/docker-sequencial-http.json": "83b19c6c5c2bc29c649c238a7c59adc0c414d0c0bc4214d5f30cfb10db94c953",
+    "docs/validacao/docker-qualidade.json": "caf4bcd0c2488279997b1132b5ec2a6d9d6f357c2f733a18a7b09ec28a7834d7",
+    "docs/validacao/docker-qualidade-pytest.log": "6059ca835364df3180b721313b4792ea34e31df1c82c21beeb4d8908bc6ffe9c"
+  },
+  "prompt_sha256": "e97c2ea115274bc71a4c27b30acd63a16d562abb0afd7c879fec65fc56933933"
+}

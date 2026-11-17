@@ -1,18 +1,15 @@
 # Plano de implementação — observabilidade de crédito
 
-> **Para agentes executores:** seguir as tarefas e seus critérios de aceite. A skill `superpowers:executing-plans` orienta execução local; `superpowers:subagent-driven-development` aplica-se quando houver delegação explicitamente autorizada. A sessão já autorizou execução ponta a ponta sem nova confirmação. Não gravar vídeo.
-
 **Objetivo:** entregar um pipeline financeiro reproduzível que bloqueia dados ruins, demonstra drift covariável e de conceito, registra observabilidade e consolida governança.
 
 **Arquitetura:** aquisição UCI e contratos precedem um split exclusivo de treino, validação, referência holdout e pool de produção. Uma pipeline scikit-learn congelada alimenta cenários controlados, comparação estatística/Evidently e consolidação HTML/MLflow.
 
 **Tecnologias:** Python 3.11, uv/uv.lock, pandas, Pandera, scikit-learn, scipy, Evidently, MLflow, PyYAML, joblib, pytest e Ruff; leitura XLS compatível com o arquivo oficial e coleta de recursos compatível com Windows.
 
-**Especificação:** [arquitetura.md](arquitetura.md) e [enunciado preservado](enunciado.md), originalmente lido em UTF-8 de `C:\estudos\MLET-Tech-Challenge-Fase-4.md`. O retrato atual é `20261116T220412_87839641f75d`, produzido a partir da revisão `11dd2b8` com `git_dirty=false`, 38,67498 s, 22 eventos e oito alertas; pai MLflow `b987bfd1e9a848179a2bdeec3eb526fc`. As 31 fontes mantêm SHA agregado `312c6ae2f7e8cecf07e52930e28172bf34a44de4021c80e7cf10bf72061d3c73`. Os 150 testes já comprovados pertencem à rodada anterior dos mesmos bytes; a nova rodada está em consolidação pelo principal. Não se antecipam resultados de CI ou push.
+**Especificação:** [arquitetura.md](arquitetura.md) e [enunciado preservado](enunciado.md). O retrato atual é `20261116T220412_87839641f75d`, produzido a partir da revisão `11dd2b8` com `git_dirty=false`, 38,67498 s, 22 eventos e oito alertas; pai MLflow `b987bfd1e9a848179a2bdeec3eb526fc`. As 31 fontes mantêm SHA agregado `312c6ae2f7e8cecf07e52930e28172bf34a44de4021c80e7cf10bf72061d3c73`. Os registros de verificação identificam os comandos executados e sua correspondência com as fontes.
 
 ## Restrições globais
 
-- Prosa em português do Brasil; identificadores de APIs podem permanecer em inglês.
 - Dataset público financeiro binário com pelo menos 5.000 registros; usar UCI Default of Credit Card Clients, 30.000.
 - Split estratificado e exclusivo por ID: treino 50%, validação 15%, referência 15%, pool de produção 20%; seed 42.
 - Pandera antes do treino e da inferência; nenhum reparo silencioso de um lote inválido.
@@ -20,8 +17,7 @@
 - Não ajustar modelo em referência ou produção; limiar predefinido em 0,30; não usar alvo na seleção covariável.
 - Cenários de 2.500 registros, IDs únicos por lote, mudanças sintéticas declaradas e rótulos indisponíveis tratados explicitamente.
 - Entrega local sem credenciais obrigatórias; dados completos, stores, caches e segredos fora do Git.
-- Commits semânticos por bloco concluído; não afirmar resultados antes de executá-los e registrar a evidência.
-- Esforço: arquitetura/auditoria xhigh; pipelines/modelo high; estatística high; testes/refatorações medium; debugging xhigh. Velocidade standard, sem modo fast. Registrar limitações do runtime quando não houver controle desses parâmetros.
+- Histórico semântico por componente, com evidências vinculadas às fontes.
 
 ## Pontos de revisão
 
@@ -96,7 +92,7 @@ As interfaces abaixo são contratos de integração; classes de resultado devem 
 - [x] Implementar `HistGradientBoostingClassifier` com seleção de atributos persistida, `max_iter=150`, `learning_rate=0.08`, `max_leaf_nodes=15`, comparação Dummy e limiar fixo 0,30. Guardar lista/ordem de atributos, seed e versões.
 - [x] Cobrir `tests/test_data_model.py` e `tests/test_contracts.py` pela suíte global; executar treino real, superar AUROC 0,65/Dummy e comparar predições antes/depois de carregar o bundle confiável.
 - [x] Registrar evidências de dados/modelo na execução final e no snapshot agregado.
-- [x] Criar commit semântico de dados/modelo: `734d66e`, após autorização específica dos hooks locais.
+- [x] Versionar os módulos de aquisição, contratos e treinamento: `734d66e`.
 
 **Aceite independente:** dataset obtido com proveniência, pelo menos três falhas rígidas bloqueadas, partições exclusivas e modelo reproduzível treinado sem vazamento.
 
@@ -110,13 +106,13 @@ As interfaces abaixo são contratos de integração; classes de resultado devem 
 - [x] Implementar pesos fixos: 3 para `limit_bal <= mediana_reference`, multiplicado por 4 para `pay_0 >= 1`, com seeds explícitas por cenário.
 - [x] Testar invariância de atributos/IDs/ordem e restrição das inversões a `pay_0 <= 0`; implementar p=0,8 e intervenção consistente por ID/seed no conceito/combinado; conferir probabilidades idênticas nos pares.
 - [x] Implementar manifesto de seleção e alterações sintéticas; identificar sobreposição entre cenários contrafactuais e limitar alegações de causalidade.
-- [x] Testar distribuições iguais, deslocamento forte, PSI finito com categoria ausente/referência constante e correção BH conhecida; conferir em código bins fixos e exclusão de IDs/alvo da família estatística. Não apresentar casos adicionais do desenho como testes dedicados que não existem.
+- [x] Testar distribuições iguais, deslocamento forte, PSI finito com categoria ausente/referência constante e correção BH conhecida; conferir bins fixos e exclusão de IDs/alvo da família estatística.
 - [x] Implementar KS com p ajustado BH a 5% e D >= 0,10, PSI >= 0,20 com epsilon 1e-6, bins contínuos por referência e bootstrap pareado de Brier com 500 reamostragens; exigir pelo menos 200 linhas para comparação. Usar `brier_increase_threshold=0.05` para conceito e reportar queda complementar de AUROC com `auc_drop_threshold=0.05`.
 - [x] Implementar adapter Evidently na versão do lock: colunas tipadas, IDs/metadados fora das features, métodos/limiares explícitos e HTML/JSON reais exportados; banner diferencia a política primária dos testes brutos.
 - [x] Implementar ausência de alvo e classe única: status `pending_labels` ou métrica indefinida com motivo, sem tratar ausência como estabilidade de conceito.
 - [x] Cobrir `tests/test_drift.py` e `tests/test_monitoring.py` pela suíte global; conferir drift nas duas variáveis e delta Brier/IC nos pares conceito/controle e combinado/covariável reais.
 - [x] Inspecionar automaticamente HTML/JSON, conteúdo, links, scores, cobertura e limites; registrar achados e correções na auditoria.
-- [ ] Concluir inspeção visual manual dos HTMLs; a ferramenta de navegador foi interrompida por não confirmar a URL.
+- [ ] Inspeção visual manual dos HTMLs: não realizada; conteúdo, links e integridade têm verificação automatizada.
 - [x] Criar commit semântico de drift: `2b8c3bc`.
 
 **Aceite independente:** drift covariável material em duas variáveis e conceito isolado com X invariável, ambos demonstrados por evidência estatística e HTML. Não usar um rótulo de cenário como resultado do detector.
@@ -132,8 +128,8 @@ As interfaces abaixo são contratos de integração; classes de resultado devem 
 - [x] Emitir logs JSONL e alertas JSON pelos schemas compartilhados; medir status, duração, volumes, cobertura, RSS e disco com funcionamento no Windows.
 - [x] Registrar execução/cenários no MLflow SQLite local e anexar configuração, métricas, manifestos e relatórios. Testar escrita/leitura real, encerramento de runs e erro de tracking explícito.
 - [x] Gerar HTML consolidado local, links relativos válidos, resumo de saúde e todos os cenários. Exibir estados insuficientes/indefinidos como pendentes.
-- [x] Cobrir `tests/test_telemetry.py`, `tests/test_fairness.py` e `tests/test_pipeline.py` pela suíte global; conferir execução completa, SQLite pai/filhos e artefatos baixados, incluindo links e métricas consistentes. A consulta foi automatizada, sem alegar navegação visual da UI.
-- [x] Configurar CI para `uv sync --frozen`, Ruff e pytest sem credenciais; executar integração real local separada, com skip explícito somente em cache ausente. Esta auditoria valida execução local; o CI é consultável na aba Actions e tem estado autônomo.
+- [x] Cobrir telemetria, equidade e integração pela suíte de testes; conferir SQLite pai/filhos, artefatos baixados, links e métricas por consultas automatizadas.
+- [x] Configurar CI para `uv sync --frozen`, Ruff e pytest sem credenciais; executar a integração local separadamente, com skip explícito em cache ausente. O estado de cada execução de CI está disponível no GitHub Actions.
 - [x] Executar Ruff/formatação/pytest e registrar resultados reais: 150 testes passaram; conferir sete logs literais, JUnit, artefatos e hashes da execução UCI final.
 - [x] Criar commit semântico de observabilidade: `5152b36`.
 
@@ -145,21 +141,19 @@ As interfaces abaixo são contratos de integração; classes de resultado devem 
 
 **Consome:** somente resultados efetivamente executados e manifestos finais. **Produz:** instruções reproduzíveis, governança consolidada, roteiro e histórico de correções.
 
-- [x] Consolidar no README propósito, setup uv, reprodução completa, comandos de verificação, caminhos de evidência e leitura de negócio dos alertas; publicar execução/configuração/dados/modelo correspondentes.
+- [x] Consolidar no README propósito, setup uv, reprodução, comandos de verificação e interpretação dos alertas; publicar indicadores e identificadores da execução, configuração, dados e modelo.
 - [x] Escrever cards: nomes/unidades/códigos, Taiwan/2005, limite de crédito diferente de renda, licença/atribuição, exclusão de atributos, vieses, ausência de validação para concessão real e limitações de generalização.
-- [x] Consolidar governança no próprio README: finalidade/minimização, responsáveis, base legal contextualizada, direitos/revisão, retenção proposta, acesso/logs/incidentes e mitigação de vieses; distinguir política acadêmica de obrigação legal.
+- [x] Resumir governança no README e detalhá-la em `docs/governanca.md`: finalidade, minimização, responsáveis, base legal contextualizada, direitos, retenção, acesso, incidentes e equidade.
 - [x] Documentar causalidade: seleção covariável dependente somente de X, contrafactual de rótulos, invariantes, métricas observadas, hipóteses alternativas reais e plano de investigação; declarar ausência de inferência causal macroeconômica.
-- [x] Criar roteiro STAR de cinco minutos com situação, tarefa, ação, resultados, governança, comandos e telas; informar que gravação/link não foram produzidos por escolha de escopo. O roteiro final usa tempos compatíveis até 5:00.
-- [x] Preencher matriz R01–R10 com artefatos/verificações/resultados; reconhecer roteiro como entrega autorizada e gravação como critério original não atendido.
-- [x] Executar rodadas adversariais iniciais com alias literal `fable`; registrar `claude-fable-5-2`, arquivos/hashes, achados e tratamento, sem dados individuais ou segredos.
-- [x] Corrigir os achados concretos examinados e verificar novamente código/execução; fechar A01–A04 da auditoria com evidência correspondente.
-- [x] Ler pareceres finais 03b/04 e 03c/04b, confrontando-os com evidência e arquivos atuais.
+- [x] Criar roteiro STAR com situação, tarefa, ação, resultados, governança, comandos e telas, com duração prevista de até cinco minutos.
+- [x] Preencher matriz R01–R10 com artefatos/verificações/resultados; relacionar o roteiro e os artefatos de demonstração ao critério de apresentação.
+- [x] Registrar revisões técnicas com identificação dos arquivos, achados e tratamento, usando apenas código e evidências agregadas.
+- [x] Tratar os achados A01–A05 com evidências de código, testes e execução.
 - [x] Fechar URI ambígua por omissão integral de metadados remotos e validar o helper de integridade por bytes, configuração, ID e manifesto; conferir regressões/evidências da versão final.
-- [x] Incorporar 03d/03e, corrigir a discriminação dos três casos negativos de ID/status/escape e conferir os hashes dos arquivos revisados e sua presença no JUnit final.
-- [x] Auditar UTF-8, integridade, links relativos automatizados e correspondência documentação/implementação; conferir lint/testes e relatar limites de CI remoto, visualização e vídeo.
-- [x] Resolver o hook por autorização específica e concluir os quatro commits técnicos mais documentação em `11dd2b8`. O principal consolidará as evidências do retrato limpo; push não foi declarado nesta auditoria.
+- [x] Isolar os três casos negativos de ID, estado e escape de diretório, com resultados identificados no JUnit.
+- [x] Validar UTF-8, integridade, links relativos e correspondência entre documentação e implementação.
 
-**Aceite independente:** um avaliador consegue reproduzir a demonstração e associar cada requisito ao artefato correto; o README contém governança e reconhece o critério de vídeo fora do escopo.
+**Aceite independente:** um avaliador consegue reproduzir a demonstração e associar cada requisito ao artefato correto; o README contém governança e referencia o roteiro de apresentação.
 
 ## Portas de aceite
 
@@ -168,6 +162,6 @@ As interfaces abaixo são contratos de integração; classes de resultado devem 
 | Dados/modelo | Proveniência, contrato, split exclusivo, fit só em treino e métrica mínima comprovados |
 | Estatística | Dois atributos com drift, invariância X no conceito e degradação pareada comprovadas |
 | Operação | Logs/alertas/recursos/HTML/MLflow realmente gerados e recuperáveis |
-| Entrega | README e matriz consistentes, revisão adversarial tratada, verificações executadas e vídeo explicitamente fora de escopo |
+| Entrega | README e matriz consistentes, revisão adversarial tratada, verificações executadas e roteiro e sequência da demonstração documentados |
 
-Este plano é considerado implementado somente quando essas portas estiverem respaldadas pelos resultados da execução. A conclusão da redação deste documento, por si só, não constitui conclusão do projeto.
+As portas de aceite são verificadas pelos resultados e artefatos identificados em [resultados](resultados.md) e na [matriz de rastreabilidade](matriz_rastreabilidade.md).

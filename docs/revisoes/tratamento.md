@@ -1,76 +1,49 @@
-# Tratamento das revisões adversariais
+# Revisões técnicas e tratamento dos achados
 
-Os pareceres numerados são históricos preservados do pacote enviado naquele momento. Cada JSON registra modelo resolvido, sessão e SHA-256 dos arquivos efetivamente revisados. A revisão usa uma sessão separada do Claude Code, por leitura estática; não equivale à execução de testes ou auditoria humana. Alterações posteriores são descritas aqui e verificadas pelos testes e pela execução final. O modelo retornado foi `claude-fable-5-2`, solicitado pelo alias `fable`, velocidade `standard` nos metadados disponíveis.
+Os pareceres são publicados em edição técnica, com achados e conclusões referentes às versões identificadas nos metadados. São leituras estáticas, complementares à execução de testes e à conferência dos artefatos. A implementação atual é comprovada pelos registros de verificação e pelos resultados publicados.
 
-## Bloco 00 — arquitetura
+| Área | Tratamento implementado | Evidência |
+|---|---|---|
+| Dados e contratos | Integridade do cache, domínios explícitos, bloqueio do lote e erros sem valores individuais. | `contracts.py`, testes e campo `contracts` do resumo. |
+| Isolamento | IDs exclusivos entre partições; ajuste apenas no treino; ID, alvo, sexo, escolaridade e estado civil fora dos preditores. | `data.py`, `model.py` e testes de separação. |
+| Estatística | KS com BH e tamanho de efeito; PSI nas discretas; política primária separada dos testes brutos do Evidently. | [Resultados](../resultados.md) e [causalidade](../causalidade.md). |
+| Conceito simulado | Comparação pareada com entradas e probabilidades invariáveis; bootstrap do aumento de Brier. | Cenários controle/conceito e covariável/combinado. |
+| Privacidade | Omissão integral de destinos remotos e sanitização dos erros persistidos. | `_safe_tracking_uri`, regressões de URI e [governança](../governanca.md). |
+| Observabilidade | Métricas finais coerentes entre resumo e MLflow; relatórios espelhados na árvore do run pai. | [Metadados MLflow](../evidencias_mlflow.json) e testes SQLite/download. |
+| Estados indefinidos | Amostra insuficiente e rótulos ausentes permanecem explícitos no JSON e no HTML. | `monitoring.py`, `reporting.py` e testes de borda. |
+| Equidade | Supressão por tamanho, supressão complementar e denominadores mínimos por métrica. | `fairness.py` e auditoria agregada no painel. |
+| Integridade | Verificação de ID, estado, configuração, inventário e hashes; fixtures negativas isoladas. | `scripts/verificar_entrega.py`, JUnit e [registro](../verificacao.json). |
+| Docker | Imagem de execução, usuário sem privilégios, volumes, rede bloqueada e coleta sequencial de evidências. | [Tratamento Docker](08-docker-tratamento.md) e [verificação](../verificacao_docker.json). |
 
-- Contradições preliminares foram corrigidas: HistGradientBoosting, limiar fixo 0,30, BH a 5%, bootstrap de 500 e aumento de Brier de 0,05, conforme configuração.
-- A previsão de que o PSI de `pay_0` não alcançaria 0,20 foi confrontada com execução: **0,20530782**, sem alterar pesos ou limiar. A margem é pequena e não há IC do PSI: é demonstração de seed fixada, não garantia de detecção em qualquer carteira.
-- Hashes ZIP e XLS fixados; artefato inclui limiar/atributos; contrato bloqueia vazio, colunas extras e domínios.
-- Diferentes regras do Evidently e política primária são explicitadas no painel e por banner no HTML Evidently. Não se declara concordância universal.
-- Conceito/combinado usam intervenção consistente por ID/seed, com pares controle/conceito e covariável/combinado.
+## Rastreabilidade dos achados de integração
 
-## Bloco 01 e rodada 01b — dados/modelo
+| Achado do parecer 03b | Estado e evidência atual |
+|---|---|
+| Histórico das fontes e registro de execução | O manifesto identifica a revisão `11dd2b8` e 31 hashes de fontes/configuração. A [captura da CLI](../execucao_cli.json) registra o processo e sua saída; o [índice de verificação](../verificacao.json) reúne logs e JUnit. |
+| Menor 1 — contador da demonstração de contrato | O bloqueio vem do contrato antes da inferência. O contador da demonstração expressa a garantia do fluxo; não representa instrumentação remota de chamadas ao modelo. |
+| Menor 2 — seleção de `failed_stage` | O handler filtra eventos com `expected_failure`; o teste de falha após bloqueio esperado verifica o diagnóstico `pipeline`. |
+| Menor 3 — URI e caminhos locais | Destinos remotos são omitidos integralmente. Caminhos locais podem aparecer nas evidências; essa exposição de metadados está descrita na governança. |
+| Menor 4 — falha após criação do run | O handler tenta marcar o run como `FAILED`. A cobertura não comprova todos os pontos de interrupção; parada forçada pode deixar registros incompletos. |
+| Menor 5 — HTML nos runs filhos | Os filhos contêm estatísticas e referência ao pai; os HTMLs e seus arquivos relativos são sincronizados na árvore do pai. |
+| Menor 6 — saúde das últimas etapas | Finalização e sincronização têm duração registrada; a avaliação de alertas ocorre antes de sua conclusão. A cobertura de alertas dessas etapas finais é limitada. |
+| Menor 7 — processo da CLI | O verificador Docker executa a CLI com saídas zero nos cenários válidos e saída 1 com cache vazio e rede bloqueada. |
+| `label_names` | `original_labels` é apresentado como `observados` no relatório. |
+| `counterfactual` no controle | O metadado também marca a amostra de controle simulada; a condição dos rótulos é descrita por `labels_status`. O controle conserva os rótulos originais. |
+| PSI e banner do Evidently | O PSI primário de `pay_0` é 0,205308, e o bruto do Evidently é 0,202018. O banner identifica políticas diferentes; a margem e a ausência de IC do PSI estão em [resultados](../resultados.md). |
 
-- Proveniência passou a validar SHA-256 do XLS; erro de integridade foi separado de falha de leitura e protegido por regressão.
-- `psi_epsilon` e limiar Brier validados; chaves desconhecidas rejeitadas; URL aprovada tem fonte única; mínimo configurado é consumido.
-- Inferência aceita ausência dos três demográficos excluídos. Quando presentes, são validados. Idade permanece: documentação e nome do teste restringem a alegação de exclusão aos atributos realmente excluídos.
-- `DataContractError` é lançado fora do tratamento Pandera: sem contexto/causa retendo valores inválidos. Testes exercitam tanto tipos quanto domínio financeiro.
-- Cobertura ampliada: cache íntegro/adulterado, configuração positiva/negativa, normalização, volume, métricas conhecidas, classe única, sobreposição, treino separável, carregamento joblib e fonte UCI real quando há cache.
-- Referência independente tem métricas finais publicadas. Limiar e hiperparâmetros são escolhas acadêmicas prévias, sem busca em produção; não se alega otimização econômica.
-- Defaults explícitos das APIs foram mantidos por conveniência de uso e testes, com argumentos passados pela orquestração validada. Não são parâmetros ocultos do pipeline entregue.
+## Pareceres de referência
 
-## Bloco 02 e rodada 02b — drift
+- Arquitetura: [00](00-arquitetura.md).
+- Dados e modelo: [01](01-dados-modelo.md), [01b](01b-correcao-dados.md).
+- Drift: [02](02-drift-estatistica.md), [02b](02b-correcao-drift.md).
+- Observabilidade e integridade: [03](03-observabilidade.md), [03b](03b-integracao-corrigida.md), [03c](03c-metadados-finais.md), [03d](03d-integridade-fechamento.md), [03e](03e-cobertura-isolada.md).
+- Documentação e governança: [04](04-documentacao-governanca.md), [04b](04b-documentacao-corrigida.md).
+- Docker: [08](08-docker.md), [08b](08b-docker-fechamento.md), [08c](08c-docker-evidencias.md).
 
-- Guardas de IDs impedem referência/produção sobrepostas antes de seleção e inferência. Comparação estatística pura ainda permite comparar distribuições iguais, como exigem seus testes.
-- Testes passam cenários pelo detector em três seeds controladas e pela base UCI real em cache. O teste real tem skip explícito em clones sem cache; evidências finais vêm da execução integral real.
-- `simulation` é persistido explicitamente, sem depender apenas de `DataFrame.attrs` para leitura do resultado.
-- Score, taxa de predição positiva e prevalência disponível são monitorados separadamente de X. Rótulo ausente permanece pendente.
-- JSON primário é gravado atomicamente antes do Evidently. Falha complementar preserva diagnóstico, grava tipo seguro e interrompe a execução, sem alegar completude.
-- O teste pareado **não é um detector causal genérico**: evidencia a intervenção conhecida. O pipeline também alerta degradação não pareada contra referência, como sinal exploratório; não rotula essa comparação como prova de concept drift real.
-- Curva dose–resposta, calibração de falso alarme sequencial, reponderação e poder estatístico não foram incluídos: extrapolam a demonstração pedida. Seus limites estão declarados, inclusive severidade0,8, dependência entre cenários e ausência de conclusão macroeconômica.
-- Sexo/escolaridade/estado civil não pertencem a FEATURES; a hipótese condicional do parecer sobre KS nesses códigos não se aplica.
+## Limites de interpretação
 
-## Bloco 03 — observabilidade
+As conclusões de cada parecer dependem dos arquivos analisados naquela versão. A ausência de um arquivo em um pacote de revisão não demonstra sua ausência no repositório completo. O estado atual dos achados é apresentado na tabela acima e na [auditoria técnica](../auditoria_final.md).
 
-- Controle positivo do lote precede violações isoladas, preservando dtype numérico. Ausência de inferência no lote inválido é uma garantia do fluxo validado e inspecionado, não um contador observado de chamadas em sistema remoto.
-- Proveniência inclui árvore suja, revisão Git, hashes individuais e agregado do código/configuração/lock. A execução não é atribuída silenciosamente apenas a um HEAD antigo.
-- Sanitização remove credenciais, parâmetros e fragmentos de URIs de quaisquer esquemas; caminho SQLite mantém formato necessário à consulta local.
-- Disjunção é verificada em dados e novamente na integração. Modelo só ajusta treino; receber validação para medir métricas não significa ajustar nesse conjunto.
-- Referência independente, auditoria por grupos e comparação combinada aparecem no HTML; métricas da referência, hiperparâmetros, série por passos e auditoria são registrados no MLflow.
-- Links relativos no artefato pai MLflow recebem espelho dos relatórios dos cenários. Arquivo principal e resumo entram no inventário de hashes.
-- Etapas de persistência/sincronização são rastreadas; erro e interrupção não viram sucesso. Falhas secundárias de salvamento não substituem a exceção original. CLI informa diretório real e distingue interrupção.
-- Supressão complementar de taxas evita dedução trivial de grupos pequenos por dimensão; TPR/FPR exigem denominador específico mínimo. Não se afirma certificação de equidade.
-- Disco é medido no diretório de saída; alertas de recursos incluem observado/limiar. Estados insuficientes/indefinidos são exibidos como pendentes.
-- Janelas T0–T3 e `step` no MLflow expressam a passagem de tempo **simulada**. São cenários controlados, sem afirmar tendência econômica monotônica ou safras futuras observadas.
-- Alertas não pareados são regras exploratórias por efeito, sem IC ou taxa sequencial calibrada; essa limitação é aceita e declarada. O contraste causal da demonstração usa pares e bootstrap.
+O modelo mantém limitações de generalização, calibração operacional e equidade. A simulação severa verifica a cadeia de detecção, sem estimar sensibilidade para mudanças pequenas ou causas macroeconômicas. A supressão aplicada à auditoria por grupos não torna automaticamente anônimos todos os histogramas do Evidently.
 
-## Escopo de entrega e limitações
-
-O [README](../../README.md) contém governança e links oficiais. Vídeo não foi produzido; somente roteiro autorizado. Execuções remotas do CI não são alegadas antes de ocorrerem. A validação visual no navegador foi interrompida pela ferramenta por não conseguir confirmar a URL; HTMLs têm testes de conteúdo, links, JSON e integridade, mas não aprovação visual manual.
-
-O hook global corporativo bloqueou a tentativa inicial de commit; foi solicitada autorização para usar hooks locais somente neste repositório acadêmico. Não foi contornado silenciosamente. Estado final do histórico e eventuais pendências constam no registro de progresso.
-
-## Fechamento das rodadas 03b e 04
-
-A rodada 03b aprovou as correções da integração e não encontrou defeito crítico de código. As pendências de evidência foram fechadas pela execução real e pelos registros literais/JUnit vinculados às fontes. Os resíduos de URI malformada, indicação de etapa esperada, rótulo em inglês e HTML isolado em filhos receberam regressões e correções; filhos agora apontam para o pai.
-
-A rodada 04 confirmou todos os números. O defeito real de acentuação em resultados, causado pela passagem por um pipe PowerShell, foi corrigido em disco por gravação UTF-8 direta; o parecer antigo permanece intacto. O README recebeu causalidade, decomposição de Brier, achados por grupo e plano de mitigação sem alegar redução empírica. O roteiro inclui números, folga e uma só execução nas telas. O Evidently realmente aponta 15 colunas com testes brutos; a política primária aponta duas e ambas também passam no Evidently.
-
-Sobre contratos: finitude é uma pré-checagem deliberada; Pandera também contém regras de nulidade, idade, unicidade, limites e domínios. Controle positivo e variantes isoladas comprovam rejeição no fluxo, sem divulgar os `failure_cases`. `rejected_rows` é o volume bloqueado integralmente, não a quantidade de linhas violadoras. Não se afirma coletar todas as causas do lote combinado depois do primeiro bloqueio.
-
-Não foram adicionados IC do PSI, ablação de idade, calibração sequencial ou parecer setorial de crédito real. Esses limites são explicitados; a atividade pede demonstração e plano de governança. A supressão por grupo não se aplica automaticamente a todo histograma Evidently, e metadados locais de execução acompanham o retrato. A revisão autorizada recebeu esses agregados, sem linhas ou IDs de clientes.
-
-Na rodada intermediária, o registro gerado por `scripts/verificar_entrega.py` confirmou **134 testes passando** depois da execução UCI `20261116T212632_471752d41e59`. O fechamento atualizado está abaixo; o bloqueio histórico dos commits foi posteriormente resolvido por autorização expressa do usuário.
-
-A diferença de contagens do Ruff foi investigada no runtime instalado: `ruff format --check --verbose` inclui explicitamente arquivos `.md` (README, AGENTS e documentação); `ruff check --show-files` lista Python/TOML. Portanto, 46 arquivos formatados contra 25 arquivos de lint não representa código Python ausente na identidade. O número do formatador cresce quando um novo parecer Markdown é criado. O contador anterior de 130 testes no pacote 04b foi atualizado em disco para 134 após receber o registro literal, sem alterar o parecer histórico.
-
-## Veredito final e ressalvas aceitas
-
-A rodada **03d** confirmou como corrigidos os três itens da 03c: destino remoto constante, evidência anterior corretamente identificada como derivada e validação por bytes/configuração/manifesto sem depender de `git_dirty`. Seu único importante remanescente era a discriminação das fixtures negativas. A rodada **03e** julgou **CORRIGIDOS** os três casos ID/status/escape, sem defeitos críticos ou importantes nesse escopo. Os pareceres são estáticos; a execução é comprovada separadamente por log e JUnit.
-
-O congelamento técnico `20261116T215129_2bee07608434` confirmou **31 fontes**, hash agregado `312c6ae2f7e8cecf07e52930e28172bf34a44de4021c80e7cf10bf72061d3c73` e **150 testes passando**. Após o versionamento, o mesmo código foi executado na árvore limpa do commit `11dd2b8`, gerando **`20261116T220412_87839641f75d`**, que é o retrato entregue. A CLI original foi capturada em `docs/execucao_cli.json`; o verificador registra sete comandos literais, hashes de artefatos e JUnit. Metadados MLflow exportam a hierarquia real. Não há modelo, banco ou base completa no retrato público.
-
-Ressalvas menores aceitas: validação de consistência por hashes não é assinatura/autenticidade contra um autor capaz de forjar todos os arquivos; instalações fora do checkout uv/editável não são o modo de uso documentado; logs verbose contêm caminhos de perfis locais; o espião de leitura dos testes acompanha a implementação atual com `Path.read_bytes`; mensagens de ID/status compartilham texto. Há ausência de calibração sequencial e de certificação de equidade, já declaradas. Nenhuma dessas ressalvas é apresentada como garantia implementada.
-
-O hook corporativo também recusou uma tentativa com `feature/observabilidade-credito`. Em seguida, o usuário autorizou expressamente usar hooks locais e esclareceu que os corporativos pertencem aos projetos de trabalho. Foi configurado `core.hooksPath=.git/hooks` apenas neste repositório, preservando a configuração global. Os commits semânticos foram registrados por bloco. Não houve contorno silencioso. Inspeção visual manual e CI remoto têm seus estados próprios; vídeo não foi gravado por instrução de escopo.
+Os HTMLs têm verificações automatizadas de conteúdo, links e integridade. Os logs e o JUnit comprovam execução; os pareceres não constituem inspeção visual manual ou certificação de produção.

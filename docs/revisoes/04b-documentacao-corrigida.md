@@ -1,6 +1,6 @@
 # Revisão adversarial — 04b-documentacao-corrigida
 
-Modelo solicitado: `fable`. Modelo retornado: `claude-fable-5-2`.
+Ferramenta de revisão: Claude Code, modelo `claude-fable-5-2`.
 
 # Revisão adversarial — correções 04
 
@@ -23,7 +23,7 @@ Nenhum defeito crítico encontrado. Não há indício de vazamento treino/teste,
    - **Correção:** explicar a diferença no registro ou alinhar os dois escopos.
 
 3. **Evidências aparentemente fora do índice Git** — `docs/evidencias_mlflow.json`, `docs/validacao/`, `scripts/verificar_entrega.py`.
-   - **Defeito:** no status do início da sessão (pode estar defasado), nenhum dos três aparece entre os arquivos staged. Vários outros estão `AM`/`MM`, ou seja, o índice guarda versões antigas.
+   - **Defeito:** no status da versão analisada (pode estar defasado), nenhum dos três aparece entre os arquivos staged. Vários outros estão `AM`/`MM`, ou seja, o índice guarda versões antigas.
    - **Impacto:** quando o commit for liberado, o link de `resultados.md` para os metadados MLflow quebra. Se `verificar_entrega.py` for uma das 30 fontes, o hash agregado não é reproduzível em clone limpo. `git diff --check` também não cobre arquivos não rastreados.
    - **Correção:** refazer o staging completo e rodar a verificação de novo antes do commit.
 
@@ -59,10 +59,10 @@ Nenhum defeito crítico encontrado. Não há indício de vazamento treino/teste,
 - **Correção BH:** p ajustado / p bruto ≈ 14, coerente com 14 variáveis contínuas.
 - **Horários:** a conversão UTC para São Paulo e a cronologia entre execução e verificação estão corretas.
 - **Roteiro:** os blocos são contíguos até 4:50 e a estrutura STAR está completa.
-- **Restrições pedidas:** a regra do alerta combinado, a equidade descritiva sem redução medida e o bloqueio de commits estão descritos de forma consistente e sem contorno.
+- **Limites documentados:** alerta combinado e equidade descritiva são apresentados sem alegação de redução empírica de viés.
 
 ## Veredito
 
-**Conformidade:** aprovação condicionada. As correções 04 estão consistentes em UTF-8/pt-BR, causalidade, distinção 15 vs 2 e roteiro; faltam os itens 1 a 3. R10 (vídeo) segue não atendido por decisão sua, e R09 (histórico Git) segue pendente.
+**Conformidade:** aprovação condicionada. As correções 04 são consistentes em UTF-8/pt-BR, causalidade, distinção entre as políticas de detecção e roteiro; os itens 1 a 3 exigem tratamento na versão analisada.
 
 **Qualidade:** boa. A coerência numérica é alta e os limites são declarados com honestidade, mas a cadeia de evidências ainda tem os elos fracos dos itens 4 e 5.

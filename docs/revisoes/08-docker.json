@@ -1,0 +1,33 @@
+{
+  "session_id": "8accb05b-c608-4a82-96e7-b8d61f99431b",
+  "duration_ms": 199116,
+  "num_turns": 1,
+  "is_error": false,
+  "subtype": "success",
+  "modelos": [
+    "claude-fable-5-2"
+  ],
+  "velocidade": "standard",
+  "instante_utc": "2026-11-17T13:08:56.454488+00:00",
+  "arquivos": [
+    "Dockerfile",
+    ".dockerignore",
+    "compose.yaml",
+    "docs/docker.md",
+    "docs/plano_docker.md",
+    "pyproject.toml",
+    "src/credito_monitorado/cli.py",
+    "src/credito_monitorado/tracking.py"
+  ],
+  "sha256": {
+    "Dockerfile": "9f9638d7edf8730aca1fb4db14f6284449e6ff80a8f4bec5c5faa774789cfb6b",
+    ".dockerignore": "72c2e689a2e5b8fed5c1107b117a23989fef9b4be1006f5e91e48fe560d746b7",
+    "compose.yaml": "bde8573200d7af2cd19906542777f0c4411771ac2d1ff1d3fd4f91cc99b2aa01",
+    "docs/docker.md": "6f3918d773f32ba5b1530cc45a6e87be94accf0883b7120dada192ffd84a6348",
+    "docs/plano_docker.md": "54640543d4675f2ef73d6a2b1cb135b33b94935c9d4c472b379e562fa9792752",
+    "pyproject.toml": "d6b5380b058ccbba97dfc06892742f0379d5408708701bcbb548f33337533e58",
+    "src/credito_monitorado/cli.py": "7c92a0d4fc6687246a622e28deb687edc8f4873be8af799cb645a45ab9896865",
+    "src/credito_monitorado/tracking.py": "d81f0ba4ed9dd14e1e8840eb9bc5403d8b24f2ab41007aa355ace15010712ecd"
+  },
+  "prompt_sha256": "12b0dc0bc8a7167125c0f752e1a37900851afe12cdd39d87a2656559f17868ea"
+}

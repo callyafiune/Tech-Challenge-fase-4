@@ -1,6 +1,6 @@
 # Revisão adversarial — 02-drift-estatistica
 
-Modelo solicitado: `fable`. Modelo retornado: `claude-fable-5-2`.
+Ferramenta de revisão: Claude Code, modelo `claude-fable-5-2`.
 
 # Revisão adversarial: `drift.py`, `monitoring.py`, testes e `params.yaml`
 

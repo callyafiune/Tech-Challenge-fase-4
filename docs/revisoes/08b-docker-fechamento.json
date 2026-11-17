@@ -1,0 +1,47 @@
+{
+  "session_id": "8daa0b98-d84d-4768-b43a-5ed352f8d600",
+  "duration_ms": 246641,
+  "num_turns": 1,
+  "is_error": false,
+  "subtype": "success",
+  "modelos": [
+    "claude-fable-5-2"
+  ],
+  "velocidade": "standard",
+  "instante_utc": "2026-11-17T13:33:11.949996+00:00",
+  "arquivos": [
+    "Dockerfile",
+    ".dockerignore",
+    "compose.yaml",
+    "compose.sem-rede.yaml",
+    "docs/docker.md",
+    "docs/plano_docker.md",
+    "docs/verificacao_docker.json",
+    "docs/revisoes/08-docker-tratamento.md",
+    "docs/enunciado.md",
+    "src/credito_monitorado/cli.py",
+    "src/credito_monitorado/pipeline.py",
+    ".gitignore",
+    ".gitattributes",
+    "params.yaml",
+    "docs/validacao/docker-02-com-rede.log"
+  ],
+  "sha256": {
+    "Dockerfile": "ed846ed4f02a722598565f15f74136581f1f81b95042b7ccee530f092dab8212",
+    ".dockerignore": "72c2e689a2e5b8fed5c1107b117a23989fef9b4be1006f5e91e48fe560d746b7",
+    "compose.yaml": "ebdb699dd11c85b2ec8d26cff6f2c719137745c6986b8e5b0861e3e8505c1467",
+    "compose.sem-rede.yaml": "48280f0e1d90765ba387c85608cad9adfdbfb7a9268a0bdcd7649ca599d0f16b",
+    "docs/docker.md": "53f6964d9e167c96781d562dfc362e160bc48650ed01fe01da4e4000b5bbd8b2",
+    "docs/plano_docker.md": "ea93477c9ee3a9d2d96fee50dd8bfdf5c42298b06217804e46cac340f3bb9dad",
+    "docs/verificacao_docker.json": "27089ac5d59296e80f9e8a73285e7c55165342f3bef47e636a73674bb6e91f7c",
+    "docs/revisoes/08-docker-tratamento.md": "af16e188e352b8e22c0d9615dd915cb359b0f001b935c32a015bb10a54b49181",
+    "docs/enunciado.md": "cd15af228391c7ba6ac8c1dc2ffc4efa197566c33a2d22e1953e8235895f9bbc",
+    "src/credito_monitorado/cli.py": "7c92a0d4fc6687246a622e28deb687edc8f4873be8af799cb645a45ab9896865",
+    "src/credito_monitorado/pipeline.py": "42bfe5389eec050c45d02861d3e764118dca3cc9cd914e4d61cbe763f0bbf699",
+    ".gitignore": "70135dd837cf50e1e08ff4373925e6404776b82fb3c2306207cac40a95475df3",
+    ".gitattributes": "cc2a0632e5ffc1805397163f172e3dbbfdc15387a905d7151cf6c4470f36f966",
+    "params.yaml": "960457bed592d56eed3be60cd5fe77d5314ae8238160ddede1dd04f73c42b587",
+    "docs/validacao/docker-02-com-rede.log": "524ce6b5b2ef417a784f34b07da065420babdf4c7afc05ffb6327e5efde925d9"
+  },
+  "prompt_sha256": "ee06d749859a78469789c4557f552216d46a01b322adf517d6f0eabf1169d8fb"
+}

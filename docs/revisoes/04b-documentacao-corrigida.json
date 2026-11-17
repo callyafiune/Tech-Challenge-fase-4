@@ -29,6 +29,5 @@
     "docs/causalidade.md": "775b4eef4f077cd4bebb340a179618678c18739b2eee5e17b842d9777b2280a4",
     ".gitattributes": "cc2a0632e5ffc1805397163f172e3dbbfdc15387a905d7151cf6c4470f36f966"
   },
-  "foco": "Revisão limitada às correções04: resultados UTF8 e números ptBR, causalidade no README, distinção15flagsEvidently vs2primárias (PSIbruto.202018), fragilidade PSI declarada, metadadosMLflow pai+4filhos, roteiro4min50 com mesmaexecução/números/STAR, stdoutJUnit e timestamps ligados a30fontes. Regra alerta combinado foi explicitamente restrita; avaliação porgrupos é descritiva com plano mitigação sem afirmar redução medida. Bloqueio de commits aguarda usuário, não foi contornado. Avalie se correções documentais são consistentes, sem impor requisitos de certificação produção ou ablação adicionais ao enunciado.",
   "prompt_sha256": "43bdefd81f0c5fb0ba60fdafae9f592025c2689ae6206122763c56f18db88597"
 }

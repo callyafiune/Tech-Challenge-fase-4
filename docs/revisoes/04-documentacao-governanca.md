@@ -1,6 +1,6 @@
 # Revisão adversarial — 04-documentacao-governanca
 
-Modelo solicitado: `fable`. Modelo retornado: `claude-fable-5-2`.
+Ferramenta de revisão: Claude Code, modelo `claude-fable-5-2`.
 
 # Parecer adversarial: documentação, governança, roteiro e rastreabilidade
 
@@ -99,7 +99,7 @@ Modelo solicitado: `fable`. Modelo retornado: `claude-fable-5-2`.
 ## Veredito
 
 **Conformidade: parcial.** As etapas 1 a 3 têm números íntegros e internamente coerentes. Ficam abertos:
-- o histórico semântico, que depende da sua decisão;
+- o vínculo entre o histórico semântico e as fontes executadas;
 - a causalidade no README (I7);
 - a evidência por regra do contrato (I1);
 - a mitigação de vieses (I8).

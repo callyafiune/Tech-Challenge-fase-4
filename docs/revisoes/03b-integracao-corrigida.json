@@ -67,6 +67,5 @@
     "docs/revisoes/03-observabilidade.md": "5bb5c42b315c6c6f835dbe1c0776f7727ab44fe073ee040c4bfb9421c3fb4e32",
     "docs/revisoes/tratamento.md": "bffbb95852163af4cc21407b5f084d0e00120b5d695a7a9abe7ff8ca94931685"
   },
-  "foco": "Verifique as correções dos itens importantes 1 a 4 e 7 a 8 da revisão03 e a integração completa. Os módulos antes ausentes estão incluídos. Confira evidência dos130 testes como registro de execução, sem alegar execução própria. Identifique apenas defeitos concretos remanescentes que impeçam a atividade acadêmica. Não transforme calibração estatística de produção, novos modelos ou certificação de conformidade em requisitos. Novos achados sobre código intocado devem ficar em seção separada; concentre o veredito nas correções.",
   "prompt_sha256": "8a9aaf2a380c2d0eb9cc688c01d295d1462e37fe12cdbfad81df4a929df020fc"
 }

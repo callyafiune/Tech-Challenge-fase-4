@@ -1,0 +1,14 @@
+{
+  "inicio_utc": "2026-11-17T13:41:04.839191+00:00",
+  "fim_utc": "2026-11-17T13:41:44.691652+00:00",
+  "saude_http": 200,
+  "runs_finalizados": 10,
+  "consultas": [
+    "GET /health",
+    "POST /api/2.0/mlflow/runs/search"
+  ],
+  "destino": "http://127.0.0.1:5000",
+  "experimentos": [
+    "1"
+  ]
+}

@@ -1,0 +1,12 @@
+# Somente os arquivos necessários ao build podem entrar no contexto.
+**
+!Dockerfile
+!pyproject.toml
+!uv.lock
+!params.yaml
+!.python-version
+!.gitattributes
+!src/
+!src/**
+**/__pycache__/
+**/*.py[cod]

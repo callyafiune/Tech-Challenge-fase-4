@@ -1,0 +1,83 @@
+ Image credito-monitorado:local Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 564B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.51kB 0.0s done
+#2 DONE 0.0s
+
+#3 resolve image config for docker-image://docker.io/docker/dockerfile:1
+#3 DONE 0.3s
+
+#4 docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+#4 resolve docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e 0.1s done
+#4 DONE 0.1s
+
+#4 docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+#4 CACHED
+
+#5 [internal] load metadata for ghcr.io/astral-sh/uv:0.11.6
+#5 DONE 0.2s
+
+#6 [internal] load metadata for docker.io/library/python:3.11.18-slim-bookworm
+#6 DONE 0.3s
+
+#7 [internal] load .dockerignore
+#7 transferring context: 241B 0.1s done
+#7 DONE 0.1s
+
+#8 [internal] load build context
+#8 transferring context: 973B 0.0s done
+#8 DONE 0.1s
+
+#9 [dependencias 1/5] FROM docker.io/library/python:3.11.18-slim-bookworm@sha256:a83ba18aef0f865b1a4a611c2cf460fe446f2795673bbb9fe43be570439e3b39
+#9 resolve docker.io/library/python:3.11.18-slim-bookworm@sha256:a83ba18aef0f865b1a4a611c2cf460fe446f2795673bbb9fe43be570439e3b39 0.1s done
+#9 DONE 0.1s
+
+#10 FROM ghcr.io/astral-sh/uv:0.11.6@sha256:b1e699368d24c57cda93c338a57a8c5a119009ba809305cc8e86986d4a006754
+#10 resolve ghcr.io/astral-sh/uv:0.11.6@sha256:b1e699368d24c57cda93c338a57a8c5a119009ba809305cc8e86986d4a006754 0.1s done
+#10 DONE 0.1s
+
+#11 [dependencias 2/5] COPY --from=ghcr.io/astral-sh/uv:0.11.6 /uv /usr/local/bin/uv
+#11 CACHED
+
+#12 [dependencias 5/5] RUN --mount=type=cache,target=/root/.cache/uv     uv sync --locked --no-dev --no-install-project --no-editable --no-build
+#12 CACHED
+
+#13 [execucao 2/6] WORKDIR /app
+#13 CACHED
+
+#14 [dependencias 4/5] COPY pyproject.toml uv.lock ./
+#14 CACHED
+
+#15 [execucao 4/6] COPY --from=dependencias /opt/venv /opt/venv
+#15 CACHED
+
+#16 [execucao 5/6] COPY src/ ./src/
+#16 CACHED
+
+#17 [execucao 3/6] RUN groupadd --gid 10001 credito     && useradd --uid 10001 --gid credito --no-create-home --home-dir /tmp         --shell /usr/sbin/nologin credito     && mkdir /app/data /app/artifacts     && chown credito:credito /app/data /app/artifacts
+#17 CACHED
+
+#18 [dependencias 3/5] WORKDIR /construcao
+#18 CACHED
+
+#19 [execucao 6/6] COPY params.yaml pyproject.toml uv.lock .python-version .gitattributes ./
+#19 CACHED
+
+#20 exporting to image
+#20 exporting layers done
+#20 exporting manifest sha256:e364bc4c9b5f0803b1aeba0a406b9980d7ee282d77f5265b839725b5d838dff5 0.0s done
+#20 exporting config sha256:da1b6f5c85e8245b14f870cf352998b29354e6a01269d13a4242f048295ee832
+#20 exporting config sha256:da1b6f5c85e8245b14f870cf352998b29354e6a01269d13a4242f048295ee832 0.0s done
+#20 exporting attestation manifest sha256:6df4781ef2df45e9094ad1c095574961f6efd3dcefcb061612ba1a6743b3a1dd 0.1s done
+#20 exporting manifest list sha256:e52e07fcf2ec7221a280fcaaf55dead94413f65089e76e9bfe7db9b7305a60ff
+#20 exporting manifest list sha256:e52e07fcf2ec7221a280fcaaf55dead94413f65089e76e9bfe7db9b7305a60ff 0.0s done
+#20 naming to docker.io/library/credito-monitorado:local done
+#20 unpacking to docker.io/library/credito-monitorado:local 0.0s done
+#20 DONE 0.3s
+
+#21 resolving provenance for metadata file
+#21 DONE 0.0s
+ Image credito-monitorado:local Built 

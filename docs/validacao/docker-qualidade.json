@@ -1,0 +1,44 @@
+[
+  {
+    "comando": [
+      "uv",
+      "run",
+      "ruff",
+      "check",
+      "."
+    ],
+    "inicio_utc": "2026-11-17T13:41:05.531986+00:00",
+    "fim_utc": "2026-11-17T13:41:05.711235+00:00",
+    "codigo_saida": 0,
+    "log": "validacao/docker-qualidade-ruff.log",
+    "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+  },
+  {
+    "comando": [
+      "uv",
+      "run",
+      "ruff",
+      "format",
+      "--check",
+      "."
+    ],
+    "inicio_utc": "2026-11-17T13:41:05.713244+00:00",
+    "fim_utc": "2026-11-17T13:41:05.885346+00:00",
+    "codigo_saida": 0,
+    "log": "validacao/docker-qualidade-formato.log",
+    "sha256": "5555688d20b6d738067feb4977a3cef821ec605eaa822842b54252fd1bf5a1fb"
+  },
+  {
+    "comando": [
+      "uv",
+      "run",
+      "pytest",
+      "-q"
+    ],
+    "inicio_utc": "2026-11-17T13:41:05.886425+00:00",
+    "fim_utc": "2026-11-17T13:43:28.011255+00:00",
+    "codigo_saida": 0,
+    "log": "validacao/docker-qualidade-pytest.log",
+    "sha256": "6059ca835364df3180b721313b4792ea34e31df1c82c21beeb4d8908bc6ffe9c"
+  }
+]
