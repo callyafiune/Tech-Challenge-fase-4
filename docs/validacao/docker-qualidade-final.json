@@ -45,8 +45,10 @@
       "codigo_saida": 0,
       "saida_esperada": 0,
       "log": "validacao/docker-qualidade-final-pytest.log",
-      "log_sha256": "b603c8666853b27530cf8f0603930249cedba1d671d6acbc0f13e1094c9d9326"
+      "log_sha256": "5b60fd7d174e7e41f35465baa4c88eb6b3efc9f38fb51cf7c990d558d0aac404"
     }
   ],
-  "fim_utc": "2026-11-17T13:51:32.972422+00:00"
+  "fim_utc": "2026-11-17T13:51:32.972422+00:00",
+  "politica_publicacao": "Cópia de publicação com caminhos locais sanitizados. Os hashes dos logs identificam as cópias publicadas; hashes de fontes e artefatos da execução original são históricos. Os originais privados permanecem fora do Git.",
+  "escopo_verificacao": "Registro histórico: fontes, coletor, imagem e resultados correspondem ao momento da coleta indicado nos horários; não atestam a árvore atual. A sanitização altera somente as cópias de publicação."
 }

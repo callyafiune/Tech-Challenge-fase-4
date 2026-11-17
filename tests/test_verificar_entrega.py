@@ -63,7 +63,7 @@ def test_mesmos_bytes_sao_aceitos_quando_apenas_git_dirty_muda(execucao):
     assert resultado["current_source_sha256"] == fonte["source_sha256"]
 
 
-def test_registro_preserva_saida_literal_sem_inventar_captura_da_cli(execucao, monkeypatch):
+def test_registro_sanitiza_saida_sem_inventar_captura_da_cli(execucao, monkeypatch):
     caminho, raiz, fonte = execucao
     documentos = raiz / "docs"
     documentos.mkdir()
@@ -84,7 +84,9 @@ def test_registro_preserva_saida_literal_sem_inventar_captura_da_cli(execucao, m
         if "pytest" in comando:
             (documentos / "validacao/pytest.xml").write_bytes(b"<testsuite tests='20'/>")
         return SimpleNamespace(
-            stdout=b"saida literal\n", stderr=b"diagnostico literal\n", returncode=0
+            stdout=f"{raiz / 'pyproject.toml'}\n".encode(),
+            stderr=b"diagnostico literal\n",
+            returncode=0,
         )
 
     monkeypatch.setattr(verificador.subprocess, "run", executar_sem_processo)
@@ -97,7 +99,7 @@ def test_registro_preserva_saida_literal_sem_inventar_captura_da_cli(execucao, m
     assert registro["execucao_real"]["cli_exit_code"] == "não capturado da CLI original"
     assert registro["execucao_real"]["status"] == "sucesso"
     for comando in registro["comandos"]:
-        assert comando["saida_literal"] == "saida literal\ndiagnostico literal\n"
+        assert comando["saida_sanitizada"] == "./pyproject.toml\ndiagnostico literal\n"
         assert comando["sha256"] == _hash((raiz / comando["arquivo"]).read_bytes())
     assert registro["evidencias_adicionais_sha256"]["docs/evidencias_mlflow.json"] == _hash(
         mlflow.read_bytes()

@@ -14,6 +14,8 @@ from pathlib import Path
 from urllib.error import URLError
 from urllib.request import ProxyHandler, Request, build_opener
 
+from credito_monitorado.publicacao import salvar_saida_publica
+
 ROOT = Path(__file__).resolve().parents[1]
 
 # O código é enviado pela entrada padrão; a sonda não integra a imagem final.
@@ -119,9 +121,9 @@ def main() -> None:
                 {"bytes_stdout": len(resultado.stdout), "codigo_saida": resultado.returncode}
             )
         else:
-            conteudo = resultado.stdout.decode("utf-8")
+            conteudo = resultado.stdout.decode("utf-8", errors="surrogateescape")
         log = ROOT / f"docs/validacao/docker-sequencial-{contador:02d}-{nome}.log"
-        log.write_text(conteudo, encoding="utf-8")
+        salvar_saida_publica(conteudo.encode("utf-8", errors="surrogateescape"), log, ROOT)
         registro = {
             "etapa": nome,
             "comando": comando,

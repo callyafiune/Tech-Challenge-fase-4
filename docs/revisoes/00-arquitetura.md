@@ -86,7 +86,7 @@ Ferramenta de revisão: Claude Code, modelo `claude-fable-5-2`.
 - **Latência:** "regressão frente a execuções comparáveis" não tem baseline; o arquivo usa teto fixo.
 - **Métricas:** "AUROC > Dummy" é trivial (0,5); comparar Brier e average precision. O F1 de validação é otimista; reportar o da `reference` como estimativa limpa. A grade de limiares não está definida.
 - **Hashes de tabelas:** falta serialização canônica, o que arrisca diferenças entre Windows e Linux.
-- **Enunciado:** o plano cita `C:\estudos\...`, fora do repositório, então a matriz R01–R10 não é auditável e não pude conferir aderência ao enunciado.
+- **Enunciado:** o plano cita `./...`, fora do repositório, então a matriz R01–R10 não é auditável e não pude conferir aderência ao enunciado.
 - **Registro desta revisão:** ela cobriu só quatro arquivos; o relatório de auditoria não deve dizer que o código foi revisado.
 - **LGPD:** o art. 20 não garante revisão humana (vetada em 2019); tratar como política. Falta o prazo de comunicação de incidente (art. 48 e Resolução ANPD 15/2024) e dizer que a LGPD se aplica por analogia a dados de Taiwan.
 - **Nomes:** projeto `confiabilidade-credito` e pacote `credito_monitorado`.

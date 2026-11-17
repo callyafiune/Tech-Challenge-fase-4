@@ -226,8 +226,8 @@
                 "com.docker.compose.image": "sha256:e52e07fcf2ec7221a280fcaaf55dead94413f65089e76e9bfe7db9b7305a60ff",
                 "com.docker.compose.oneoff": "False",
                 "com.docker.compose.project": "credito-verificacao-20261117133825",
-                "com.docker.compose.project.config_files": "C:\\estudos\\Tech-Challenge-fase-4\\compose.yaml,C:\\estudos\\Tech-Challenge-fase-4\\compose.sem-rede.yaml",
-                "com.docker.compose.project.working_dir": "C:\\estudos\\Tech-Challenge-fase-4",
+                "com.docker.compose.project.config_files": "./compose.yaml,./compose.sem-rede.yaml",
+                "com.docker.compose.project.working_dir": ".",
                 "com.docker.compose.replace": "pipeline-1",
                 "com.docker.compose.service": "pipeline",
                 "com.docker.compose.version": "5.2.0"

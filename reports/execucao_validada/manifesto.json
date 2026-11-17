@@ -159,7 +159,7 @@
   },
   "tracking": {
     "status": "completed",
-    "uri": "sqlite:///C:/estudos/Tech-Challenge-fase-4/artifacts/mlflow.db",
+    "uri": "sqlite:///./artifacts/mlflow.db",
     "run_id": "b987bfd1e9a848179a2bdeec3eb526fc"
   },
   "resources": [

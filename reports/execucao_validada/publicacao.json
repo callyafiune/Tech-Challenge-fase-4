@@ -3,8 +3,8 @@
   "source_status": "sucesso",
   "included_sha256": {
     "index.html": "37abcc2e3e10d18bc62a26179d54c01a26b32d047ae581e8c917da8e86739f82",
-    "resumo.json": "54f5d534de5ab73715abc87a1de47da04edea58677a4eaa15ce4e052a5d60c3c",
-    "manifesto.json": "e1afc12288b4f95820993e92f36fc90ac26a4d5112c43bd5756aa20cabc675b3",
+    "resumo.json": "e168d030d8b057c26cb6e92fa2bc61911709f4e1a2734ee540f5ad5b1e17fd53",
+    "manifesto.json": "647bac6604153e2555fe7cc7f8524069c7b94f35544aaa3b564967fb31e799b0",
     "logs.jsonl": "a79be727e86689cec6e5fea5770242fb8e46137e309a9688102b858b66f0a2ad",
     "alertas.json": "296688b707ee6f3df19c21b67652cbacfebb2fce740d94a5a1d850a023fd4d39",
     "control/evidently.html": "1d8439ad258a3cbade812d10db91570de8fcd72b420f45aa8fc82c352ae4f416",
@@ -26,5 +26,6 @@
     "predições individuais",
     "banco MLflow"
   ],
-  "note": "O manifesto original descreve a execução local completa. Este inventário descreve somente os arquivos agregados incluídos no Git. O banco MLflow e o modelo devem ser recriados executando o pipeline."
+  "note": "O manifesto original descreve a execução local completa. Este inventário descreve somente os arquivos agregados incluídos no Git. O banco MLflow e o modelo devem ser recriados executando o pipeline.",
+  "politica_publicacao": "Cópia de publicação com caminhos locais sanitizados. Os hashes dos logs identificam as cópias publicadas; hashes de fontes e artefatos da execução original são históricos. Os originais privados permanecem fora do Git."
 }

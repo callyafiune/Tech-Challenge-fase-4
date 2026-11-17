@@ -5,8 +5,9 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-import shutil
 from pathlib import Path
+
+from credito_monitorado.publicacao import salvar_saida_publica
 
 
 def export_evidence(source: Path, destination: Path) -> None:
@@ -25,7 +26,9 @@ def export_evidence(source: Path, destination: Path) -> None:
     for name in names:
         target = destination / name
         target.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(source / name, target)
+        salvar_saida_publica(
+            (source / name).read_bytes(), target, Path(__file__).resolve().parents[1]
+        )
     hashes = {name: hashlib.sha256((destination / name).read_bytes()).hexdigest() for name in names}
     manifest = {
         "execution_id": summary["execution_id"],
@@ -35,6 +38,8 @@ def export_evidence(source: Path, destination: Path) -> None:
         "note": (
             "O manifesto original descreve a execução local completa. "
             "Este inventário descreve somente os arquivos agregados incluídos no Git. "
+            "As cópias publicadas têm caminhos locais sanitizados; os hashes do manifesto "
+            "original continuam descrevendo os artefatos privados da execução. "
             "O banco MLflow e o modelo devem ser recriados executando o pipeline."
         ),
     }

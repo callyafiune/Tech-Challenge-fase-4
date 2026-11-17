@@ -1,137 +1,137 @@
-[2026-11-17][20:13:28][ruff::resolve][DEBUG] Using configuration file (via parent) at: C:\estudos\Tech-Challenge-fase-4\pyproject.toml
-[2026-11-17][20:13:28][ignore::gitignore][DEBUG] opened gitignore file: C:\Users\Cally\.config\git/ignore
-[2026-11-17][20:13:28][ignore::gitignore][DEBUG] opened gitignore file: C:\estudos\Tech-Challenge-fase-4\.gitignore
-[2026-11-17][20:13:28][ignore::gitignore][DEBUG] opened gitignore file: C:\estudos\Tech-Challenge-fase-4\.git\info/exclude
-[2026-11-17][20:13:28][ignore::walk][DEBUG] whitelisting C:\estudos\Tech-Challenge-fase-4\.env.example: Whitelist(IgnoreMatch(Gitignore(Glob { from: Some("C:\\estudos\\Tech-Challenge-fase-4\\.gitignore"), original: "!.env.example", actual: "**/.env.example", is_whitelist: true, is_only_dir: false })))
-[2026-11-17][20:13:28][ignore::walk][DEBUG] ignoring C:\estudos\Tech-Challenge-fase-4\.pytest_cache: Ignore(IgnoreMatch(Gitignore(Glob { from: Some("C:\\estudos\\Tech-Challenge-fase-4\\.gitignore"), original: ".pytest_cache/", actual: "**/.pytest_cache", is_whitelist: false, is_only_dir: true })))
-[2026-11-17][20:13:28][ignore::walk][DEBUG] ignoring C:\estudos\Tech-Challenge-fase-4\.ruff_cache: Ignore(IgnoreMatch(Gitignore(Glob { from: Some("C:\\estudos\\Tech-Challenge-fase-4\\.gitignore"), original: ".ruff_cache/", actual: "**/.ruff_cache", is_whitelist: false, is_only_dir: true })))
-[2026-11-17][20:13:28][ignore::walk][DEBUG] ignoring C:\estudos\Tech-Challenge-fase-4\.venv: Ignore(IgnoreMatch(Gitignore(Glob { from: Some("C:\\estudos\\Tech-Challenge-fase-4\\.gitignore"), original: ".venv/", actual: "**/.venv", is_whitelist: false, is_only_dir: true })))
-[2026-11-17][20:13:28][ignore::walk][DEBUG] ignoring C:\estudos\Tech-Challenge-fase-4\artifacts: Ignore(IgnoreMatch(Gitignore(Glob { from: Some("C:\\estudos\\Tech-Challenge-fase-4\\.gitignore"), original: "/artifacts/", actual: "artifacts", is_whitelist: false, is_only_dir: true })))
-[2026-11-17][20:13:28][ignore::walk][DEBUG] ignoring C:\estudos\Tech-Challenge-fase-4\data: Ignore(IgnoreMatch(Gitignore(Glob { from: Some("C:\\estudos\\Tech-Challenge-fase-4\\.gitignore"), original: "/data/", actual: "data", is_whitelist: false, is_only_dir: true })))
-[2026-11-17][20:13:28][ignore::walk][DEBUG] ignoring C:\estudos\Tech-Challenge-fase-4\tests\__pycache__: Ignore(IgnoreMatch(Gitignore(Glob { from: Some("C:\\estudos\\Tech-Challenge-fase-4\\.gitignore"), original: "__pycache__/", actual: "**/__pycache__", is_whitelist: false, is_only_dir: true })))
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Ignored path via `exclude`: "C:\\estudos\\Tech-Challenge-fase-4\\.git"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\AGENTS.md"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\tests\\test_drift.py"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\tests\\test_monitoring.py"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\tests\\test_contracts.py"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\tests\\test_verificar_entrega.py"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\tests\\test_pipeline.py"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\tests\\test_data_model.py"
-[2026-11-17][20:13:28][ignore::walk][DEBUG] ignoring C:\estudos\Tech-Challenge-fase-4\src\credito_monitorado\__pycache__: Ignore(IgnoreMatch(Gitignore(Glob { from: Some("C:\\estudos\\Tech-Challenge-fase-4\\.gitignore"), original: "__pycache__/", actual: "**/__pycache__", is_whitelist: false, is_only_dir: true })))
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\src\\credito_monitorado\\__main__.py"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\src\\credito_monitorado\\__init__.py"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\docs\\enunciado.md"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\docs\\docker.md"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\docs\\dicionario_dados.md"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\src\\credito_monitorado\\model.py"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\docs\\revisoes\\tratamento.md"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\docs\\revisoes\\08c-docker-evidencias.md"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\tests\\test_telemetry.py"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\src\\credito_monitorado\\tracking.py"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\README.md"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\pyproject.toml"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\docs\\causalidade.md"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\docs\\revisoes\\02b-correcao-drift.md"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\tests\\test_fairness.py"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\docs\\revisoes\\08b-docker-fechamento.md"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\src\\credito_monitorado\\telemetry.py"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\docs\\arquitetura.md"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\docs\\auditoria_final.md"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\src\\credito_monitorado\\config.py"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\src\\credito_monitorado\\fairness.py"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\docs\\revisoes\\02-drift-estatistica.md"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\docs\\resultados.md"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\docs\\progresso.md"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\src\\credito_monitorado\\reporting.py"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\docs\\operacao.md"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\docs\\plano_implementacao.md"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\src\\credito_monitorado\\cli.py"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\src\\credito_monitorado\\drift.py"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\src\\credito_monitorado\\data.py"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\docs\\revisoes\\08-docker.md"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\docs\\revisoes\\00-arquitetura.md"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\src\\credito_monitorado\\pipeline.py"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\docs\\model_card.md"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\docs\\plano_docker.md"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\docs\\revisoes\\01b-correcao-dados.md"
-[2026-11-17][20:13:28][ignore::walk][DEBUG] ignoring C:\estudos\Tech-Challenge-fase-4\scripts\__pycache__: Ignore(IgnoreMatch(Gitignore(Glob { from: Some("C:\\estudos\\Tech-Challenge-fase-4\\.gitignore"), original: "__pycache__/", actual: "**/__pycache__", is_whitelist: false, is_only_dir: true })))
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\src\\credito_monitorado\\contracts.py"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\docs\\revisoes\\08-docker-tratamento.md"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\docs\\revisoes\\01-dados-modelo.md"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\src\\credito_monitorado\\monitoring.py"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\docs\\matriz_rastreabilidade.md"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\docs\\revisoes\\03c-metadados-finais.md"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\docs\\revisoes\\03e-cobertura-isolada.md"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\scripts\\verificar_qualidade.py"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\docs\\governanca.md"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\docs\\revisoes\\04b-documentacao-corrigida.md"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\docs\\revisoes\\03d-integridade-fechamento.md"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\docs\\revisoes\\03-observabilidade.md"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\docs\\revisoes\\03b-integracao-corrigida.md"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\docs\\revisoes\\04-documentacao-governanca.md"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\scripts\\revisar_bloco.py"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\scripts\\verificar_entrega.py"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\scripts\\exportar_evidencias.py"
-[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "C:\\estudos\\Tech-Challenge-fase-4\\scripts\\verificar_docker.py"
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\scripts\exportar_evidencias.py
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\scripts\verificar_entrega.py
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\docs\revisoes\08b-docker-fechamento.md
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\AGENTS.md
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\docs\resultados.md
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\src\credito_monitorado\drift.py
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\docs\enunciado.md
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\docs\auditoria_final.md
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\scripts\revisar_bloco.py
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\scripts\verificar_qualidade.py
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\scripts\verificar_docker.py
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\docs\revisoes\08c-docker-evidencias.md
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\docs\revisoes\00-arquitetura.md
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\src\credito_monitorado\fairness.py
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\docs\governanca.md
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\README.md
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\src\credito_monitorado\__init__.py
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\docs\matriz_rastreabilidade.md
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\docs\revisoes\01-dados-modelo.md
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\src\credito_monitorado\model.py
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\docs\revisoes\tratamento.md
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\src\credito_monitorado\__main__.py
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\docs\revisoes\01b-correcao-dados.md
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\src\credito_monitorado\monitoring.py
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\docs\revisoes\03b-integracao-corrigida.md
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\src\credito_monitorado\pipeline.py
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\docs\revisoes\02-drift-estatistica.md
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\src\credito_monitorado\cli.py
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\src\credito_monitorado\reporting.py
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\docs\revisoes\02b-correcao-drift.md
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\src\credito_monitorado\config.py
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\docs\operacao.md
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\docs\model_card.md
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\docs\revisoes\03-observabilidade.md
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\docs\revisoes\03c-metadados-finais.md
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\docs\causalidade.md
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\src\credito_monitorado\telemetry.py
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\src\credito_monitorado\contracts.py
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\docs\arquitetura.md
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\src\credito_monitorado\tracking.py
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\tests\test_contracts.py
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\docs\dicionario_dados.md
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\docs\revisoes\03d-integridade-fechamento.md
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\docs\plano_implementacao.md
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\src\credito_monitorado\data.py
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\docs\plano_docker.md
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\docs\revisoes\04-documentacao-governanca.md
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\tests\test_data_model.py
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\docs\docker.md
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\docs\revisoes\03e-cobertura-isolada.md
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\docs\progresso.md
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\docs\revisoes\08-docker-tratamento.md
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\docs\revisoes\04b-documentacao-corrigida.md
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\docs\revisoes\08-docker.md
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\tests\test_fairness.py
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\tests\test_monitoring.py
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\tests\test_telemetry.py
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\tests\test_drift.py
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\tests\test_pipeline.py
-[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=C:\estudos\Tech-Challenge-fase-4\tests\test_verificar_entrega.py
+[2026-11-17][20:13:28][ruff::resolve][DEBUG] Using configuration file (via parent) at: ./pyproject.toml
+[2026-11-17][20:13:28][ignore::gitignore][DEBUG] opened gitignore file: [USUARIO]/.config\git/ignore
+[2026-11-17][20:13:28][ignore::gitignore][DEBUG] opened gitignore file: ./.gitignore
+[2026-11-17][20:13:28][ignore::gitignore][DEBUG] opened gitignore file: ./.git\info/exclude
+[2026-11-17][20:13:28][ignore::walk][DEBUG] whitelisting ./.env.example: Whitelist(IgnoreMatch(Gitignore(Glob { from: Some("./.gitignore"), original: "!.env.example", actual: "**/.env.example", is_whitelist: true, is_only_dir: false })))
+[2026-11-17][20:13:28][ignore::walk][DEBUG] ignoring ./.pytest_cache: Ignore(IgnoreMatch(Gitignore(Glob { from: Some("./.gitignore"), original: ".pytest_cache/", actual: "**/.pytest_cache", is_whitelist: false, is_only_dir: true })))
+[2026-11-17][20:13:28][ignore::walk][DEBUG] ignoring ./.ruff_cache: Ignore(IgnoreMatch(Gitignore(Glob { from: Some("./.gitignore"), original: ".ruff_cache/", actual: "**/.ruff_cache", is_whitelist: false, is_only_dir: true })))
+[2026-11-17][20:13:28][ignore::walk][DEBUG] ignoring ./.venv: Ignore(IgnoreMatch(Gitignore(Glob { from: Some("./.gitignore"), original: ".venv/", actual: "**/.venv", is_whitelist: false, is_only_dir: true })))
+[2026-11-17][20:13:28][ignore::walk][DEBUG] ignoring ./artifacts: Ignore(IgnoreMatch(Gitignore(Glob { from: Some("./.gitignore"), original: "/artifacts/", actual: "artifacts", is_whitelist: false, is_only_dir: true })))
+[2026-11-17][20:13:28][ignore::walk][DEBUG] ignoring ./data: Ignore(IgnoreMatch(Gitignore(Glob { from: Some("./.gitignore"), original: "/data/", actual: "data", is_whitelist: false, is_only_dir: true })))
+[2026-11-17][20:13:28][ignore::walk][DEBUG] ignoring ./tests\__pycache__: Ignore(IgnoreMatch(Gitignore(Glob { from: Some("./.gitignore"), original: "__pycache__/", actual: "**/__pycache__", is_whitelist: false, is_only_dir: true })))
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Ignored path via `exclude`: "./.git"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./AGENTS.md"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./tests\\test_drift.py"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./tests\\test_monitoring.py"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./tests\\test_contracts.py"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./tests\\test_verificar_entrega.py"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./tests\\test_pipeline.py"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./tests\\test_data_model.py"
+[2026-11-17][20:13:28][ignore::walk][DEBUG] ignoring ./src\credito_monitorado\__pycache__: Ignore(IgnoreMatch(Gitignore(Glob { from: Some("./.gitignore"), original: "__pycache__/", actual: "**/__pycache__", is_whitelist: false, is_only_dir: true })))
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./src\\credito_monitorado\\__main__.py"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./src\\credito_monitorado\\__init__.py"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./docs\\enunciado.md"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./docs\\docker.md"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./docs\\dicionario_dados.md"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./src\\credito_monitorado\\model.py"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./docs\\revisoes\\tratamento.md"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./docs\\revisoes\\08c-docker-evidencias.md"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./tests\\test_telemetry.py"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./src\\credito_monitorado\\tracking.py"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./README.md"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./pyproject.toml"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./docs\\causalidade.md"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./docs\\revisoes\\02b-correcao-drift.md"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./tests\\test_fairness.py"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./docs\\revisoes\\08b-docker-fechamento.md"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./src\\credito_monitorado\\telemetry.py"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./docs\\arquitetura.md"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./docs\\auditoria_final.md"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./src\\credito_monitorado\\config.py"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./src\\credito_monitorado\\fairness.py"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./docs\\revisoes\\02-drift-estatistica.md"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./docs\\resultados.md"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./docs\\progresso.md"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./src\\credito_monitorado\\reporting.py"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./docs\\operacao.md"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./docs\\plano_implementacao.md"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./src\\credito_monitorado\\cli.py"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./src\\credito_monitorado\\drift.py"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./src\\credito_monitorado\\data.py"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./docs\\revisoes\\08-docker.md"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./docs\\revisoes\\00-arquitetura.md"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./src\\credito_monitorado\\pipeline.py"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./docs\\model_card.md"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./docs\\plano_docker.md"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./docs\\revisoes\\01b-correcao-dados.md"
+[2026-11-17][20:13:28][ignore::walk][DEBUG] ignoring ./scripts\__pycache__: Ignore(IgnoreMatch(Gitignore(Glob { from: Some("./.gitignore"), original: "__pycache__/", actual: "**/__pycache__", is_whitelist: false, is_only_dir: true })))
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./src\\credito_monitorado\\contracts.py"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./docs\\revisoes\\08-docker-tratamento.md"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./docs\\revisoes\\01-dados-modelo.md"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./src\\credito_monitorado\\monitoring.py"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./docs\\matriz_rastreabilidade.md"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./docs\\revisoes\\03c-metadados-finais.md"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./docs\\revisoes\\03e-cobertura-isolada.md"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./scripts\\verificar_qualidade.py"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./docs\\governanca.md"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./docs\\revisoes\\04b-documentacao-corrigida.md"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./docs\\revisoes\\03d-integridade-fechamento.md"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./docs\\revisoes\\03-observabilidade.md"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./docs\\revisoes\\03b-integracao-corrigida.md"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./docs\\revisoes\\04-documentacao-governanca.md"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./scripts\\revisar_bloco.py"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./scripts\\verificar_entrega.py"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./scripts\\exportar_evidencias.py"
+[2026-11-17][20:13:28][ruff_workspace::resolver][DEBUG] Included path via `include`: "./scripts\\verificar_docker.py"
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./scripts\exportar_evidencias.py
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./scripts\verificar_entrega.py
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./docs\revisoes\08b-docker-fechamento.md
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./AGENTS.md
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./docs\resultados.md
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./src\credito_monitorado\drift.py
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./docs\enunciado.md
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./docs\auditoria_final.md
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./scripts\revisar_bloco.py
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./scripts\verificar_qualidade.py
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./scripts\verificar_docker.py
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./docs\revisoes\08c-docker-evidencias.md
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./docs\revisoes\00-arquitetura.md
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./src\credito_monitorado\fairness.py
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./docs\governanca.md
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./README.md
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./src\credito_monitorado\__init__.py
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./docs\matriz_rastreabilidade.md
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./docs\revisoes\01-dados-modelo.md
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./src\credito_monitorado\model.py
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./docs\revisoes\tratamento.md
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./src\credito_monitorado\__main__.py
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./docs\revisoes\01b-correcao-dados.md
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./src\credito_monitorado\monitoring.py
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./docs\revisoes\03b-integracao-corrigida.md
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./src\credito_monitorado\pipeline.py
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./docs\revisoes\02-drift-estatistica.md
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./src\credito_monitorado\cli.py
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./src\credito_monitorado\reporting.py
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./docs\revisoes\02b-correcao-drift.md
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./src\credito_monitorado\config.py
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./docs\operacao.md
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./docs\model_card.md
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./docs\revisoes\03-observabilidade.md
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./docs\revisoes\03c-metadados-finais.md
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./docs\causalidade.md
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./src\credito_monitorado\telemetry.py
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./src\credito_monitorado\contracts.py
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./docs\arquitetura.md
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./src\credito_monitorado\tracking.py
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./tests\test_contracts.py
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./docs\dicionario_dados.md
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./docs\revisoes\03d-integridade-fechamento.md
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./docs\plano_implementacao.md
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./src\credito_monitorado\data.py
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./docs\plano_docker.md
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./docs\revisoes\04-documentacao-governanca.md
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./tests\test_data_model.py
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./docs\docker.md
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./docs\revisoes\03e-cobertura-isolada.md
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./docs\progresso.md
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./docs\revisoes\08-docker-tratamento.md
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./docs\revisoes\04b-documentacao-corrigida.md
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./docs\revisoes\08-docker.md
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./tests\test_fairness.py
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./tests\test_monitoring.py
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./tests\test_telemetry.py
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./tests\test_drift.py
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./tests\test_pipeline.py
+[2026-11-17][20:13:28][ruff::commands::format][DEBUG] format_path; path=./tests\test_verificar_entrega.py
 [2026-11-17][20:13:28][ruff::commands::format][DEBUG] Formatted 60 files in 3.46ms
 60 files already formatted

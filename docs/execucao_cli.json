@@ -7,7 +7,9 @@
   "source_sha256": "312c6ae2f7e8cecf07e52930e28172bf34a44de4021c80e7cf10bf72061d3c73",
   "git_revision": "11dd2b83b57a77ceda8186d6c61b79e20e0dca35",
   "git_dirty": false,
-  "arquivo_saida_literal": "docs/validacao/00-pipeline-cli.log",
-  "sha256_saida": "182daf691d4325770e81f2fad633b59808630af4845ce9a50be1bc09f7b2e37a",
-  "saida_literal": "Execução concluída: 20261116T220412_87839641f75d\r\nRelatório: C:\\estudos\\Tech-Challenge-fase-4\\artifacts\\20261116T220412_87839641f75d\\index.html\r\nResumo: C:\\estudos\\Tech-Challenge-fase-4\\artifacts\\20261116T220412_87839641f75d\\resumo.json\r\n"
+  "arquivo_saida_sanitizada": "docs/validacao/00-pipeline-cli.log",
+  "sha256_saida": "e5bd1664d9320787b12b8cc781309e7ece8ddf83bc6bd36f62e38e087504fdc6",
+  "saida_sanitizada": "Execução concluída: 20261116T220412_87839641f75d\r\nRelatório: ./artifacts\\20261116T220412_87839641f75d\\index.html\r\nResumo: ./artifacts\\20261116T220412_87839641f75d\\resumo.json\r\n",
+  "politica_publicacao": "Cópia de publicação com caminhos locais sanitizados. Os hashes dos logs identificam as cópias publicadas; hashes de fontes e artefatos da execução original são históricos. Os originais privados permanecem fora do Git.",
+  "escopo_verificacao": "Registro histórico: fontes, coletor, imagem e resultados correspondem ao momento da coleta indicado nos horários; não atestam a árvore atual. A sanitização altera somente as cópias de publicação."
 }

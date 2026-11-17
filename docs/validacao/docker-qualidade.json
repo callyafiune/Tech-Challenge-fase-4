@@ -39,6 +39,6 @@
     "fim_utc": "2026-11-17T13:43:28.011255+00:00",
     "codigo_saida": 0,
     "log": "validacao/docker-qualidade-pytest.log",
-    "sha256": "6059ca835364df3180b721313b4792ea34e31df1c82c21beeb4d8908bc6ffe9c"
+    "sha256": "c17baa2678ce15f5225156f9f7073c22a72d37c8417e80837eb767c5b067992c"
   }
 ]

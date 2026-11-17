@@ -6,11 +6,13 @@ import subprocess
 from datetime import UTC, datetime
 from pathlib import Path
 
+from credito_monitorado.publicacao import salvar_saida_publica
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
 def main() -> None:
-    """Preserva os bytes dos logs, os horários e o código de saída de cada comando."""
+    """Registra horários, códigos de saída e cópias dos logs com caminhos sanitizados."""
     indice = {
         "inicio_utc": datetime.now(UTC).isoformat(),
         "coletor_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
@@ -27,7 +29,7 @@ def main() -> None:
             comando, cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=900
         )
         caminho = ROOT / f"docs/validacao/docker-qualidade-final-{nome}.log"
-        caminho.write_bytes(resultado.stdout)
+        publicado = salvar_saida_publica(resultado.stdout, caminho, ROOT)
         indice["comandos"].append(
             {
                 "comando": comando,
@@ -36,7 +38,7 @@ def main() -> None:
                 "codigo_saida": resultado.returncode,
                 "saida_esperada": 0,
                 "log": caminho.relative_to(ROOT / "docs").as_posix(),
-                "log_sha256": hashlib.sha256(resultado.stdout).hexdigest(),
+                "log_sha256": hashlib.sha256(publicado).hexdigest(),
             }
         )
         indice["fim_utc"] = datetime.now(UTC).isoformat()

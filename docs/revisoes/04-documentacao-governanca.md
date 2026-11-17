@@ -61,7 +61,7 @@ Ferramenta de revisão: Claude Code, modelo `claude-fable-5-2`.
 - **Correção:** registrar os IDs dos filhos e exportar os metadados agregados dos runs.
 
 **I12. A alegação de privacidade do snapshot não é verificada pelo código.** `scripts/exportar_evidencias.py` copia uma lista fixa de arquivos e declara as exclusões como literal, sem inspecionar o conteúdo.
-- **Lacunas:** não confere os hashes contra o manifesto de origem, e uma falha no meio da cópia deixa o destino parcial. Publica `output_dir` e a URI com o caminho absoluto `C:\estudos\…`, apesar da sanitização alegada no tratamento.
+- **Lacunas:** não confere os hashes contra o manifesto de origem, e uma falha no meio da cópia deixa o destino parcial. Publica `output_dir` e a URI com o caminho absoluto `./…`, apesar da sanitização alegada no tratamento.
 - **Política inconsistente:** a supressão de grupos com menos de 30 registros vale só para a auditoria de equidade; os histogramas do Evidently expõem categorias raras de `pay_*`.
 
 ## Menores

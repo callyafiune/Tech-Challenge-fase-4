@@ -68,7 +68,9 @@ git diff --check
 
 Testes usam fixtures controladas e geração HTML real pelo Evidently, sem download. Casos de cache real têm skip explícito se não há cache local; execução completa com dados reais possui evidência separada. O CI verifica ambiente limpo; seu resultado remoto só existe após rodar no GitHub.
 
-Para registrar stdout literal, JUnit, horários e vínculo ao código de uma execução concluída, use `uv run python -X utf8 scripts/verificar_entrega.py --resumo artifacts/ID_DA_EXECUCAO/resumo.json`. Os arquivos ficam em `docs/validacao/` e o índice em `docs/verificacao.json`. `.env.example` documenta variáveis opcionais; o programa não carrega `.env` automaticamente.
+Para registrar saídas com caminhos locais sanitizados, JUnit, horários e vínculo ao código de uma execução concluída, use `uv run python -X utf8 scripts/verificar_entrega.py --resumo artifacts/ID_DA_EXECUCAO/resumo.json`. Os arquivos ficam em `docs/validacao/` e o índice em `docs/verificacao.json`. `.env.example` documenta variáveis opcionais; o programa não carrega `.env` automaticamente.
+
+Os coletores e o exportador substituem a raiz do projeto por `./` e o diretório do usuário por `[USUARIO]/`. Quando há substituição, o original fica em `artifacts/evidencias_privadas/`, ignorado pelo Git. Os hashes dos logs e do inventário `publicacao.json` correspondem às cópias publicadas. Os hashes do manifesto da execução continuam identificando os artefatos originais privados, e não as cópias sanitizadas.
 
 O Git preserva os bytes dos arquivos por `.gitattributes`, evitando que conversões automáticas de fim de linha invalidem os hashes das evidências. Hashes de modelo binário podem mudar por plataforma/versão. Identidade dos dados/configuração, isolamento e métricas com tolerância são verificações relevantes. `joblib` deve carregar somente artefatos confiáveis produzidos nesta execução; arquivo não confiável pode executar código.
 

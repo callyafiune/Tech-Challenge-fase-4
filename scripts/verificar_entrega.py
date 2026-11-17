@@ -13,6 +13,7 @@ from pathlib import Path
 import yaml
 
 from credito_monitorado.pipeline import _source_identity
+from credito_monitorado.publicacao import salvar_saida_publica
 
 
 def _sha256(content: bytes) -> str:
@@ -115,14 +116,14 @@ def main() -> None:
         completed = subprocess.run(command, cwd=root, env=environment, capture_output=True)
         log_path = destination / f"{index:02d}-comando.log"
         content = completed.stdout + completed.stderr
-        log_path.write_bytes(content)
+        content = salvar_saida_publica(content, log_path, root)
         records.append(
             {
                 "comando": " ".join(command),
                 "inicio_utc": begin.isoformat(),
                 "fim_utc": datetime.now(UTC).isoformat(),
                 "codigo_saida": completed.returncode,
-                "saida_literal": content.decode("utf-8", errors="replace"),
+                "saida_sanitizada": content.decode("utf-8"),
                 "arquivo": log_path.relative_to(root).as_posix(),
                 "sha256": hashlib.sha256(content).hexdigest(),
             }
@@ -156,7 +157,7 @@ def main() -> None:
         },
         "observacao_descoberta_ruff": (
             "Ruff format inclui arquivos .md; ruff check --show-files lista Python/TOML. "
-            "A descoberta do format está capturada literalmente no comando 7 com --verbose."
+            "A descoberta do format está no comando 7 com --verbose, com caminhos sanitizados."
         ),
         "evidencias_adicionais_sha256": {
             name: _sha256((root / name).read_bytes())
@@ -166,6 +167,11 @@ def main() -> None:
         "comandos": records,
         "resultado": "aprovado" if all(r["codigo_saida"] == 0 for r in records) else "falha",
     }
+    for name in ("docs/validacao/pytest.xml", "docs/evidencias_mlflow.json"):
+        path = root / name
+        if path.is_file():
+            publicado = salvar_saida_publica(path.read_bytes(), path, root)
+            record["evidencias_adicionais_sha256"][name] = _sha256(publicado)
     (root / "docs" / "verificacao.json").write_text(
         json.dumps(record, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )

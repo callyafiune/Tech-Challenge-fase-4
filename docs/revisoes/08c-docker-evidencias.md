@@ -59,7 +59,7 @@ Nenhum defeito crítico encontrado.
    - Falha em `encerrar-ui` dentro do `finally` mascara o erro original.
    - `arquivos_sha256` é calculado no fim, não antes do build, e cobre só `*.py` de `src/`.
 6. **Resíduos.** Cada coleta deixa dois projetos com contêineres parados e quatro volumes. O guia não dá o comando de limpeza (`docker compose -p <projeto> down --volumes`), embora a política de retenção se aplique.
-7. **Documentação.** O padrão `docs/validacao/docker-*.log` na seção "Verificação realizada" também casa com os logs da primeira coleta. O log do pytest expõe o caminho absoluto `C:\estudos\…`, sem dado pessoal; os `docker inspect` (logs 13 e 16, fora do pacote) provavelmente também expõem caminhos do host.
+7. **Documentação.** O padrão `docs/validacao/docker-*.log` na seção "Verificação realizada" também casa com os logs da primeira coleta. O log do pytest expõe o caminho absoluto `./…`, sem dado pessoal; os `docker inspect` (logs 13 e 16, fora do pacote) provavelmente também expõem caminhos do host.
 
 ## Veredito
 

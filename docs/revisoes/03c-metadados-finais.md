@@ -54,7 +54,7 @@ Nenhum.
 - **Registro literal** (`docs/verificacao.json`):
   - `ruff format` relata 46 arquivos, mas `--show-files` lista 25; a diferença não está explicada.
   - `pytest -q` não nomeia os testes, e `pytest.xml` não tem hash no registro.
-  - Há caminhos absolutos `C:\estudos\...` no registro: não são dado pessoal, mas não são portáveis.
+  - Há caminhos absolutos `./...` no registro: não são dado pessoal, mas não são portáveis.
 - **URI SQLite**: o caminho absoluto local é publicado e, em outro ambiente, pode conter o nome do usuário do sistema operacional. URIs que não são URL viram `://` ou `c://`.
 
 ## Conferido sem defeito
