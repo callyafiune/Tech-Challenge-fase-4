@@ -46,7 +46,7 @@ src/credito_monitorado/
   pipeline.py                       orquestração e estados de execução
   cli.py                            interface de linha de comando
 tests/                              testes de contratos, leakage, estatística e integração
-docs/                               arquitetura, plano, cards, causalidade e roteiro STAR
+docs/                               arquitetura, plano, cards, causalidade e auditoria
 artifacts/<execution_id>/            evidências geradas (fora do Git por padrão)
 .github/workflows/ci.yml             lint, testes e smoke reproduzível
 ```
@@ -137,23 +137,23 @@ As interfaces abaixo são contratos de integração; classes de resultado devem 
 
 ## Bloco 4 — documentação, governança e auditoria
 
-**Arquivos:** `README.md`, `docs/dicionario_dados.md`, `docs/model_card.md`, `docs/causalidade.md`, `docs/roteiro_star.md`, `docs/matriz_rastreabilidade.md` e relatório de auditoria/revisão.
+**Arquivos:** `README.md`, `docs/dicionario_dados.md`, `docs/model_card.md`, `docs/causalidade.md`, `docs/matriz_rastreabilidade.md` e relatório de auditoria/revisão.
 
-**Consome:** somente resultados efetivamente executados e manifestos finais. **Produz:** instruções reproduzíveis, governança consolidada, roteiro e histórico de correções.
+**Consome:** somente resultados efetivamente executados e manifestos finais. **Produz:** instruções reproduzíveis, governança consolidada, apresentação em vídeo e histórico de correções.
 
 - [x] Consolidar no README propósito, setup uv, reprodução, comandos de verificação e interpretação dos alertas; publicar indicadores e identificadores da execução, configuração, dados e modelo.
 - [x] Escrever cards: nomes/unidades/códigos, Taiwan/2005, limite de crédito diferente de renda, licença/atribuição, exclusão de atributos, vieses, ausência de validação para concessão real e limitações de generalização.
 - [x] Resumir governança no README e detalhá-la em `docs/governanca.md`: finalidade, minimização, responsáveis, base legal contextualizada, direitos, retenção, acesso, incidentes e equidade.
 - [x] Documentar causalidade: seleção covariável dependente somente de X, contrafactual de rótulos, invariantes, métricas observadas, hipóteses alternativas reais e plano de investigação; declarar ausência de inferência causal macroeconômica.
-- [x] Criar roteiro STAR com situação, tarefa, ação, resultados, governança, comandos e telas, com duração prevista de até cinco minutos.
-- [x] Preencher matriz R01–R10 com artefatos/verificações/resultados; relacionar o roteiro e os artefatos de demonstração ao critério de apresentação.
+- [x] Publicar o [vídeo STAR](https://youtu.be/0NyRf1oxfeI), com situação, tarefa, ação, resultados e governança, em até cinco minutos.
+- [x] Preencher matriz R01–R10 com artefatos/verificações/resultados; relacionar o vídeo e os artefatos de demonstração ao critério de apresentação.
 - [x] Registrar revisões técnicas com identificação dos arquivos, achados e tratamento, usando apenas código e evidências agregadas.
 - [x] Tratar os achados A01–A05 com evidências de código, testes e execução.
 - [x] Fechar URI ambígua por omissão integral de metadados remotos e validar o helper de integridade por bytes, configuração, ID e manifesto; conferir regressões/evidências da versão final.
 - [x] Isolar os três casos negativos de ID, estado e escape de diretório, com resultados identificados no JUnit.
 - [x] Validar UTF-8, integridade, links relativos e correspondência entre documentação e implementação.
 
-**Aceite independente:** um avaliador consegue reproduzir a demonstração e associar cada requisito ao artefato correto; o README contém governança e referencia o roteiro de apresentação.
+**Aceite independente:** um avaliador consegue reproduzir a demonstração e associar cada requisito ao artefato correto; o README contém governança e referencia o vídeo publicado.
 
 ## Portas de aceite
 
@@ -162,6 +162,6 @@ As interfaces abaixo são contratos de integração; classes de resultado devem 
 | Dados/modelo | Proveniência, contrato, split exclusivo, fit só em treino e métrica mínima comprovados |
 | Estatística | Dois atributos com drift, invariância X no conceito e degradação pareada comprovadas |
 | Operação | Logs/alertas/recursos/HTML/MLflow realmente gerados e recuperáveis |
-| Entrega | README e matriz consistentes, revisão adversarial tratada, verificações executadas e roteiro e sequência da demonstração documentados |
+| Entrega | README e matriz consistentes, revisão adversarial tratada, verificações executadas e vídeo da demonstração publicado |
 
 As portas de aceite são verificadas pelos resultados e artefatos identificados em [resultados](resultados.md) e na [matriz de rastreabilidade](matriz_rastreabilidade.md).

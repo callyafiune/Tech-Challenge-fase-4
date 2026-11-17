@@ -8,4 +8,4 @@
 - Cada bloco passa por revisão adversarial no Claude Code com `--model fable`.
 - Effort dos agentes Codex: arquitetura e auditoria xhigh; pipelines/modelo e
   estatística high; testes e refatorações simples medium; depuração difícil xhigh.
-- Velocidade standard. Não produzir vídeo; entregar somente roteiro STAR.
+- Velocidade standard. A apresentação STAR é referenciada pelo vídeo publicado: https://youtu.be/0NyRf1oxfeI.

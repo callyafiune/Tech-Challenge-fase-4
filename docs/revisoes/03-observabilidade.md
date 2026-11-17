@@ -1,10 +1,12 @@
 # Revisão adversarial — 03-observabilidade
 
+**Cópia de publicação:** referências a itens retirados da entrega foram suprimidas. O parecer integral está preservado em `3e65bbe915b491fe7bd63980c1f23ee0901ca644:docs/revisoes/03-observabilidade.md`.
+
 Ferramenta de revisão: Claude Code, modelo `claude-fable-5-2`.
 
 # Revisão adversarial: pacote `credito_monitorado`
 
-Revisão estática: nada foi executado e o pacote não traz nenhuma evidência de execução (saída de testes, artefatos, relatório). Faltam `contracts.py`, `data.py`, `drift.py`, `model.py`, `monitoring.py`, `config.py`, `params.yaml`, `pyproject.toml`, o README e o roteiro.
+Revisão estática: nada foi executado e o pacote não traz nenhuma evidência de execução (saída de testes, artefatos, relatório). Faltam `contracts.py`, `data.py`, `drift.py`, `model.py`, `monitoring.py`, `config.py`, `params.yaml`, `pyproject.toml`, o README.
 
 ## Críticos
 
@@ -111,10 +113,9 @@ Nenhum defeito crítico comprovável no código fornecido. A ressalva é de esco
 - Se o contrato é aplicado à ingestão real: em `run_pipeline`, o estágio `validacao_origem` só verifica o volume mínimo.
 - Se os HTMLs do Evidently contêm apenas agregados.
 - Plano LGPD, base legal, retenção e análise causal no README.
-- Roteiro do vídeo.
 
 ## Veredito
 
-- **Conformidade:** não atestável. A Etapa 3 (logs, alertas, MLflow, relatório HTML) está estruturalmente atendida no código mostrado. As Etapas 1, 2 e 4 e o roteiro dependem de arquivos ausentes, e não há prova de execução.
+- **Conformidade:** não atestável. A Etapa 3 (logs, alertas, MLflow, relatório HTML) está estruturalmente atendida no código mostrado. As Etapas 1, 2 e 4 dependem de arquivos ausentes, e não há prova de execução.
 - **Qualidade:** engenharia acima da média para o contexto (falhas explícitas, sanitização de mensagens, hashes, invariantes do contrafactual). Ainda não é confiável como evidência, por causa dos itens 1 a 5 e da ausência de teste do caminho de sucesso.
 - **Antes da entrega:** corrigir os itens 1 a 4, organizar o histórico de commits e reenviar o pacote com os módulos faltantes e a saída real de `pytest` e de uma execução completa.

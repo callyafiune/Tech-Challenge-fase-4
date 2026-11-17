@@ -1,5 +1,7 @@
 # Revisão adversarial — 01b-correcao-dados
 
+**Cópia de publicação:** referências a itens retirados da entrega foram suprimidas. O parecer integral está preservado em `3e65bbe915b491fe7bd63980c1f23ee0901ca644:docs/revisoes/01b-correcao-dados.md`.
+
 Ferramenta de revisão: Claude Code, modelo `claude-fable-5-2`.
 
 # Revisão adversarial: `credito_monitorado` (config, contrato, dados, baseline), 2ª passagem
@@ -8,7 +10,7 @@ Ferramenta de revisão: Claude Code, modelo `claude-fable-5-2`.
 
 - **Hashes fixados:** não confirmei `DATASET_ZIP_SHA256` nem `DATASET_XLS_SHA256`; o comentário "verificado em 16/11/2026" é só uma alegação.
 - **Dados reais:** nenhum teste lê o XLS oficial, então não há evidência de que ele passe em `validate_batch`. De memória, os domínios da UCI cabem no contrato.
-- **Fora do pacote:** `pipeline.py`, `drift.py`, `monitoring.py`, `tracking.py`, `fairness.py`, docs, enunciado, `pyproject.toml`/`uv.lock` e o roteiro. Aderência ao enunciado e o uso real da configuração não são julgáveis aqui.
+- **Fora do pacote:** `pipeline.py`, `drift.py`, `monitoring.py`, `tracking.py`, `fairness.py`, docs, enunciado, `pyproject.toml`/`uv.lock`. Aderência ao enunciado e o uso real da configuração não são julgáveis aqui.
 
 Conferi à mão que `params.yaml` passa em `load_config`, que os valores esperados em `test_metricas_com_valores_conhecidos...` estão corretos e que o split dá 15000/4500/4500/6000 (30.000 linhas) e 200/60/60/80 (400 linhas).
 
@@ -84,6 +86,6 @@ Nenhum defeito crítico demonstrável. Não há vazamento treino/validação no 
 
 ## Veredito
 
-- **Conformidade:** não atestável para o desafio como um todo, porque enunciado, drift, monitoramento, tracking, docs e roteiro estão fora do pacote. No recorte, é parcial: a aquisição com integridade fixada, o contrato, o split e o baseline estão coerentes, mas não há prova de execução sobre dados reais.
+- **Conformidade:** não atestável para o desafio como um todo, porque enunciado, drift, monitoramento, tracking, docs estão fora do pacote. No recorte, é parcial: a aquisição com integridade fixada, o contrato, o split e o baseline estão coerentes, mas não há prova de execução sobre dados reais.
 - **Qualidade:** boa e melhor que na passagem anterior, sem vazamento identificado. As correções de proveniência e de configuração não estão protegidas por testes que falhariam se fossem removidas.
 - **Resultado:** aprovado com ressalvas. Corrigir os itens 1, 2 e 3 e documentar os itens 4 e 5 antes da entrega.

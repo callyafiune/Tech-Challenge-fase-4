@@ -41,4 +41,4 @@ As auditorias por grupo usam tamanho e denominadores mínimos, com supressão co
 
 Os HTMLs são verificados automaticamente quanto a conteúdo, links e integridade. Inspeção visual manual: não realizada. Hashes comprovam consistência, sem substituir assinatura ou garantia de autenticidade contra alteração coordenada de todos os arquivos.
 
-O [roteiro STAR](roteiro_star.md) organiza a apresentação técnica. A [matriz de rastreabilidade](matriz_rastreabilidade.md) relaciona os requisitos aos artefatos disponíveis.
+O [vídeo STAR](https://youtu.be/0NyRf1oxfeI) apresenta a demonstração técnica. A [matriz de rastreabilidade](matriz_rastreabilidade.md) relaciona os requisitos aos artefatos disponíveis.

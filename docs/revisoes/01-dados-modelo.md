@@ -1,5 +1,7 @@
 # Revisão adversarial — 01-dados-modelo
 
+**Cópia de publicação:** referências a itens retirados da entrega foram suprimidas. O parecer integral está preservado em `3e65bbe915b491fe7bd63980c1f23ee0901ca644:docs/revisoes/01-dados-modelo.md`.
+
 Ferramenta de revisão: Claude Code, modelo `claude-fable-5-2`.
 
 # Revisão adversarial: pacote `credito_monitorado` (config, contrato, dados, baseline)
@@ -8,7 +10,7 @@ Ferramenta de revisão: Claude Code, modelo `claude-fable-5-2`.
 
 - **Hash do dataset:** não confirmei `DATASET_ZIP_SHA256`. O comentário "verificado em 16/11/2026" é uma alegação.
 - **Dataset real contra o contrato:** não há evidência de que o XLS real passe em `validate_batch`. Pelo que conheço dos domínios da UCI deveria passar, mas isso não está demonstrado.
-- **Módulos ausentes:** simulação de drift, monitoramento (PSI/KS/bootstrap), tracking, scripts, docs, `pyproject.toml`/`uv.lock` e o roteiro não estão no pacote. O enunciado do Tech Challenge também não, então a aderência só pode ser julgada pelo que o código sugere.
+- **Módulos ausentes:** simulação de drift, monitoramento (PSI/KS/bootstrap), tracking, scripts, docs, `pyproject.toml`/`uv.lock` não estão no pacote. O enunciado do Tech Challenge também não, então a aderência só pode ser julgada pelo que o código sugere.
 
 ## Críticos
 
@@ -64,6 +66,6 @@ Nenhum defeito crítico demonstrável nos arquivos fornecidos. Não encontrei va
 
 ## Veredito
 
-- **Conformidade:** não atestável para o desafio como um todo, porque drift, monitoramento, tracking, documentação e roteiro estão fora do pacote. No recorte entregue (dados reais com integridade fixada, contrato, split estratificado, baseline), a conformidade é parcial com ressalvas: itens 1 a 3 e a execução não comprovada.
+- **Conformidade:** não atestável para o desafio como um todo, porque drift, monitoramento, tracking, documentação estão fora do pacote. No recorte entregue (dados reais com integridade fixada, contrato, split estratificado, baseline), a conformidade é parcial com ressalvas: itens 1 a 3 e a execução não comprovada.
 - **Qualidade:** boa no recorte, com código defensivo e sem vazamento identificado. Fica abaixo do que a documentação interna afirma em proveniência, validação de configuração e cobertura de testes.
 - **Resultado:** aprovado com ressalvas. Corrigir os itens 1, 2 e 5 antes da entrega.

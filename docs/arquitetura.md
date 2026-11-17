@@ -149,7 +149,7 @@ Como política acadêmica proposta, reter dados e artefatos locais até 90 dias 
 | R07 — observabilidade (20%) | HTML consolidado, logs e runs MLflow | Sucesso, bloqueio esperado, duração, volumes, recursos e alertas visíveis |
 | R08 — governança (15%) | README e model/dataset cards | Finalidade, minimização, base legal contextualizada, retenção, direitos, vieses e resposta descritos |
 | R09 — reprodução e histórico | uv.lock, CI, comandos e commits semânticos | Clone limpo executa verificação; evidências identificam configuração/modelo/dados |
-| R10 — vídeo STAR (15%) | Apresentação gravada e link, conforme o enunciado | Roteiro STAR disponível; gravação e link pendentes |
+| R10 — vídeo STAR (15%) | Apresentação e link, conforme o enunciado | [Vídeo publicado no YouTube](https://youtu.be/0NyRf1oxfeI), com demonstração dos relatórios e alertas |
 
 ## Riscos e decisões de execução
 

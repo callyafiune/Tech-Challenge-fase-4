@@ -1,8 +1,10 @@
 # Revisão adversarial — 04-documentacao-governanca
 
+**Cópia de publicação:** referências a itens retirados da entrega foram suprimidas. O parecer integral está preservado em `3e65bbe915b491fe7bd63980c1f23ee0901ca644:docs/revisoes/04-documentacao-governanca.md`.
+
 Ferramenta de revisão: Claude Code, modelo `claude-fable-5-2`.
 
-# Parecer adversarial: documentação, governança, roteiro e rastreabilidade
+# Parecer adversarial: documentação, governança e rastreabilidade
 
 **Escopo.** Parecer estático, sem execução. Recalculei os números do `resumo.json` e os comparei com README, model card, resultados e matriz. Não recebi `index.html`, `manifesto.json`, `logs.jsonl`, `alertas.json`, `monitoring.json`, `evidently.*`, `auditoria_final.md`, `progresso.md`, `params.yaml`, os testes nem o CI. Não recalculei os hashes de `publicacao.json` nem acessei os links externos.
 
@@ -32,7 +34,7 @@ Ferramenta de revisão: Claude Code, modelo `claude-fable-5-2`.
 **I3. A segunda variável com drift está dentro do ruído amostral.** O PSI de `pay_0` é 0,2053 contra limiar de 0,20, sem intervalo. A frase "pesos e limiares não foram alterados" não é comprovável sem histórico de commits.
 - **Correção:** publicar um IC bootstrap do PSI e declarar a fragilidade em `resultados.md`, sem ajustar pesos depois do fato.
 
-**I4. O Evidently covariável provavelmente contradiz a fala do roteiro.** As 14 contínuas têm p bruto ≤ 0,022 nesse cenário. Se o Evidently usa KS bruto a 5%, deve marcar cerca de 15 de 20 colunas, não as "duas variáveis" da matriz (R05) e do roteiro (1:50). É inferência: o `evidently.json` não veio no pacote.
+**I4. As políticas de detecção podem divergir.** As 14 contínuas têm p bruto ≤ 0,022 nesse cenário. Se o Evidently usa KS bruto a 5%, deve marcar cerca de 15 de 20 colunas, não as "duas variáveis" da matriz (R05). É inferência: o `evidently.json` não veio no pacote.
 - **Correção:** registrar em `resultados.md` a contagem real do Evidently e ajustar a fala.
 
 **I5. `docs/verificacao.json` não está vinculado ao código executado.** O instante 21:15:56 cai dentro da janela do pipeline (21:15:36 a 21:16:03), e o pytest sozinho dura 71 s. Ou as execuções foram concorrentes, o que contamina duração, RSS e CPU, ou o carimbo não foi medido. As saídas são paráfrases, e o arquivo não traz `source_sha256`.
@@ -54,12 +56,6 @@ Ferramenta de revisão: Claude Code, modelo `claude-fable-5-2`.
 - **Normas ausentes:** Lei 12.414/2011 (Cadastro Positivo), Súmula 550 do STJ, art. 43, §1º do CDC (prazo de cinco anos, relevante para retenção) e o RIPD do art. 38.
 - **Classificação das colunas:** falta dizer que nenhuma é dado sensível no sentido do art. 5º, II, embora sexo e idade sejam atributos de risco discriminatório.
 - **Redação:** "art. 7º, X não autoriza uso indiscriminado" é fraco; o art. 11 simplesmente não prevê a hipótese de proteção do crédito.
-
-**I10. O roteiro tem quatro problemas.**
-- **Números ausentes:** a fala remete a `resultados.md` em vez de citar os valores. Sugestões: AUROC de 0,783 para 0,407; recall de 0,54 para 0,19; Brier +0,347 com IC [0,327; 0,368]; 8 alertas.
-- **Mapeamento STAR cruzado:** o plano de governança deveria estar em Action e os alertas em Result. O impacto não é quantificado.
-- **Tempo sem folga:** os blocos somam exatamente 300 s, com cerca de oito trocas de tela.
-- **Execuções diferentes na tela:** os comandos rodam um pipeline novo, mas servem o snapshot antigo. O HTML e o MLflow mostrarão IDs distintos; o run `99897dc9…` não existirá em outro clone.
 
 **I11. O rastreamento "pai e quatro filhos" não tem evidência no repositório.** `resumo.json → tracking` traz só o run pai.
 - **Correção:** registrar os IDs dos filhos e exportar os metadados agregados dos runs.

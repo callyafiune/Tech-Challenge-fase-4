@@ -1,10 +1,12 @@
 # Revisão adversarial — 00-arquitetura
 
+**Cópia de publicação:** referências a itens retirados da entrega foram suprimidas. O parecer integral está preservado em `3e65bbe915b491fe7bd63980c1f23ee0901ca644:docs/revisoes/00-arquitetura.md`.
+
 Ferramenta de revisão: Claude Code, modelo `claude-fable-5-2`.
 
 # Revisão adversarial: observabilidade de crédito
 
-**Escopo real:** recebi só `docs/arquitetura.md`, `docs/plano_implementacao.md`, `params.yaml` e `pyproject.toml`. Não recebi código, testes, `uv.lock`, README, artefatos, roteiro nem o enunciado original. Não executei nada; as estimativas numéricas abaixo são cálculos analíticos meus, não medições.
+**Escopo real:** recebi só `docs/arquitetura.md`, `docs/plano_implementacao.md`, `params.yaml` e `pyproject.toml`. Não recebi código, testes, `uv.lock`, README, artefatos, nem o enunciado original. Não executei nada; as estimativas numéricas abaixo são cálculos analíticos meus, não medições.
 
 ## Críticos
 
@@ -91,6 +93,6 @@ Ferramenta de revisão: Claude Code, modelo `claude-fable-5-2`.
 
 ## Veredito
 
-- **Conformidade: não demonstrada.** O pacote é só especificação e configuração: todas as caixas do plano estão desmarcadas e o snapshot do Git mostra um único commit com tudo não rastreado. O roteiro STAR não veio no pacote e não foi avaliado.
+- **Conformidade: não demonstrada.** O pacote é só especificação e configuração: todas as caixas do plano estão desmarcadas e o snapshot do Git mostra um único commit com tudo não rastreado.
 - **Qualidade do desenho: boa**, com split exclusivo, holdout de referência, bloqueio sem reparo silencioso e limites causais explícitos.
 - **Recomendação: não está pronto para execução.** Corrigir C1 e C2 antes de rodar; I1 a I5 antes de publicar qualquer resultado.

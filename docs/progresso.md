@@ -13,7 +13,7 @@ O estado técnico é comprovado pelas execuções, relatórios e registros de ve
 | Governança | Finalidade, minimização, base legal contextualizada, retenção e auditoria de equidade documentadas. | [Governança](governanca.md). |
 | Docker | Execução com rede e repetição sem rede; falha esperada com cache vazio; exportação e UI verificadas. | [Guia Docker](docker.md) e [verificação](verificacao_docker.json). |
 | Qualidade | 150 testes aprovados; Ruff e formatação aprovados. | [Registros do pipeline](verificacao.json) e [coleta local](validacao/docker-qualidade-final.json). |
-| Apresentação | Roteiro STAR com sequência de demonstração de até cinco minutos. | [Roteiro](roteiro_star.md). |
+| Apresentação | Vídeo STAR publicado, com demonstração dos relatórios, alertas e governança. | [Assistir no YouTube](https://youtu.be/0NyRf1oxfeI). |
 
 ## Execução de referência
 

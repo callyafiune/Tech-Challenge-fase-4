@@ -1,5 +1,7 @@
 # Revisão adversarial — 03b-integracao-corrigida
 
+**Cópia de publicação:** referências a itens retirados da entrega foram suprimidas. O parecer integral está preservado em `3e65bbe915b491fe7bd63980c1f23ee0901ca644:docs/revisoes/03b-integracao-corrigida.md`.
+
 Ferramenta de revisão: Claude Code, modelo `claude-fable-5-2`.
 
 ## Correções de observabilidade e integração
@@ -54,12 +56,12 @@ Não há defeito crítico de código.
 
 - **`reporting.py::render_summary`:** `label_names` usa a chave `"original"`, mas `build_scenarios` emite `"original_labels"`. A coluna "Rótulos" mostra o texto cru nos cenários controle e covariável.
 - **`drift.py::build_scenarios`:** `"counterfactual": True` também é gravado no controle, que é amostra uniforme com rótulos originais.
-- **Margem de `pay_0`:** o requisito de duas variáveis depende de 0,2053 contra o limiar de 0,20, na seed fixada. Nenhum teste verifica o que o próprio Evidently marca: o PSI dele usa outra suavização e pode não acusar `pay_0`. Confira `covariate/evidently.json` na execução real antes de gravar o roteiro.
+- **Margem de `pay_0`:** o requisito de duas variáveis depende de 0,2053 contra o limiar de 0,20, na seed fixada. Nenhum teste verifica o que o próprio Evidently marca: o PSI dele usa outra suavização e pode não acusar `pay_0`. Confira `covariate/evidently.json` na execução real antes da apresentação.
 - **`test_evidently_gera_html...`:** "Decisão primária", "BH" e "efeito" vêm do banner injetado, não do Evidently.
 
 ## Não verificável neste pacote
 
-- README (LGPD, base legal, retenção, vieses), `docs/causalidade.md` e `docs/roteiro_star.md`.
+- README (LGPD, base legal, retenção, vieses) e `docs/causalidade.md`.
 - A justificativa para a referência ser um holdout independente, já que o enunciado a descreve como "usada no treino".
 - CI e `scripts/`.
 
@@ -67,5 +69,5 @@ Não há defeito crítico de código.
 
 - **Correções:** aprovadas. Os resíduos são menores e nenhum invalida as evidências.
 - **Integração:** coerente por leitura estática: contrato na ingestão, partições disjuntas verificadas, treino só em `train`, limiar fixo, cenários só do pool, artefatos e MLflow sincronizados. Não encontrei vazamento treino/teste.
-- **Conformidade:** o código das Etapas 1 a 3 adere ao enunciado. A entrega ainda não está conforme enquanto o crítico 1 persistir. A Etapa 4 e o roteiro não são atestáveis.
+- **Conformidade:** o código das Etapas 1 a 3 adere ao enunciado. A entrega ainda não está conforme enquanto o crítico 1 persistir. A Etapa 4 não são atestáveis.
 - **Qualidade:** alta para o contexto acadêmico. Falta fechar o importante 1 para que as evidências deixem de depender de prosa.

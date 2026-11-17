@@ -15,6 +15,8 @@
 
 Pipeline de sustentação de um classificador de inadimplência: valida dados antes da inferência, simula e detecta drift, acompanha desempenho e registra a saúde da execução. **Pandera + scikit-learn + Evidently + MLflow**, com relatórios HTML e plano de governança.
 
+**Vídeo da apresentação:** [assistir no YouTube](https://youtu.be/0NyRf1oxfeI).
+
 ## Pré-requisitos e execução
 
 | Requisito | Observação |
@@ -147,4 +149,11 @@ A [verificação registrada](docs/verificacao.json) contém **150 testes aprovad
 | Privacidade e hipóteses causais | [Governança](docs/governanca.md) e [causalidade](docs/causalidade.md) |
 | Revisões com Claude Code Fable | [Tratamento dos pareceres](docs/revisoes/tratamento.md) |
 | Conferência dos requisitos | [Auditoria final](docs/auditoria_final.md) |
-| Apresentação em até cinco minutos | [Roteiro STAR](docs/roteiro_star.md) |
+| Apresentação em até cinco minutos | [Vídeo no YouTube](https://youtu.be/0NyRf1oxfeI) |
+
+## Base de dados utilizada
+
+Utilizamos a base **Default of Credit Card Clients**, disponibilizada pelo **UCI Machine Learning Repository**. Ela contém **30.000 registros de clientes de cartão de crédito de Taiwan**, com informações demográficas, limite de crédito, histórico de pagamentos e faturas. O alvo indica a inadimplência no mês seguinte. Os dados são históricos, referentes a 2005, e a licença é **CC BY 4.0**.
+
+- Página oficial e descrição da base: <https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients>.
+- Download oficial utilizado pelo pipeline (ZIP): <https://archive.ics.uci.edu/static/public/350/default+of+credit+card+clients.zip>.

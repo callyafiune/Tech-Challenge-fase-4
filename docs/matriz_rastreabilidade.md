@@ -13,7 +13,7 @@ O [enunciado](enunciado.md) é a referência de requisitos. A execução identif
 | R07 — operação /20% | `telemetry`, `tracking`, `pipeline`, `reporting` | [Painel](../reports/execucao_validada/index.html), logs/alertas, duração/volume/recursos e [metadados do pai e quatro filhos](evidencias_mlflow.json). Sucesso SQLite e download dos artefatos com links válidos testados. |
 | R08 — governança /15% | Resumo no README e [plano de governança](governanca.md) | Finalidade, minimização, base legal contextual, retenção, direitos, revisão, vieses e incidentes; [model card](model_card.md) e auditoria agregada no painel. Não é certificação de conformidade. |
 | R09 — repositório/histórico/reprodução | `uv.lock`, CI, comandos e revisões | [Verificação local](verificacao.json), [tratamento Fable](revisoes/tratamento.md), hashes e [auditoria](auditoria_final.md). Histórico semântico por componente e evidências vinculadas às fontes. O CI pode ser consultado no GitHub Actions. |
-| R10 — vídeo STAR /15% | [Roteiro de até 5 min](roteiro_star.md) | Artefato disponível: roteiro textual com comandos e telas. Gravação e link: pendentes. |
+| R10 — vídeo STAR /15% | [Vídeo publicado](https://youtu.be/0NyRf1oxfeI) | Apresentação com demonstração dos contratos, drift, saúde da execução, alertas e governança. |
 
 Comandos de reprodução estão no README. Todos os testes são executados pelo comando padrão `uv run pytest -q`; o marker `integracao` não é excluído pelo CI. Um skip em cache ausente não é declarado como execução UCI. O dataset real foi executado integralmente e seus resultados agregados estão incluídos.
 

@@ -1,5 +1,7 @@
 # Revisão adversarial — 04b-documentacao-corrigida
 
+**Cópia de publicação:** referências a itens retirados da entrega foram suprimidas. O parecer integral está preservado em `3e65bbe915b491fe7bd63980c1f23ee0901ca644:docs/revisoes/04b-documentacao-corrigida.md`.
+
 Ferramenta de revisão: Claude Code, modelo `claude-fable-5-2`.
 
 # Revisão adversarial — correções 04
@@ -41,28 +43,23 @@ Nenhum defeito crítico encontrado. Não há indício de vazamento treino/teste,
 
 - **Espaços faltando em `docs/matriz_rastreabilidade.md`:** "real30.000", "validação0,77357", "Dummy0,50", "deltaBrier", "pai+4filhos", "até5min".
 - **Matriz incompleta:** R05 aponta o Evidently como evidência de drift em duas colunas sem dizer que ele marca 15 de 20. R07 não liga para `evidencias_mlflow.json`.
-- **Tela e fala no roteiro (1:50–2:40):** a fala cita PSI 0,205 com o Evidently aberto, que mostra 0,202. Indique o painel primário para 0,182/0,205 e o Evidently só para "15 de 20".
-- **ID ausente no roteiro:** ele exige "mesma execução", mas não cita `20261116T212632_471752d41e59`.
-- **Omissão no roteiro:** "o covariável sozinho não piorou a AUROC" é verdadeiro, mas o Brier subiu de 0,130 para 0,160, abaixo do limiar. Vale uma frase.
 - **Fragilidade do PSI:** `resultados.md` cita só a margem 0,0053. No PSI do Evidently ela é 0,0020, e "seus limiares" não informa o valor configurado.
 - **Alegação sem prova:** "pesos e limiares não foram alterados para forçar esse resultado" não é verificável com um único commit. Marque como declaração.
 - **Redação no README:** "impede-se uso real do protótipo" descreve uma restrição documental, não um controle técnico.
 - **Alertas:** a composição dos oito não está discriminada em `resultados.md`.
 - **`.gitattributes`:** `reports/**` desliga só `blank-at-eol`; `blank-at-eof` e `space-before-tab` continuam ativos, ao contrário do comentário. Use `-whitespace`.
 - **Árvore do README:** não lista `verificar_entrega.py` nem `exportar_evidencias.py`.
-- **Duração do roteiro:** o README diz "cinco minutos"; o roteiro diz até 4:50.
 
 ## Consistências confirmadas
 
-- **Métricas:** todas as de `resultados.md`, README e roteiro batem com `evidencias_mlflow.json`, e as matrizes de confusão que reconstruí fecham. Conceito e controle têm os mesmos 535 positivos previstos; combinado e covariável, os mesmos 972.
+- **Métricas:** todas as de `resultados.md`, README batem com `evidencias_mlflow.json`, e as matrizes de confusão que reconstruí fecham. Conceito e controle têm os mesmos 535 positivos previstos; combinado e covariável, os mesmos 972.
 - **Decomposição do Brier:** 0,021753 + 0,228136 = 0,249889.
 - **Correção BH:** p ajustado / p bruto ≈ 14, coerente com 14 variáveis contínuas.
 - **Horários:** a conversão UTC para São Paulo e a cronologia entre execução e verificação estão corretas.
-- **Roteiro:** os blocos são contíguos até 4:50 e a estrutura STAR está completa.
 - **Limites documentados:** alerta combinado e equidade descritiva são apresentados sem alegação de redução empírica de viés.
 
 ## Veredito
 
-**Conformidade:** aprovação condicionada. As correções 04 são consistentes em UTF-8/pt-BR, causalidade, distinção entre as políticas de detecção e roteiro; os itens 1 a 3 exigem tratamento na versão analisada.
+**Conformidade:** aprovação condicionada. As correções 04 são consistentes em UTF-8/pt-BR, causalidade, distinção entre as políticas de detecção; os itens 1 a 3 exigem tratamento na versão analisada.
 
 **Qualidade:** boa. A coerência numérica é alta e os limites são declarados com honestidade, mas a cadeia de evidências ainda tem os elos fracos dos itens 4 e 5.

@@ -9,25 +9,28 @@
   ],
   "velocidade": "standard",
   "instante_utc": "2026-11-16T21:33:03.368872+00:00",
-  "arquivos": [
-    "README.md",
-    "docs/resultados.md",
-    "docs/roteiro_star.md",
-    "docs/matriz_rastreabilidade.md",
-    "docs/verificacao.json",
-    "docs/evidencias_mlflow.json",
-    "docs/causalidade.md",
-    ".gitattributes"
-  ],
-  "sha256": {
-    "README.md": "8cdcb596ad781844608b770ad7ef419b281d48c0d579371c2892fdd57dffdfd7",
-    "docs/resultados.md": "f0583ac535c2671636c3023a6611d0c2cef780a640eff09df0c51ea3c1d4d095",
-    "docs/roteiro_star.md": "545fc39433d95e858ec133dfc01ded1cf2fb7ff8b61461f0ad076d93018646bc",
-    "docs/matriz_rastreabilidade.md": "dc274a75a7d0844baf39c73ce7a841a965adc0a213359fa30093714d0e360363",
-    "docs/verificacao.json": "75f48be309a4e304566a210836d0ae41efdce852b83a089702d7274936066e52",
-    "docs/evidencias_mlflow.json": "5a8f23dd0a4e5dccd5b1d01dbf326ed3b7d9b04e9aee71afb6771b5ac4a855ac",
-    "docs/causalidade.md": "775b4eef4f077cd4bebb340a179618678c18739b2eee5e17b842d9777b2280a4",
-    ".gitattributes": "cc2a0632e5ffc1805397163f172e3dbbfdc15387a905d7151cf6c4470f36f966"
+  "prompt_sha256": "43bdefd81f0c5fb0ba60fdafae9f592025c2689ae6206122763c56f18db88597",
+  "registro_original_git": "3e65bbe915b491fe7bd63980c1f23ee0901ca644:docs/revisoes/04b-documentacao-corrigida.json",
+  "inventario_publicado": {
+    "arquivos": [
+      "README.md",
+      "docs/resultados.md",
+      "docs/matriz_rastreabilidade.md",
+      "docs/verificacao.json",
+      "docs/evidencias_mlflow.json",
+      "docs/causalidade.md",
+      ".gitattributes"
+    ],
+    "sha256_no_pacote_revisado": {
+      "README.md": "8cdcb596ad781844608b770ad7ef419b281d48c0d579371c2892fdd57dffdfd7",
+      "docs/resultados.md": "f0583ac535c2671636c3023a6611d0c2cef780a640eff09df0c51ea3c1d4d095",
+      "docs/matriz_rastreabilidade.md": "dc274a75a7d0844baf39c73ce7a841a965adc0a213359fa30093714d0e360363",
+      "docs/verificacao.json": "75f48be309a4e304566a210836d0ae41efdce852b83a089702d7274936066e52",
+      "docs/evidencias_mlflow.json": "5a8f23dd0a4e5dccd5b1d01dbf326ed3b7d9b04e9aee71afb6771b5ac4a855ac",
+      "docs/causalidade.md": "775b4eef4f077cd4bebb340a179618678c18739b2eee5e17b842d9777b2280a4",
+      ".gitattributes": "cc2a0632e5ffc1805397163f172e3dbbfdc15387a905d7151cf6c4470f36f966"
+    },
+    "itens_omitidos": 1
   },
-  "prompt_sha256": "43bdefd81f0c5fb0ba60fdafae9f592025c2689ae6206122763c56f18db88597"
+  "prompt_sha256_referencia": "Hash do prompt integral identificado no registro original."
 }
